@@ -6,8 +6,8 @@ public class Main {
 		// object: an instance of a class that may contain attributes and methods
 		// example: (phone, desk, computer, coffee cup)
 
-//		Car myCar = new Car();
-//		Car mySecondCar = new Car();
+//		car1 myCar = new car1();
+//		car1 mySecondCar = new car1();
 //
 //		myCar.drive();
 //		myCar.brake();
@@ -46,7 +46,7 @@ public class Main {
 		// that 'textually represent' an object, can be used both implicitly and
 		// explicitly
 
-//		Car myCar = new Car();
+//		car1 myCar = new car1();
 //		System.out.println(myCar.toString());
 //		System.out.println(myCar);
 
@@ -74,24 +74,75 @@ public class Main {
 
 		// Passing objects within different classes
 //		Garage garage = new Garage();
-//		Car car = new Car("Tesla");
-//		Car car2 = new Car("BMW");
+//		car1 car1 = new car1("Tesla");
+//		car1 car2 = new car1("BMW");
 //
-//		garage.park(car);
+//		garage.park(car1);
 //		garage.park(car2);
 
 		// static : modifier, a single copy of a variable/method is created and shared.
 		// the class owns the static member
 
-		Friend friend1 = new Friend("Arjun");
-		Friend friend2 = new Friend("Shiya");
-		Friend friend3 = new Friend("Speed");
-		Friend friend4 = new Friend("JP");
+//		Friend friend1 = new Friend("Arjun");
+//		Friend friend2 = new Friend("Shiya");
+//		Friend friend3 = new Friend("Speed");
+//		Friend friend4 = new Friend("JP");
 
 //		System.out.println(Friend.numberOfFriends);
 //		System.out.println(friend1.numberOfFriends);
 
-		Friend.displayFriends();
+//		Friend.displayFriends();
+
+		// super: keyword refers to the superclass (parent) of an object
+		// very similar to the "this" keyword.
+
+//		Hero hero1 = new Hero("Batman", 42, "$$$");
+//		Hero hero2 = new Hero("Superman", 43, "laser eye");
+
+//		System.out.println(hero2.power);
+//		System.out.println(hero2.toString());
+
+		// abstract: abstract classes cannot be instantiated, but they can have a
+		// subclass
+		// abstract methods are declared without an implementation.
+
+//		Vehicle vehicle = new Vehicle();
+//		car1 car1 = new car1();
+//		car1.go();
+
+		// Encapsulation: attributes of a class will be hidden or private;
+		// Can be accessed only through methods(getters or setters);
+		// you should make attributes private if you don't have a reason to make them
+		// public
+
+//		Car car1 = new Car("chevrolet", "Camero", 2022);
+//		System.out.println(car1.getMake() + " " + car1.getModel());
+//		car1.year = 2023;
+//		car1.setYear(2025);
+//		System.out.println(car1.getYear());
+
+//		Car car2 = new Car("Ford", "Mustang", 2021);
+//
+//		car2.copy(car1);
+
+//		Car car2 = new Car(car1);
+//
+//		System.out.println(car1);
+//		System.out.println(car2);
+//		System.out.println();
+//		System.out.println(car1.getMake());
+//		System.out.println(car1.getModel());
+//		System.out.println(car1.getYear());
+//		System.out.println();
+//		System.out.println(car2.getMake());
+//		System.out.println(car2.getModel());
+//		System.out.println(car2.getYear());
+
+//		
+		// interface: a template that can be applied to a class;
+		// similar to inheritance, but specifies what a class has/must do;
+		// classes can apply more than one interface, inheritance is limited to 1 super
+		// class;
 
 	}
 
