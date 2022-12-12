@@ -5,6 +5,12 @@ public class Test {
 		// TODO Auto-generated method stub
 		System.out.println("Commiting to git through terminal");
 		System.out.println("idkkkk");
+		System.out.println("idkkkk");
+		
+		System.out.println("Commiting to git through terminal");
+		System.out.println("idkkkk");
+		System.out.println("idkkkk");
+	}
 	}
 
 }
