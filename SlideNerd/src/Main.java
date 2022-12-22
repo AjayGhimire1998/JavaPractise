@@ -377,14 +377,38 @@ public class Main {
 
 		// StringBuilder
 
-		StringBuilder sb = new StringBuilder();
+//		StringBuilder sb = new StringBuilder();
+//
+//		sb.append("hello worldddd");
+//		sb.append(" world");
+//
+//		System.out.println(sb);
 
-		sb.append("hello");
-		sb.append(" world");
+//		byte b = 1;
+//		String result = String.valueOf(b);
+//		System.out.println(result);
 
-		System.out.println(sb);
+//		float f = 22.45f;
+//		String result = String.valueOf(f);
+//		System.out.println(result);
 
+//		String string = "12";
+////		System.out.println(((Object) string).getClass().getSimpleName());
+////		byte b = Byte.parseByte(string);
+////		System.out.println(b);
+//		int i = Integer.parseInt(string);
+//		System.out.println(((Object)i).getClass().getSimpleName());
+//		System.out.println(i);
+//
+//		boolean b = Boolean.parseBoolean("false");
+//		System.out.println(((Object) b).getClass().getName());
+//		System.out.println(add(5, 6));
+//
 	}
+//
+//	static int add(int a, int b) {
+//		return a + b;
+//	}
 
 //	public static float getValue() {
 //
