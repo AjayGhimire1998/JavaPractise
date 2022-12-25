@@ -1,4 +1,4 @@
-package sliderNerdOOP;
+package sliderNerdMethod;
 
 public class Person {
 
