@@ -403,7 +403,22 @@ public class Main {
 //		boolean b = Boolean.parseBoolean("false");
 //		System.out.println(((Object) b).getClass().getName());
 //		System.out.println(add(5, 6));
+
+		int number = 179;
 //
+//		boolean isDivisible = number % 7 == 0;
+//		System.out.println(isDivisible);
+
+		boolean isDivisible = isDivisbibleBySeven(number);
+		System.out.println(isDivisible);
+//
+	}
+
+	// methods
+
+	static boolean isDivisbibleBySeven(int number) {
+		boolean isDivisible = number % 7 == 0;
+		return isDivisible;
 	}
 //
 //	static int add(int a, int b) {
