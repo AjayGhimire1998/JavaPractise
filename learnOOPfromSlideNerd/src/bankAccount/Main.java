@@ -94,8 +94,46 @@ public class Main {
 
 					break;
 				case 4:
+					System.out.println("Enter your account number: ");
+					acc = bufferedReader.readLine();
+					if (numberOfCustomers == 0) {
+						System.err.println("Account not found");
+					} else {
+						boolean found = false;
+						for (int i = 0; i < numberOfCustomers; i++) {
+							Account temp = c[i].getAccount();
+							String accTemp = temp.getAccountNumber();
+							if (accTemp.equals(acc)) {
+								System.out.println("Your new balance is: " + temp.getBalance());
+								found = true;
+							}
+
+						}
+						if (found == false) {
+							System.err.println("Account not found");
+						}
+					}
 					break;
 				case 5:
+					System.out.println("Enter your account number: ");
+					acc = bufferedReader.readLine();
+					if (numberOfCustomers == 0) {
+						System.err.println("Account not found");
+					} else {
+						boolean found = false;
+						for (int i = 0; i < numberOfCustomers; i++) {
+							Account temp = c[i].getAccount();
+							String accTemp = temp.getAccountNumber();
+							if (accTemp.equals(acc)) {
+								bank.calculateInterest(c[i]);
+								found = true;
+							}
+
+						}
+						if (found == false) {
+							System.err.println("Account not found");
+						}
+					}
 					break;
 				case 6:
 					System.exit(0);
