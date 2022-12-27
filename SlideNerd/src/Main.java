@@ -1,4 +1,3 @@
-
 public class Main {
 
 	public static void main(String args[]) {
@@ -404,23 +403,101 @@ public class Main {
 //		System.out.println(((Object) b).getClass().getName());
 //		System.out.println(add(5, 6));
 
-		int number = 179;
+//		int number = 179;
 //
 //		boolean isDivisible = number % 7 == 0;
 //		System.out.println(isDivisible);
 
-		boolean isDivisible = isDivisbibleBySeven(number);
-		System.out.println(isDivisible);
+//		boolean isDivisible = isDivisbibleBySeven(number);
+//		System.out.println(isDivisible);
+
+		// data structures
+
+		// stack
+//		Stack<String> stack = new Stack<>();
 //
+//		stack.push("Fifa");
+//		stack.push("Cod");
+//		stack.push("Gta");
+//
+////		stack.pop();
+//		System.out.println(stack.peek());
+//		System.out.println(stack);
+
+		// queue
+//		Queue<String> queue = new LinkedList<String>();
+//
+//		queue.offer("Fifa");
+//		queue.offer("COD");
+//		queue.offer("GTA");
+//
+//		queue.poll();
+//		System.out.println(queue.peek());
+//
+//		System.out.println(queue);
+
+//		Queue<Double> queue = new PriorityQueue<Double>();
+//
+//		queue.offer(2.5);
+//		queue.offer(2.0);
+//		queue.offer(3.5);
+//		queue.offer(4.0);
+//		queue.offer(3.0);
+//
+//		queue.poll();
+//
+//		System.out.println(queue.peek());
+//
+//		System.out.println(queue);
+
+//		HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
+//
+//		hashMap.put("Ajay", 24);
+//		hashMap.put("Arjun", 23);
+//		hashMap.put("SIa", 25);
+
+//		hashMap.clear();
+
+//		System.out.println(hashMap.containsKey("Ajay"));
+//		System.out.println(hashMap.size());
+//		System.out.println(hashMap.replace("SIa", 16));
+//		System.out.println(hashMap.toString());
+
+//		System.out.println(hashMap.getClass());
+//		System.out.println(hashMap);
+
+		Test test = new Test();
+//		System.out.println(test.x);
+		Test test2 = new Test();
+
+//		System.out.println(test);
+//		System.out.println(test2);
+//		System.out.println(test.x);
+//		System.out.println(test2.x);
+
+//		test.change();
+//		System.out.println(test.x);
+//		System.out.println(test2.x);
+
+//		if (test == test2) {
+//			System.out.println("they are equal");
+//		}
+//
+//		if (test.equals(test2)) {
+//			System.out.println("euals");
+//		}
+
+		System.out.println(test == test2);
+
 	}
 
 	// methods
 
-	static boolean isDivisbibleBySeven(int number) {
-		boolean isDivisible = number % 7 == 0;
-		return isDivisible;
-	}
-//
+//	static boolean isDivisbibleBySeven(int number) {
+//		boolean isDivisible = number % 7 == 0;
+//		return isDivisible;
+//	}
+////
 //	static int add(int a, int b) {
 //		return a + b;
 //	}
@@ -437,3 +514,11 @@ public class Main {
 //	System.out.println(salary);
 
 //}
+
+class Test {
+	String x = "hi";
+
+	public void change() {
+		x = "bye";
+	}
+}
