@@ -37,7 +37,7 @@ public class Main {
 					Customer customer = new Customer(name, account);
 					c[numberOfCustomers] = customer;
 					numberOfCustomers++;
-					System.out.println("Number of Customers: " + numberOfCustomers);
+					customer.display();
 //					for (int i = 0; i < numberOfCustomers; i++) {
 //						System.out.println("Name: " + c[i].getName());
 //					}
@@ -53,11 +53,11 @@ public class Main {
 						for (int i = 0; i < numberOfCustomers; i++) {
 							Account temp = c[i].getAccount();
 							String accTemp = temp.getAccountNumber();
-//							System.out.println(accTemp);
 							if (accTemp.equals(acc)) {
 
 								System.out.println("Please enter the amount to deposit: ");
 								double deposit = Double.parseDouble(bufferedReader.readLine());
+								temp.deposit(deposit);
 								found = true;
 							}
 
@@ -69,6 +69,29 @@ public class Main {
 
 					break;
 				case 3:
+					System.out.println("Enter your account number: ");
+					acc = bufferedReader.readLine();
+					if (numberOfCustomers == 0) {
+						System.err.println("Account not found");
+					} else {
+						boolean found = false;
+						for (int i = 0; i < numberOfCustomers; i++) {
+							Account temp = c[i].getAccount();
+							String accTemp = temp.getAccountNumber();
+							if (accTemp.equals(acc)) {
+
+								System.out.println("Please enter the amount to withdraw: ");
+								double withdraw = Double.parseDouble(bufferedReader.readLine());
+								temp.withdraw(withdraw);
+								found = true;
+							}
+
+						}
+						if (found == false) {
+							System.err.println("Account not found");
+						}
+					}
+
 					break;
 				case 4:
 					break;

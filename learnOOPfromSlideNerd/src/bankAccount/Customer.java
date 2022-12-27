@@ -15,6 +15,7 @@ public class Customer {
 		System.out.println("Name: " + name);
 		System.out.println("Accounnt: " + account.getAccountNumber());
 		System.out.println("Balance: " + account.getBalance());
+
 	}
 
 	public String getName() {

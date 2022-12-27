@@ -48,6 +48,7 @@ public class Account {
 				if (tempBalance >= 100) {
 					balance -= amount - bank.getTransactionFee();
 					System.out.println(amount + " has been withdrawn successfully.");
+					System.out.println("your new balance is " + balance);
 				} else {
 					System.err.println("Insufficient balance to withdraw " + amount);
 
