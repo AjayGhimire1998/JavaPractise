@@ -33,9 +33,9 @@ public class Main {
 
 		// static methods
 		Person person = new Person();
-		person.getYear();
-
-		Person.getAge();
+//		person.getYear();
+//
+//		Person.getAge();
 
 //		Person.getAge();
 
@@ -68,9 +68,9 @@ class Person {
 
 	String name;
 	String address;
-//	int day;
-//	int month;
-//	int year;
+	int day;
+	int month;
+	int year;
 //	int age = 20;
 //	static int years = 1000;
 
@@ -91,7 +91,7 @@ class Person {
 		return address;
 	}
 
-	public static void calculateAge(int day, int month, int year) {
+	public void calculateAge() {
 
 	}
 }
