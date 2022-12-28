@@ -1,7 +1,5 @@
 package thisKeyword;
 
-import java.util.Arrays;
-
 public class Main {
 
 	public static void main(String[] args) {
@@ -46,25 +44,44 @@ public class Main {
 //		String[] arr = s.split(" ");
 //		System.out.println(arr[arr.length - 1]);
 
-		int[] arr = { 4, 3, 6, 7 };
+//		int[] arr = { 4, 3, 6, 7 };
+//
+//		System.out.println(minStoneSum(arr, 3));
 
-		System.out.println(minStoneSum(arr, 3));
+//		int[] arr = { -1, 0, 3, 5, 9, 12 };
+//		System.out.println(search(arr, 9));
 
 	}
 
-	public static int minStoneSum(int[] piles, int k) {
-		Arrays.sort(piles);
-		int total = 0;
-//		while (k != 0) {
-
-		for (int i = 1; i < k + 1; i++) {
-			total = (int) (total + (piles[i] - Math.floor(piles[i] / 2)));
-		}
-//		k--;
+//	public static int minStoneSum(int[] piles, int k) {
+//		Arrays.sort(piles);
+//		int total = 0;
+////		while (k != 0) {
+//
+//		for (int i = 1; i < k + 1; i++) {
+//			total = (int) (total + (piles[i] - Math.floor(piles[i] / 2)));
 //		}
+////		k--;
+////		}
+//
+//		return total + piles[0];
+//	}
 
-		return total + piles[0];
-	}
+//	public static int search(int[] nums, int target) {
+//		int index = 0;
+//		for (int i = 0; i < nums.length; i++) {
+//			if (target == nums[i]) {
+//				index = i;
+//				break;
+//			}
+//		}
+//
+//		if (nums[index] == target) {
+//			return index;
+//		} else {
+//			return -1;
+//		}
+//	}
 
 }
 
