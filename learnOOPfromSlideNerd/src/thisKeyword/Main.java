@@ -1,5 +1,7 @@
 package thisKeyword;
 
+import java.util.Arrays;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -32,13 +34,36 @@ public class Main {
 //		System.exit(0);
 
 		// static methods
-		Person person = new Person();
+//		Person person = new Person();
 //		person.getYear();
 //
 //		Person.getAge();
 
 //		Person.getAge();
 
+		// leetcode
+//		String s = new String("hello World");
+//		String[] arr = s.split(" ");
+//		System.out.println(arr[arr.length - 1]);
+
+		int[] arr = { 4, 3, 6, 7 };
+
+		System.out.println(minStoneSum(arr, 3));
+
+	}
+
+	public static int minStoneSum(int[] piles, int k) {
+		Arrays.sort(piles);
+		int total = 0;
+//		while (k != 0) {
+
+		for (int i = 1; i < k + 1; i++) {
+			total = (int) (total + (piles[i] - Math.floor(piles[i] / 2)));
+		}
+//		k--;
+//		}
+
+		return total + piles[0];
 	}
 
 }
