@@ -14,6 +14,11 @@ public class Main {
 
 //		B b = new B();
 
+//		C c = new C();
+//		System.out.println(c.intB);
+//		B bb = new B();
+//		B b = new B(5, 10);
+
 	}
 
 }
@@ -47,23 +52,43 @@ public class Main {
 
 class A {
 
-	String name = "Ajay";
+	int intA;
 
-	A() {
-		System.out.println("Inside A constructor");
+//	A() {
+//		System.out.println("Inside A constructor");
+//	}
+
+	A(int a) {
+		System.out.println("Inside super class constructor which takes one argument");
+		this.intA = 2 * a;
+
 	}
 
 }
 
 class B extends A {
+	int intB = 20;
+
 	B() {
+		super(0);
 		System.out.println("Inside B constructor");
 	}
-}
 
-class C extends B {
-	C() {
-		System.out.println("Inside C constructor");
+	B(int a, int b) {
+		super(a);
+		this.intB = b;
+
+		System.out.println("IntA: " + intA);
+		System.out.println("IntB: " + intB);
+
 	}
-
 }
+
+//class C extends B {
+//	int intC = 30;
+//
+//	C() {
+//		System.out.println("Inside C constructor");
+//	}
+//
+//}
