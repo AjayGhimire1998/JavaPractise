@@ -29,14 +29,22 @@ public class Main {
 //		Person p4 = s1;
 //		System.out.println(p4.name);
 
-		Student s = new Student();
+//		Student s = new Student();
 //		Person p = new Person();
 //		Student s = (Student) p;
-
-		Person p = s;
+//		Person p = s;
 
 //		System.out.println(p.name);
 //		System.out.println(s.name);
+
+//		Person p = new Student();
+//		Student s = (Student) p;
+
+//		Student s = null;
+//		System.out.println(s);
+//		System.out.println(s instanceof Student);
+
+		// instanceof
 
 	}
 
