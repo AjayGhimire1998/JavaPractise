@@ -46,6 +46,39 @@ public class Main {
 
 		// instanceof
 
+//		Parent p = new Parent();
+//		System.out.println(p instanceof Parent);
+//
+//		Child c = new Child();
+//		System.out.println(c instanceof Child);
+
+//		Parent p = new Child();
+//		System.out.println(p instanceof Parent); // true  
+//		System.out.println(p instanceof Child); // true because p has child object
+
+//		Child c = (Child) new Parent(); //throws ClassCastException
+//		System.out.println(c instanceof Child);
+
+//		Parent p = new Child();
+//		Child c = (Child) p;
+//		System.out.println(c instanceof Parent); // true
+//		System.out.println(c instanceof Child); // true
+
+//		Parent p = new Parent();
+//		System.out.println(p instanceof Child); // false
+
+//		Parent p = new Parent();
+//		Child c = (Child) p;
+//		System.out.println(p instanceof Child); //ClassCastException
+
+		Parent p = new Parent();
+		if (p instanceof Child) {
+			Child c = (Child) p;
+			System.out.println(c);
+		} else {
+			System.out.println("TypeCasting not allowed");
+		}
+
 	}
 
 }
@@ -122,20 +155,30 @@ public class Main {
 
 //superclass reference
 
-class Person {
-	String name = "Ajay";
-	int age;
-	String address;
-}
-
-class Student extends Person {
-//	String name;
+//class Person {
+//	String name = "Ajay";
 //	int age;
 //	String address;
-	int marks;
-	int rollNumber;
+//}
+//
+//class Student extends Person {
+////	String name;
+////	int age;
+////	String address;
+//	int marks;
+//	int rollNumber;
+//
+//	public Student() {
+//		System.out.println("Created Student");
+//	}
+//}
 
-	public Student() {
-		System.out.println("Created Student");
-	}
+//instance of
+
+class Parent {
+
+}
+
+class Child extends Parent {
+
 }
