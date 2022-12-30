@@ -1,14 +1,14 @@
 package superKeyword;
 
-public class Main {
+//public class Main {
 
-	public static void main(String[] args) {
+//	public static void main(String[] args) {
 
-		// super on classes
+// super on classes
 //		Student student = new Student();
 //		student.getInfo();
 
-		// super on constructors
+// super on constructors
 //		C c = new C();
 //		System.out.println(c.name);
 
@@ -19,7 +19,7 @@ public class Main {
 //		B bb = new B();
 //		B b = new B(5, 10); 
 
-		// superClass reference
+// superClass reference
 //		Person p1 = new Person();
 //		Person p2 = new Person();
 //		Student s1 = new Student();
@@ -44,7 +44,7 @@ public class Main {
 //		System.out.println(s);
 //		System.out.println(s instanceof Student);
 
-		// instanceof
+// instanceof
 
 //		Parent p = new Parent();
 //		System.out.println(p instanceof Parent);
@@ -71,17 +71,17 @@ public class Main {
 //		Child c = (Child) p;
 //		System.out.println(p instanceof Child); //ClassCastException
 
-		Parent p = new Parent();
-		if (p instanceof Child) {
-			Child c = (Child) p;
-			System.out.println(c);
-		} else {
-			System.out.println("TypeCasting not allowed");
-		}
+//		Parent p = new Parent();
+//		if (p instanceof Child) {
+//			Child c = (Child) p;
+//			System.out.println(c);
+//		} else {
+//			System.out.println("TypeCasting not allowed");
+//		}
 
-	}
+//	}
 
-}
+//}
 
 //super on classes
 
@@ -176,9 +176,41 @@ public class Main {
 //instance of
 
 class Parent {
+	String firstName = "Lionel";
+	String lastName = "Messi";
+	String job = "Footballer";
+
+	public void getHobby() {
+		System.out.println("Play football..");
+	}
 
 }
 
 class Child extends Parent {
+	String firstName = "Mateo";
+	String lastName = "Messi";
+	String job = "Student";
+	String school = "Rosario Academy";
+	int grade = 2;
 
+	@Override
+	public void getHobby() {
+		System.out.println("Study..");
+	}
+}
+
+public class Main {
+	public static void main(String args[]) {
+		// storing superclass object in a reference of a subclass type
+//		Child mateo1 = new Parent();
+//		// or
+//		// assigning a reference of a subclass to a variable of a superclass type
+//		Parent messi = new Parent();
+//		Child mateo2 = (Child) messi; // downcasting superclass reference to a subclass type
+
+		Parent p = new Parent();
+		Child c = new Child();
+		Parent p2 = c;
+		p2.getHobby();
+	}
 }
