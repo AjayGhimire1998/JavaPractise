@@ -1,5 +1,7 @@
 package thisKeyword;
 
+import java.util.Arrays;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -53,58 +55,58 @@ public class Main {
 
 	}
 
-//	public static int minStoneSum(int[] piles, int k) {
-//		Arrays.sort(piles);
-//		int total = 0;
-////		while (k != 0) {
-//
-//		for (int i = 1; i < k + 1; i++) {
-//			total = (int) (total + (piles[i] - Math.floor(piles[i] / 2)));
-//		}
-////		k--;
-////		}
-//
-//		return total + piles[0];
-//	}
+	public static int minStoneSum(int[] piles, int k) {
+		Arrays.sort(piles);
+		int total = 0;
+//		while (k != 0) {
 
-//	public static int search(int[] nums, int target) {
-//		int index = 0;
-//		for (int i = 0; i < nums.length; i++) {
-//			if (target == nums[i]) {
-//				index = i;
-//				break;
-//			}
+		for (int i = 1; i < k + 1; i++) {
+			total = (int) (total + (piles[i] - Math.floor(piles[i] / 2)));
+		}
+//		k--;
 //		}
-//
-//		if (nums[index] == target) {
-//			return index;
-//		} else {
-//			return -1;
-//		}
-//	}
+
+		return total + piles[0];
+	}
+
+	public static int search(int[] nums, int target) {
+		int index = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (target == nums[i]) {
+				index = i;
+				break;
+			}
+		}
+
+		if (nums[index] == target) {
+			return index;
+		} else {
+			return -1;
+		}
+	}
 
 }
 
-//class Test {
-//	static int id = 1000;
-//	static boolean myConditiob = true;
-//	static char c = 'A';
-//	static Object obj = new Object();
-//	static int uId;
-//	static {
-//		uId = 0;
-//		System.out.println("Look I am first");
-//	}
-//	static {
-//		uId = 3;
-//		System.out.println("Look I am second");
-//	}
-//
-//	Test() {
-//		uId++;
-//		System.out.println("Contructors called");
-//	}
-//}
+class Test {
+	static int id = 1000;
+	static boolean myConditiob = true;
+	static char c = 'A';
+	static Object obj = new Object();
+	static int uId;
+	static {
+		uId = 0;
+		System.out.println("Look I am first");
+	}
+	static {
+		uId = 3;
+		System.out.println("Look I am second");
+	}
+
+	Test() {
+		uId++;
+		System.out.println("Contructors called");
+	}
+}
 
 class Person {
 

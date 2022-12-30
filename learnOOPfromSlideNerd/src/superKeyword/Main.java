@@ -85,93 +85,75 @@ package superKeyword;
 
 //super on classes
 
-//class Person {
+class Person {
+
+	String name = "Ajay";
+
+	public void getInfo() {
+		System.out.println("Name of the person: " + name);
+	}
+
+}
+
 //
-//	String name = "Ajay";
-//
-//	public void getInfo() {
-//		System.out.println("Name of the person: " + name);
-//	}
-//
-//}
-//
-//class Student extends Person {
-//
-//	int marks = 100;
-//
-//	public void getInfo() {
-//		super.getInfo();
-////		System.out.println(super.name);
-//		System.out.println("Marks scored: " + marks);
-//
-//	}
-//
-//}
+class Student extends Person {
+
+	int marks = 100;
+
+	public void getInfo() {
+		super.getInfo();
+//		System.out.println(super.name);
+		System.out.println("Marks scored: " + marks);
+
+	}
+
+}
 
 //super in constructors
 
-//class A {
-//
-//	int intA;
-//
-////	A() {
-////		System.out.println("Inside A constructor");
-////	}
-//
-//	A(int a) {
-//		System.out.println("Inside super class constructor which takes one argument");
-//		this.intA = 2 * a;
-//
-//	}
-//
-//}
-//
-//class B extends A {
-//	int intB = 20;
-//
-//	B() {
-//		super(0);
-//		System.out.println("Inside B constructor");
-//	}
-//
-//	B(int a, int b) {
-//		super(a);
-//		this.intB = b;
-//
-//		System.out.println("IntA: " + intA);
-//		System.out.println("IntB: " + intB);
-//
-//	}
-//}
+class A {
 
-//class C extends B {
-//	int intC = 30;
-//
-//	C() {
-//		System.out.println("Inside C constructor");
-//	}
-//
-//}
+	int intA;
 
-//superclass reference
-
-//class Person {
-//	String name = "Ajay";
-//	int age;
-//	String address;
-//}
-//
-//class Student extends Person {
-////	String name;
-////	int age;
-////	String address;
-//	int marks;
-//	int rollNumber;
-//
-//	public Student() {
-//		System.out.println("Created Student");
+//	A() {
+//		System.out.println("Inside A constructor");
 //	}
-//}
+
+	A(int a) {
+		System.out.println("Inside super class constructor which takes one argument");
+		this.intA = 2 * a;
+
+	}
+
+}
+
+//
+class B extends A {
+	int intB = 20;
+
+	B() {
+		super(0);
+		System.out.println("Inside B constructor");
+	}
+
+	B(int a, int b) {
+		super(a);
+		this.intB = b;
+
+		System.out.println("IntA: " + intA);
+		System.out.println("IntB: " + intB);
+
+	}
+}
+
+class C extends B {
+	int intC = 30;
+
+	C() {
+		System.out.println("Inside C constructor");
+	}
+
+}
 
 //instance of
 
@@ -199,18 +181,18 @@ class Child extends Parent {
 	}
 }
 
-public class Main {
-	public static void main(String args[]) {
-		// storing superclass object in a reference of a subclass type
-//		Child mateo1 = new Parent();
-//		// or
-//		// assigning a reference of a subclass to a variable of a superclass type
-//		Parent messi = new Parent();
-//		Child mateo2 = (Child) messi; // downcasting superclass reference to a subclass type
-
-		Parent p = new Parent();
-		Child c = new Child();
-		Parent p2 = c;
-		p2.getHobby();
-	}
-}
+//public class Main {
+//	public static void main(String args[]) {
+//		// storing superclass object in a reference of a subclass type
+////		Child mateo1 = new Parent();
+////		// or
+////		// assigning a reference of a subclass to a variable of a superclass type
+////		Parent messi = new Parent();
+////		Child mateo2 = (Child) messi; // downcasting superclass reference to a subclass type
+//
+//		Parent p = new Parent();
+//		Child c = new Child();
+//		Parent p2 = c;
+//		p2.getHobby();
+//	}
+//}
