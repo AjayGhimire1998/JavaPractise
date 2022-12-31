@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 //import java.awt.geom.Arc2D;
 
 //import javax.swing.JOptionPane;
@@ -65,12 +67,12 @@ public class Main {
 //		
 
 		// Java Application GUI
-//		String name = JOptionPane.showInputDialog("Enter You name: ");
-//		int age = Integer.parseInt(JOptionPane.showInputDialog("Enter your age: "));
-//		double height = Double.parseDouble(JOptionPane.showInputDialog("Enter your height in cm: "));
-//		JOptionPane.showMessageDialog(null, "Hello " + name);	
-//		JOptionPane.showMessageDialog(null, "You are " + age);
-//		JOptionPane.showMessageDialog(null, "You are " + height + " cm tall.");
+		String name3 = JOptionPane.showInputDialog("Enter You name: ");
+		int age2 = Integer.parseInt(JOptionPane.showInputDialog("Enter your age: "));
+		double height = Double.parseDouble(JOptionPane.showInputDialog("Enter your height in cm: "));
+		JOptionPane.showMessageDialog(null, "Hello " + name3);
+		JOptionPane.showMessageDialog(null, "You are " + age2);
+		JOptionPane.showMessageDialog(null, "You are " + height + " cm tall.");
 //		
 
 		// Math class
