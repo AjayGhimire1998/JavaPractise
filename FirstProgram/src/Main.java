@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -274,35 +275,36 @@ public class Main {
 		// UNBOXING: reverse of auto boxing, automatic conversion of wrapper class to
 		// primitve.
 
-//		Boolean a = true;
-//		Character b = '@';
-//		Integer c = 123;
-//		Double d = 3.14;
-//		String e = "Ajay";
+		Boolean a = true;
+		System.out.println(a);
+		Character bb = '@';
+		Integer cc = 123;
+		Double dd = 3.14;
+		String e = "Ajay";
 //
-//		if (a == true) {
-//			System.out.print("Thi is still true");
-//		}
+		if (a == true) {
+			System.out.print("Thi is still true");
+		}
 
 		// Array List: a resizeable array, elements can be added and removed after
 		// compilation phase,
 		// stores reference data types
 
-//		ArrayList<String> food = new ArrayList<String>();
-//
-//		food.add("pizza");
-//		food.add("Burger");
-//		food.add("hotDog");
-//
-//		food.set(0, "sushi");
-//		food.remove(2);
-//
-//		food.clear();
-//
-//		for (int i = 0; i < food.size(); i++) {
-//			System.out.println(food.get(i));
-//
-//		}
+		ArrayList<String> food1 = new ArrayList<String>();
+
+		food1.add("pizza");
+		food1.add("Burger");
+		food1.add("hotDog");
+
+		food1.set(0, "sushi");
+		food1.remove(2);
+
+		food1.clear();
+
+		for (int i = 0; i < food1.size(); i++) {
+			System.out.println(food1.get(i));
+
+		}
 
 		// 2D ArrayLists; a dynamic list of lists, can change size during runtime
 
