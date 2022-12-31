@@ -86,7 +86,6 @@ public class Main {
 		System.out.println(z);
 
 		double xx;
-		double yy;
 		double zz;
 //		
 		Scanner scanner2 = new Scanner(System.in);
@@ -115,6 +114,7 @@ public class Main {
 		// if else statement
 		int age3 = 24;
 
+		double yy;
 		if (age3 > 18 && age3 < 24) {
 			System.out.println("A new adult");
 		} else if (age3 >= 25 && age3 <= 80) {
@@ -308,26 +308,26 @@ public class Main {
 
 		// 2D ArrayLists; a dynamic list of lists, can change size during runtime
 
-//		ArrayList<ArrayList<String>> groceriesList = new ArrayList();
-//		ArrayList<String> bakeryList = new ArrayList();
-//		bakeryList.add("pasta");
-//		bakeryList.add("garlic bread");
-//		bakeryList.add("donuts");
-//
-//		ArrayList<String> produceList = new ArrayList();
-//		produceList.add("tomatoes");
-//		produceList.add("bacon");
-//		produceList.add("parmesan");
-//
-//		ArrayList<String> drinkList = new ArrayList();
-//		drinkList.add("red wine");
-//		drinkList.add("Dr peppers");
-//
-//		groceriesList.add(bakeryList);
-//		groceriesList.add(produceList);
-//		groceriesList.add(drinkList);
+		ArrayList<ArrayList<String>> groceriesList = new ArrayList();
+		ArrayList<String> bakeryList = new ArrayList();
+		bakeryList.add("pasta");
+		bakeryList.add("garlic bread");
+		bakeryList.add("donuts");
 
-//		System.out.println(groceriesList.get(0).get(2));
+		ArrayList<String> produceList = new ArrayList();
+		produceList.add("tomatoes");
+		produceList.add("bacon");
+		produceList.add("parmesan");
+//
+		ArrayList<String> drinkList = new ArrayList();
+		drinkList.add("red wine");
+		drinkList.add("Dr peppers");
+
+		groceriesList.add(bakeryList);
+		groceriesList.add(produceList);
+		groceriesList.add(drinkList);
+
+		System.out.println(groceriesList.get(0).get(2));
 
 		// for-each: traversing technique to iterate through the elements in an array,
 		// less-steps,
