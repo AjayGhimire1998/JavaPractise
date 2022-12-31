@@ -147,14 +147,14 @@ public class Main {
 		// ! (not) reverses the boolean value of the condition
 
 		// &&
-//		int temp = 25;
-//		if(temp > 30) {
-//			System.out.println("It is very hot");
-//		} else if(temp >=20 && temp <=30) {
-//			System.out.println("It is warm outside");
-//		} else {
-//			System.out.println("It is cold");
-//		}
+		int temp2 = 25;
+		if (temp2 > 30) {
+			System.out.println("It is very hot");
+		} else if (temp2 >= 20 && temp2 <= 30) {
+			System.out.println("It is warm outside");
+		} else {
+			System.out.println("It is cold");
+		}
 
 		// || or ! not
 //		Scanner scanner = new Scanner(System.in);
