@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -100,15 +101,15 @@ public class Main {
 		scanner.close();
 
 		// Random values
-//		Random random = new Random();
-////		int x = random.nextInt();
-////		boolean b = random.nextBoolean();
-////		
-////		double y = random.nextDouble();
+		Random random = new Random();
+		int xxx = random.nextInt();
+		boolean bbb = random.nextBoolean();
+
+		double yyy = random.nextDouble();
 //		
-//		int dice = random.nextInt(6) + 1;
-//		
-//		System.out.println(dice);
+		int dice = random.nextInt(6) + 1;
+
+		System.out.println(dice);
 
 		// if else statement
 //		int age = 24;
