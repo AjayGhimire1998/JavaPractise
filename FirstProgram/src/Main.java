@@ -157,25 +157,25 @@ public class Main {
 		}
 
 		// || or ! not
-//		Scanner scanner = new Scanner(System.in);
-//		System.out.println("Playing game...Press q or Q to quit");
-//		String response = scanner.next();
-//		
-//		if(!response.equals("q") && !response.equals("Q")) {
-//			System.out.println("Game still on..");	
-//		} else {
-//			System.out.println("Game quitting..");
-//		}
+		Scanner scanner3 = new Scanner(System.in);
+		System.out.println("Playing game...Press q or Q to quit");
+		String response = scanner3.next();
+
+		if (!response.equals("q") && !response.equals("Q")) {
+			System.out.println("Game still on..");
+		} else {
+			System.out.println("Game quitting..");
+		}
 
 		// while loops : execute a block of code as long as its condition is true
-//		Scanner scanner = new Scanner(System.in);
-//		String name = "";
+		Scanner scanner4 = new Scanner(System.in);
+		String name4 = "";
 
-//		while(name.isBlank()) {
-//			System.out.print(" enter ypour name: ");
-//			name = scanner.nextLine();
-//		}
-//		System.out.println("Hello " +  name);
+		while (name.isBlank()) {
+			System.out.print(" enter ypour name: ");
+			name4 = scanner4.nextLine();
+		}
+		System.out.println("Hello " + name4);
 
 		// do-loop
 //		do {
