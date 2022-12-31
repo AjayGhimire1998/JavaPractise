@@ -125,17 +125,21 @@ public class Main {
 		}
 
 		// Switch Statements
-//		String day = "FridaY";
-//		
-//		switch(day.toLowerCase()) {
-//			case "sunday": System.out.println("It is sunday");
-//			break;
-//			case "wednesday": System.out.println("It is Wednesday");
-//			break;
-//			case "friday": System.out.println("It is Friday");
-//			break;
-//			default: System.out.println("Faulty day");
-//		}
+		String day = "FridaY";
+
+		switch (day.toLowerCase()) {
+		case "sunday":
+			System.out.println("It is sunday");
+			break;
+		case "wednesday":
+			System.out.println("It is Wednesday");
+			break;
+		case "friday":
+			System.out.println("It is Friday");
+			break;
+		default:
+			System.out.println("Faulty day");
+		}
 
 		// Logical Operators used to connect two or more expressions
 		// && (and) both must be true;
