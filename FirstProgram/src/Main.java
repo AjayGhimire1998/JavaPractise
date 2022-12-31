@@ -112,18 +112,17 @@ public class Main {
 		System.out.println(dice);
 
 		// if else statement
-//		int age = 24;
-//	
-//		if(age > 18 && age < 24) {
-//			System.out.println("A new adult");
-//		} else if(age >= 25 && age <= 80) {
-//			System.out.println("A milenial");
-//		} else if(age == 24) {
-//			System.out.println("Young adult");
-//		}
-//		else {
-//			System.out.println("child or old");
-//		}
+		int age3 = 24;
+
+		if (age3 > 18 && age3 < 24) {
+			System.out.println("A new adult");
+		} else if (age3 >= 25 && age3 <= 80) {
+			System.out.println("A milenial");
+		} else if (age3 == 24) {
+			System.out.println("Young adult");
+		} else {
+			System.out.println("child or old");
+		}
 
 		// Switch Statements
 //		String day = "FridaY";
