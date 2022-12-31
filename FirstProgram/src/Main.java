@@ -178,17 +178,17 @@ public class Main {
 		System.out.println("Hello " + name4);
 
 		// do-loop
-//		do {
-//			System.out.print(" enter ypour name: ");
-//			name = scanner.nextLine();
-//		}while(name.isBlank());
-//		System.out.println("Hello " +  name);
+		do {
+			System.out.print(" enter ypour name: ");
+			name3 = scanner4.nextLine();
+		} while (name.isBlank());
+		System.out.println("Hello " + name3);
 
 		// for-loops : execute a block of code a l,imited amount of times
-//		for(int i = 10; i >= 0; i--) {
-//			System.out.println(i);
-//		}
-//		System.out.print("Happy New Year");
+		for (int j = 10; j >= 0; j--) {
+			System.out.println(j);
+		}
+		System.out.print("Happy New Year");
 
 		// nested-loops
 //		Scanner scanner =  new Scanner(System.in);
