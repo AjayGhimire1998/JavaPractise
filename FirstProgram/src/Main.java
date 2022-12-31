@@ -232,30 +232,30 @@ public class Main {
 
 		// 2D : multidimensional array of arrays
 
-//		String[][] cars = { { "BMW", "Tesla", "Honda" }, { "mercedes", "ford", "RollsRoyce" },
-//				{ "ferrari", "toyota", "Yatri" } };
-//
-//		for (int i = 0; i < cars.length; i++) {
-//			System.out.println();
-//			for (int j = 0; j < cars[i].length; j++) {
-//				System.out.print(cars[i][j] + " ");
-//
-//			}
-//
-//		}
+		String[][] cars3 = { { "BMW", "Tesla", "Honda" }, { "mercedes", "ford", "RollsRoyce" },
+				{ "ferrari", "toyota", "Yatri" } };
+
+		for (int l1 = 0; l1 < cars3.length; l1++) {
+			System.out.println();
+			for (int j = 0; j < cars3[l1].length; j++) {
+				System.out.print(cars3[l1][j] + " ");
+
+			}
+
+		}
 
 		// DATA-Types methods : String
-//		String name = "Ajay";
-//		System.out.println(name.equals("Ajay"));
-//		System.out.println(name.equalsIgnoreCase("ajay"));
-//		System.out.println(name.length());
-//		System.out.println(name.charAt(1));
-//		System.out.println(name.indexOf("y"));
-//		System.out.println(name.isEmpty());
-//		System.out.println(name.toUpperCase());
-//		System.out.println(name.toLowerCase());
-//		System.out.println(name.trim());
-//		System.out.println(name.replace("a", "A"));
+		String name1 = "Ajay";
+		System.out.println(name1.equals("Ajay"));
+		System.out.println(name1.equalsIgnoreCase("ajay"));
+		System.out.println(name1.length());
+		System.out.println(name1.charAt(1));
+		System.out.println(name1.indexOf("y"));
+		System.out.println(name1.isEmpty());
+		System.out.println(name1.toUpperCase());
+		System.out.println(name1.toLowerCase());
+		System.out.println(name1.trim());
+		System.out.println(name1.replace("a", "A"));
 
 		// wrapper class : provides a way to use primitive data types as reference
 		// data types
