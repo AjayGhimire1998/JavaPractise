@@ -53,15 +53,15 @@ public class Main {
 		// expression = perands and operators
 		// operand = values, variables, number, quantity
 		// operators = + - * / %
-//		double  friends = 10;
-//		friends = friends + 1;
-//		friends = friends % 3;
-//		friends ++;
-//		friends --;
-//		friends = friends * friends;
-//		friends = friends + 6;
-//		friends = (double) friends / 3;
-//		System.out.println(friends);
+		double friends = 10;
+		friends = friends + 1;
+		friends = friends % 3;
+		friends++;
+		friends--;
+		friends = friends * friends;
+		friends = friends + 6;
+		friends = (double) friends / 3;
+		System.out.println(friends);
 //		
 
 		// Java Application GUI
