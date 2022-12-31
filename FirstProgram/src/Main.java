@@ -76,28 +76,28 @@ public class Main {
 //		
 
 		// Math class
-//		double x = 3.14;
-//		double y = 19;
-//		
-//      System.out.println(Math.ceil(x));
-//		double z = Math.round(x); 
-//		System.out.println(z);
+		double x2 = 3.14;
+		double y2 = 19;
 
-//		double x;
-//		double y;
-//		double z;
+		System.out.println(Math.ceil(x2));
+		double z = Math.round(x2);
+		System.out.println(z);
+
+		double xx;
+		double yy;
+		double zz;
 //		
-//		Scanner scanner = new Scanner(System.in);
-//		
-//		System.out.println("enter side x: ");
-//		x = scanner.nextDouble();
-//		System.out.println("Enter side y: ");
-//		y = scanner.nextDouble();
-//		
-//		z = Math.sqrt((x*x) + (y*y));
-//		
-//		System.out.println("The hypotenuse is: " + z);
-//		scanner.close();
+		Scanner scanner2 = new Scanner(System.in);
+
+		System.out.println("enter side x: ");
+		xx = scanner2.nextDouble();
+		System.out.println("Enter side y: ");
+		yy = scanner2.nextDouble();
+
+		zz = Math.sqrt((xx * xx) + (yy * yy));
+
+		System.out.println("The hypotenuse is: " + zz);
+		scanner.close();
 
 		// Random values
 //		Random random = new Random();
