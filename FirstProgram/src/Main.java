@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 //import java.awt.geom.Arc2D;
 
 //import javax.swing.JOptionPane;
@@ -7,48 +9,45 @@ public class Main {
 
 	public static void main(String[] args) {
 
-//		int i = 9; //integer
-//		boolean b = true;
-//		String name = "Ajay";
-//		float f = 5.5555f;
-//		double d = 53253.55555; 
-//		String s = "okkkk";
-//		char c = 'A';
-//		long l = 7326573678568657L;
-//		
-//		System.out.print(
-//				"Hello, I am " + name + 
-//				" and favorite amount is " + l + 
-//				" and " + s + " ? " );
+		int i = 9; // integer
+		boolean b = true;
+		String name = "Ajay";
+		float f = 5.5555f;
+		double d = 53253.55555;
+		String s = "okkkk";
+		char c = 'A';
+		long l = 7326573678568657L;
+
+		System.out.print("Hello, I am " + name + " and favorite amount is " + l + " and " + s + " ? ");
 
 		// swapping variables
-//		String x = "water";
-//		String y = "Tang";
-//		String temp;
+		String x = "water";
+		String y = "Tang";
+		String temp;
+
+		temp = x;
+		x = y;
+		y = temp;
 //		
-//		temp = x;
-//		x = y;
-//		y = temp;
-//		
-//		System.out.println("x: " + x);
-//		System.out.println("y: " + y);
+		System.out.println("x: " + x);
+		System.out.println("y: " + y);
 
 		// user input
-//		Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Type your name: ");
+		String name2 = scanner.nextLine();
+
+		System.out.println("Type your age: ");
+		int age = scanner.nextInt();
+		scanner.nextLine();
+
+		System.out.println("Type your fav foood: ");
+		String food = scanner.nextLine();
+
 //		
-//		System.out.println("Type your name: ");
-//		String name = scanner.nextLine();
-//		
-//		System.out.println("Type your age: ");
-//		int age = scanner.nextInt();
-//		scanner.nextLine();
-//		
-//		System.out.println("Type your fav foood: ");
-//		String food = scanner.nextLine();
-//		
-//		
-//		System.out.println("Hello " + name + " you are " + age);
-//		System.out.println("You like " + food);
+		System.out.println("Hello " + name2 + " you are " + age);
+		System.out.println("You like " + food);
 
 		// expression
 		// expression = perands and operators
