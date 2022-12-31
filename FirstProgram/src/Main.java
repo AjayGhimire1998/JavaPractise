@@ -216,19 +216,19 @@ public class Main {
 		// array : used to store multiple values in a single variable
 
 		// 1D
-//		String[] cars = {"BMW", "Tesla", "Mercedes"};
-//		cars[0] = "Mustang";
-////		cars[3] = "BMW";
-//		System.out.println(cars[0]);
+		String[] cars = { "BMW", "Tesla", "Mercedes" };
+		cars[0] = "Mustang";
+		cars[3] = "BMW";
+		System.out.println(cars[0]);
 
-//		String[] cars = new String[3];
-//		cars[0] = "BMW";
-//		cars[1] = "tesla";
-//		cars[2] = "Mercedes";
+		String[] cars2 = new String[3];
+		cars2[0] = "BMW";
+		cars2[1] = "tesla";
+		cars2[2] = "Mercedes";
 //		
-//		for(int i = 0; i < cars.length; i++) {
-//			System.out.println(cars[i]);
-//		}
+		for (int k = 0; k < cars2.length; k++) {
+			System.out.println(cars2[k]);
+		}
 
 		// 2D : multidimensional array of arrays
 
