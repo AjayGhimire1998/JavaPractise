@@ -336,18 +336,18 @@ public class Main {
 
 //		String[] animals = { "cat", "dog", "rat", "bird" };
 
-//		ArrayList<String> animals = new ArrayList<String>();
+		ArrayList<String> animals = new ArrayList<String>();
 //
-//		animals.add("cat");
-//		animals.add("dog");
-//		animals.add("rat");
-//		animals.add("bird");
-//		animals.add("kutta");
-//
-//		for (String i : animals) {
-//			System.out.println(i);
-//
-//		}
+		animals.add("cat");
+		animals.add("dog");
+		animals.add("rat");
+		animals.add("bird");
+		animals.add("kutta");
+
+		for (String animal : animals) {
+			System.out.println(animal);
+
+		}
 
 		// methods : a block of code executed on called upon
 //		hello("Ajay", 34);
