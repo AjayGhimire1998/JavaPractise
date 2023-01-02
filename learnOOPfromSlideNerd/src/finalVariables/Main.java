@@ -1,4 +1,4 @@
-package finalKeyword;
+package finalVariables;
 
 import java.util.ArrayList;
 
