@@ -5,6 +5,12 @@ public class Main {
 
 		Counter c = new Counter(5);
 		System.out.println(c.getCount());
+		c.increment();
+		System.out.println(c.getCount());
+		c.increment(10);
+		System.out.println(c.getCount());
+		c.reset();
+		System.out.println(c.getCount());
 	}
 
 }
