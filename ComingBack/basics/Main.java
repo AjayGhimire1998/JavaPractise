@@ -3,7 +3,11 @@ public class Main {
 
 	public static void main(String[] args) {
 
+		Counter counter = new Counter();
+		System.out.println(counter);
 		Counter c = new Counter(5);
+		Counter d = c;
+		System.out.println(d.getCount());
 		System.out.println(c.getCount());
 		c.increment();
 		System.out.println(c.getCount());
@@ -17,6 +21,10 @@ public class Main {
 
 class Counter {
 	public int count;
+
+	public Counter() {
+
+	}
 
 	public Counter(int i) {
 		// TODO Auto-generated constructor stub
