@@ -7,6 +7,11 @@ public class Main {
 		System.out.println(counter);
 		Counter c = new Counter(5);
 		Counter d = c;
+		int temp = d.getCount();
+		System.out.println("temp: " + temp);
+		temp = temp + 5;
+		System.out.println("temp + 5: " + temp);
+		System.out.println(d.getCount());
 		System.out.println(d.getCount());
 		System.out.println(c.getCount());
 		c.increment();
