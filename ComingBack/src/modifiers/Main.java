@@ -6,6 +6,8 @@ public class Main {
 		// TODO Auto-generated method stub
 //		System.out.println(Hero.name);
 		Hero.printName();
+		Ajay ajay = new Ajay();
+		ajay.getHalfName();
 
 	}
 
@@ -14,15 +16,16 @@ public class Main {
 class Ajay extends Hero {
 
 	@Override
+
 	public void getHalfName() {
 		// TODO Auto-generated method stub
-
+		System.out.println("Aj");
 	}
 
 }
 
 abstract class Hero {
-	String name = "Ajay";
+	static String name = "Ajay";
 
 	static void printName() {
 		System.out.println(name);
