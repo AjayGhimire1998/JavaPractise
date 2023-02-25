@@ -26,7 +26,7 @@ public class Main {
 }
 
 class Counter {
-	public int count;
+	private int count;
 
 	public Counter() {
 
