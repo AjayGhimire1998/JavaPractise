@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		System.out.println(Hero.name);
+		System.out.println(Hero.name);
 		Hero.printName();
 		Ajay ajay = new Ajay();
 		ajay.getHalfName();
