@@ -37,6 +37,15 @@ public class variables {
 		System.out.println("Euro format:");
 		System.out.println(day + " " + date + " " + month + " " + year);
 
+		double midnight = 24;
+		double hour = 21;
+		double minute = 5;
+		double seconds = 26;
+
+		double secondsLeft = ((midnight - hour) * 60 * 60) - ((minute * 60) - seconds);
+		System.out.println("Seconds till midnight: ");
+		System.out.println(secondsLeft);
+
 	}
 
 }
