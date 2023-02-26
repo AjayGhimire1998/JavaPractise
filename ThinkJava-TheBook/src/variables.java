@@ -27,6 +27,16 @@ public class variables {
 		BigDecimal bal2 = new BigDecimal(123.212);
 		System.out.println(bal.add(bal2));
 
+		String day = "Thursday";
+		String month = "July";
+		int date = 16;
+		int year = 2015;
+
+		System.out.println("American Format:");
+		System.out.println(day + ", " + month + " " + date + ", " + year);
+		System.out.println("Euro format:");
+		System.out.println(day + " " + date + " " + month + " " + year);
+
 	}
 
 }
