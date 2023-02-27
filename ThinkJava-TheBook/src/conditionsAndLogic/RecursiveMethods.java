@@ -3,7 +3,8 @@ package conditionsAndLogic;
 public class RecursiveMethods {
 
 	public static void main(String[] args) {
-		countdownWithParams(5);
+//		countdownWithParams(5);
+		countUp(6);
 	}
 
 	public static void countdownWithParams(int num) {
@@ -13,6 +14,16 @@ public class RecursiveMethods {
 			System.out.println(num);
 			countdownWithParams(num - 1);
 		}
+	}
+
+	public static void countUp(int num) {
+		if (num == 0) {
+			System.out.println("BOOOM!!");
+		} else {
+			countUp(num - 1);
+			System.out.println(num);
+		}
+
 	}
 
 }
