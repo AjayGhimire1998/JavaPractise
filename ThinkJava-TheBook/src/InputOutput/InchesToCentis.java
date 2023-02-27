@@ -19,6 +19,7 @@ public class InchesToCentis {
 		inch = in.nextInt();
 		cm = inch * CM_PER_INCH;
 
+		System.out.printf("%d inches = %f cm\n", inch, cm);
 		System.out.println(inch + " inches is: " + cm + " cms");
 
 	}
