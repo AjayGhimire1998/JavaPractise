@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class InputOutput {
 
 	public static void main(String[] args) {
+		System.out.println("Please enter your age: ");
+		Scanner scanner2 = new Scanner(System.in);
+		int age = scanner2.nextInt();
+
 		System.out.println("Please enter youtr name: ");
 		Scanner scanner = new Scanner(System.in);
 		String name = scanner.nextLine();
 
 		System.out.println("Hello, " + "Mr. " + name);
-
-		System.out.println("Please enter your age: ");
-		Scanner scanner2 = new Scanner(System.in);
-		int age = scanner2.nextInt();
 
 		System.out.println(" you sure you are " + age + " years old ?");
 

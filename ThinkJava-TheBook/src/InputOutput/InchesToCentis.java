@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class InchesToCentis {
 
-	final static double MULTIPLIER = 2.53;
+	final static double CM_PER_INCH = 2.54;
 
 	public static void main(String[] args) {
 		inchesToCentis();
@@ -17,7 +17,7 @@ public class InchesToCentis {
 		System.out.println("How many inches ? ");
 		Scanner in = new Scanner(System.in);
 		inch = in.nextInt();
-		cm = inch * MULTIPLIER;
+		cm = inch * CM_PER_INCH;
 
 		System.out.println(inch + " inches is: " + cm + " cms");
 
