@@ -75,28 +75,30 @@ public class Exercises {
 	 */
 
 	public static void guessMyNumber() {
-		Random random = new Random();
-		int rand = random.nextInt(100) + 1;
 
+		Random random = new Random();
+		int rand = random.nextInt(10) + 1;
 		System.out.println(
 				"I'm thinking of a number between 1 and 100\n" + "(including both). Can you guess what it is?");
 		System.out.print("Type a number: ");
 		Scanner in = new Scanner(System.in);
-		int guess = in.nextInt();
 
+		int guess = in.nextInt();
 		System.out.println("Your guess is: " + guess);
 
 		System.out.println("The number I was thinking is: " + rand);
 
-		if (guess > rand) {
-			System.out.println("you were off by: " + (guess - rand));
+		if (rand == guess) {
+			System.out.println("Damn, youy got it right!!");
 		} else {
-			System.out.println("you were off by: " + (rand - guess));
+			if (guess > rand) {
+				System.out.println("you were off by: " + (guess - rand));
+			} else {
+				System.out.println("you were off by: " + (rand - guess));
+			}
+			guessMyNumber();
+
 		}
-
-	}
-
-	public static void recursiveGuess() {
 
 	}
 
