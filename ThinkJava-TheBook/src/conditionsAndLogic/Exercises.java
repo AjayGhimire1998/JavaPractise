@@ -7,7 +7,9 @@ public class Exercises {
 
 	public static void main(String[] args) {
 //		checkFermat(3, 5, 7, 2);
-		beerRap(100);
+//		beerRap(100);
+
+		guessMyNumber();
 	}
 
 	/**
@@ -81,6 +83,20 @@ public class Exercises {
 		System.out.print("Type a number: ");
 		Scanner in = new Scanner(System.in);
 		int guess = in.nextInt();
+
+		System.out.println("Your guess is: " + guess);
+
+		System.out.println("The number I was thinking is: " + rand);
+
+		if (guess > rand) {
+			System.out.println("you were off by: " + (guess - rand));
+		} else {
+			System.out.println("you were off by: " + (rand - guess));
+		}
+
+	}
+
+	public static void recursiveGuess() {
 
 	}
 
