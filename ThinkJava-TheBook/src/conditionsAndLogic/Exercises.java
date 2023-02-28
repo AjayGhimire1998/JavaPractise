@@ -72,4 +72,5 @@ public class Exercises {
 	public static void guessMyNumber() {
 
 	}
+
 }
