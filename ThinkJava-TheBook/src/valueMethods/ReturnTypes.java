@@ -9,7 +9,8 @@ public class ReturnTypes {
 //		System.out.println(print);
 
 		System.out.println(calculateArea(2.0));
-		System.out.printf("%.2f square radius", calculateAreaConcise(2.0));
+		System.out.printf("%.2f square radius\n", calculateAreaConcise(2.0));
+		System.out.println(absoluteValue(1.2));
 
 	}
 
@@ -20,6 +21,14 @@ public class ReturnTypes {
 
 	public static double calculateAreaConcise(double radius) {
 		return Math.PI * radius * radius;
+	}
+
+	public static double absoluteValue(double x) {
+		if (x < 0) {
+			return -x;
+		} else {
+			return x;
+		}
 	}
 
 }
