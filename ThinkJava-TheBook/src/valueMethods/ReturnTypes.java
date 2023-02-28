@@ -6,8 +6,9 @@ public class ReturnTypes {
 		// TODO Auto-generated method stub
 
 //		double print = calculateArea(2.0);
-
 //		System.out.println(print);
+
+		System.out.println(calculateArea(2.0));
 
 	}
 
