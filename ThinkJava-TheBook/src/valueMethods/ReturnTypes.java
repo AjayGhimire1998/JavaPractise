@@ -31,4 +31,8 @@ public class ReturnTypes {
 		}
 	}
 
+	public static double distance(double x1, double x2, double x3, double x4) {
+		return 0.0;
+	}
+
 }
