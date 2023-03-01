@@ -17,6 +17,8 @@ public class ReturnTypes {
 
 		System.out.println(calculateArea(1.0, 2.0, 4.0, 6.0));
 
+		System.out.println(isSingleDigit(90));
+
 	}
 
 	public static double calculateArea(double radius) {
@@ -51,11 +53,23 @@ public class ReturnTypes {
 	}
 
 	/* method overloading and decomposition */
+
 	public static double calculateArea(double xc, double yc, double xp, double yp) {
 //		double radius = distance(xc, yc, xp, yp);
 //		double area = calculateArea(radius);
 //		return area;
 		return calculateArea(distance(xc, yc, xp, yp));
+	}
+
+	/**
+	 * Tests whether x is a single digit integer
+	 * 
+	 * @param x the integer to tes
+	 * @return true if x has one digit, false otherwise
+	 */
+
+	public static boolean isSingleDigit(int x) {
+		return x > -10 && x < 10;
 	}
 
 }
