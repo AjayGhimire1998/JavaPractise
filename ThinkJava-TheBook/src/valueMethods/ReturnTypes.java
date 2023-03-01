@@ -5,15 +5,17 @@ public class ReturnTypes {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-//		double print = calculateArea(2.0);
-//		System.out.println(print);
+		double print = calculateArea(2.0);
+		System.out.println(print);
 
-//		System.out.println(calculateArea(2.0));
-//		System.out.printf("%.2f square radius\n", calculateAreaConcise(2.0));
-//		System.out.println(absoluteValue(1.2));
+		System.out.println(calculateArea(2.0));
+		System.out.printf("%.2f square radius\n", calculateAreaConcise(2.0));
+		System.out.println(absoluteValue(1.2));
 
 		double distance = distance(1.0, 2.0, 4.0, 6.0);
 		System.out.println(distance);
+
+		System.out.println(circleArea(1.0, 2.0, 4.0, 6.0));
 
 	}
 
@@ -48,9 +50,10 @@ public class ReturnTypes {
 	}
 
 	public static double circleArea(double xc, double yc, double xp, double yp) {
-		double radius = distance(xc, yc, xp, yp);
-		double area = calculateArea(radius);
-		return area;
+//		double radius = distance(xc, yc, xp, yp);
+//		double area = calculateArea(radius);
+//		return area;
+		return calculateArea(distance(xc, yc, xp, yp));
 	}
 
 }
