@@ -15,7 +15,7 @@ public class ReturnTypes {
 		double distance = distance(1.0, 2.0, 4.0, 6.0);
 		System.out.println(distance);
 
-		System.out.println(circleArea(1.0, 2.0, 4.0, 6.0));
+		System.out.println(calculateArea(1.0, 2.0, 4.0, 6.0));
 
 	}
 
@@ -49,7 +49,7 @@ public class ReturnTypes {
 		return result;
 	}
 
-	public static double circleArea(double xc, double yc, double xp, double yp) {
+	public static double calculateArea(double xc, double yc, double xp, double yp) {
 //		double radius = distance(xc, yc, xp, yp);
 //		double area = calculateArea(radius);
 //		return area;
