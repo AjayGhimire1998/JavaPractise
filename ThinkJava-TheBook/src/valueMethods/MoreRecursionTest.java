@@ -14,6 +14,7 @@ public class MoreRecursionTest extends TestCase {
 		assertEquals(false, Labs.isDivisible(1, 2));
 		assertEquals(true, Labs.isDivisible(2, 2));
 		assertEquals(true, Labs.isDivisible(0, 1));
+		assertEquals(false, Labs.isDivisible(2, 3));
 	}
 
 }
