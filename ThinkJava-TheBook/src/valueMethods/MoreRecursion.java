@@ -5,6 +5,8 @@ public class MoreRecursion {
 	public static void main(String[] args) {
 		int print = factorial(5);
 		System.out.println(print);
+		System.out.println(fibonacci(10));
+//		System.out.println(ReturnTypes.isSingleDigit(9));ßß
 	}
 
 	/**
@@ -20,6 +22,20 @@ public class MoreRecursion {
 		int recurse = factorial(n - 1);
 		int result = n * recurse;
 		return result;
+	}
+
+	/**
+	 * fibonacci
+	 * 
+	 * @param integer
+	 * @return
+	 */
+	public static int fibonacci(int n) {
+		if (n == 1 || n == 2) {
+			return 1;
+		}
+		return fibonacci(n - 1) + fibonacci(n - 2);
+
 	}
 
 }
