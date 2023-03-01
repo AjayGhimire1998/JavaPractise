@@ -8,9 +8,11 @@ public class ReturnTypes {
 //		double print = calculateArea(2.0);
 //		System.out.println(print);
 
-		System.out.println(calculateArea(2.0));
-		System.out.printf("%.2f square radius\n", calculateAreaConcise(2.0));
-		System.out.println(absoluteValue(1.2));
+//		System.out.println(calculateArea(2.0));
+//		System.out.printf("%.2f square radius\n", calculateAreaConcise(2.0));
+//		System.out.println(absoluteValue(1.2));
+
+		double distance = distance(1.0, 2.0, 4.0, 6.0);
 
 	}
 
@@ -31,7 +33,9 @@ public class ReturnTypes {
 		}
 	}
 
-	public static double distance(double x1, double x2, double x3, double x4) {
+	public static double distance(double x1, double y1, double x2, double y2) {
+		double dx = x2 - x1;
+//		double dy = 
 		return 0.0;
 	}
 
