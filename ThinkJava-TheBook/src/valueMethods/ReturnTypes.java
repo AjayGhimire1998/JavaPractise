@@ -36,6 +36,7 @@ public class ReturnTypes {
 		}
 	}
 
+	/* incremental development */
 	public static double distance(double x1, double y1, double x2, double y2) {
 		double dx = x2 - x1;
 		double dy = y2 - y1;
@@ -49,6 +50,7 @@ public class ReturnTypes {
 		return result;
 	}
 
+	/* method overloading and decomposition */
 	public static double calculateArea(double xc, double yc, double xp, double yp) {
 //		double radius = distance(xc, yc, xp, yp);
 //		double area = calculateArea(radius);
