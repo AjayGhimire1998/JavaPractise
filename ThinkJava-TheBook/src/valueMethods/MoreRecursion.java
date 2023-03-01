@@ -5,7 +5,7 @@ public class MoreRecursion {
 	public static void main(String[] args) {
 		int print = factorial(5);
 		System.out.println(print);
-		System.out.println(fibonacci(10));
+		System.out.println(fibonacci(99));
 //		System.out.println(ReturnTypes.isSingleDigit(9));ßß
 	}
 
