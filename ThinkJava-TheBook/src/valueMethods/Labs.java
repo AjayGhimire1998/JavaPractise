@@ -33,6 +33,10 @@ public class Labs {
 	 * sticks with the given lengths. The point of this exercise is to use
 	 * conditional statements to write a value method.
 	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @return true or false
 	 */
 	public static boolean isTriangle(int x, int y, int z) {
 		if (x <= 0 || y <= 0 || z <= 0) {
@@ -44,6 +48,22 @@ public class Labs {
 			return false;
 		}
 		return true;
+
+	}
+
+	/**
+	 * Many computations can be expressed more concisely using the “multadd”
+	 * operation, which takes three operands and computes a * b + c. Some processors
+	 * even provide a hardware implementation of this operation for floating-point
+	 * numbers.
+	 * 
+	 * @param a
+	 * @param b
+	 * @param c
+	 * @return double
+	 */
+	public static double multiAdd(double a, double b, double c) {
+		return 0.0;
 
 	}
 }
