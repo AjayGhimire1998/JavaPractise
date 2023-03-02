@@ -4,6 +4,8 @@ public class Labs {
 	public static void main(String[] args) {
 		boolean result = isDivisible(0, 1);
 		System.out.println(result);
+		System.out.println(isTriangle(1, 2, 3));
+
 	}
 
 	/**
@@ -32,6 +34,14 @@ public class Labs {
 	 * 
 	 */
 	public static boolean isTriangle(int x, int y, int z) {
-		return x + y > z || y + z > x || x + z > y;
+		if (x <= 0 || y <= 0 || z <= 0) {
+			// any side of a triangle can't be negative or zero
+			return false;
+		}
+		if (x + y <= z || y + z <= x || x + z <= y) {
+			return false;
+		}
+		return true;
+
 	}
 }
