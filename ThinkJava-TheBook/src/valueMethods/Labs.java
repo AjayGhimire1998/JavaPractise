@@ -10,6 +10,9 @@ public class Labs {
 		double multAddValue = multAdd(1, 2, 3);
 		System.out.println(multAddValue);
 
+		System.out.println(multAdd(1, Math.sin(Math.PI / 4), (Math.cos(Math.PI / 4) / 2)));
+		System.out.println(multAdd(1, Math.log(10), Math.log(20)));
+
 	}
 
 	/**
