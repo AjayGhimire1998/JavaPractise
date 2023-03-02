@@ -5,6 +5,7 @@ public class Labs {
 		boolean result = isDivisible(0, 1);
 		System.out.println(result);
 		System.out.println(isTriangle(1, 2, 3));
+		System.out.println(isTriangle(1, 2, 3));
 
 	}
 
@@ -39,6 +40,7 @@ public class Labs {
 			return false;
 		}
 		if (x + y <= z || y + z <= x || x + z <= y) {
+			// the sum of any two sides of a triangle must be greater than the third side
 			return false;
 		}
 		return true;
