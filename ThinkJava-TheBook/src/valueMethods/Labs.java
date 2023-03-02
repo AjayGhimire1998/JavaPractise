@@ -12,6 +12,7 @@ public class Labs {
 
 		System.out.println(multAdd(1, Math.sin(Math.PI / 4), (Math.cos(Math.PI / 4) / 2)));
 		System.out.println(multAdd(1, Math.log(10), Math.log(20)));
+		System.out.println(expSum(1));
 
 	}
 
@@ -71,5 +72,16 @@ public class Labs {
 	public static double multAdd(double a, double b, double c) {
 		return a * b + c;
 
+	}
+
+	/**
+	 * Write a method called expSum that takes a double as a parameter and that uses
+	 * multadd to calculate
+	 * 
+	 * @param x
+	 * @return
+	 */
+	public static double expSum(double x) {
+		return multAdd(x, Math.exp(-x), Math.sqrt(1 - Math.exp(-x)));
 	}
 }
