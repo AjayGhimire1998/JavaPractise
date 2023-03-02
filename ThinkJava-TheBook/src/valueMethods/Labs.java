@@ -7,6 +7,9 @@ public class Labs {
 		System.out.println(isTriangle(1, 2, 3));
 		System.out.println(isTriangle(1, 2, 3));
 
+		double multAddValue = multAdd(1, 2, 3);
+		System.out.println(multAddValue);
+
 	}
 
 	/**
@@ -62,8 +65,8 @@ public class Labs {
 	 * @param c
 	 * @return double
 	 */
-	public static double multiAdd(double a, double b, double c) {
-		return 0.0;
+	public static double multAdd(double a, double b, double c) {
+		return a * b + c;
 
 	}
 }

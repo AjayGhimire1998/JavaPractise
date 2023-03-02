@@ -22,4 +22,8 @@ public class MoreRecursionTest extends TestCase {
 		assertEquals(false, Labs.isTriangle(1, 2, 3));
 	}
 
+	public void testmultAdd() {
+		assertEquals(5.0, Labs.multAdd(1, 2, 3));
+	}
+
 }
