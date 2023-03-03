@@ -13,6 +13,7 @@ public class Labs {
 		System.out.println(multAdd(1, Math.sin(Math.PI / 4), (Math.cos(Math.PI / 4) / 2)));
 		System.out.println(multAdd(1, Math.log(10), Math.log(20)));
 		System.out.println(expSum(1));
+		System.out.println(prod(1, 4));
 
 	}
 
