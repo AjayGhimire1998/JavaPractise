@@ -84,4 +84,15 @@ public class Labs {
 	public static double expSum(double x) {
 		return multAdd(x, Math.exp(-x), Math.sqrt(1 - Math.exp(-x)));
 	}
+
+	public static int prod(int m, int n) {
+		if (m == n) {
+			return n;
+		} else {
+			int recurse = prod(m, n - 1);
+			int result = n * recurse;
+			return result;
+		}
+	}
+
 }
