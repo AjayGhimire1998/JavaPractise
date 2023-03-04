@@ -86,6 +86,14 @@ public class Labs {
 		return multAdd(x, Math.exp(-x), Math.sqrt(1 - Math.exp(-x)));
 	}
 
+	/**
+	 * Exercise 6-6. In this exercise, you will use a stack diagram to understand
+	 * the execution of the fol‐ lowing recursive program.
+	 * 
+	 * @param m
+	 * @param n
+	 * @return
+	 */
 	public static int prod(int m, int n) {
 		if (m == n) {
 			return n;
