@@ -130,4 +130,8 @@ public class Labs {
 
 	}
 
+	public static int ack(int m, int n) {
+		return n;
+	}
+
 }
