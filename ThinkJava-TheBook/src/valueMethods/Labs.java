@@ -15,6 +15,8 @@ public class Labs {
 		System.out.println(expSum(1));
 		System.out.println(prod(1, 4));
 
+		System.out.println(oddSum(13));
+
 	}
 
 	/**
@@ -113,9 +115,19 @@ public class Labs {
 	 * @param p
 	 * @return
 	 */
-	public static int oddSum(int p) {
+	public static int oddSum(int n) {
 
-		return p;
+		if (n == 1) {
+			System.out.println("Base case reached, n = 1");
+			return 1;
+		} else {
+			System.out.println("n = " + n);
+			int sum = oddSum(n - 2); // recursive call with n-2
+			int result = sum + n; // add n to the sum
+			System.out.println("sum = " + sum + ", n = " + n + ", result = " + result);
+			return result;
+		}
+
 	}
 
 }
