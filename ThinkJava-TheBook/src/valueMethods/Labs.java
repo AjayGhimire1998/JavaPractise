@@ -2,20 +2,21 @@ package valueMethods;
 
 public class Labs {
 	public static void main(String[] args) {
-		boolean result = isDivisible(0, 1);
-		System.out.println(result);
-		System.out.println(isTriangle(1, 2, 3));
-		System.out.println(isTriangle(1, 2, 3));
-
-		double multAddValue = multAdd(1, 2, 3);
-		System.out.println(multAddValue);
-
-		System.out.println(multAdd(1, Math.sin(Math.PI / 4), (Math.cos(Math.PI / 4) / 2)));
-		System.out.println(multAdd(1, Math.log(10), Math.log(20)));
-		System.out.println(expSum(1));
-		System.out.println(prod(1, 4));
-
-		System.out.println(oddSum(13));
+//		boolean result = isDivisible(0, 1);
+//		System.out.println(result);
+//		System.out.println(isTriangle(1, 2, 3));
+//		System.out.println(isTriangle(1, 2, 3));
+//
+//		double multAddValue = multAdd(1, 2, 3);
+//		System.out.println(multAddValue);
+//
+//		System.out.println(multAdd(1, Math.sin(Math.PI / 4), (Math.cos(Math.PI / 4) / 2)));
+//		System.out.println(multAdd(1, Math.log(10), Math.log(20)));
+//		System.out.println(expSum(1));
+//		System.out.println(prod(1, 4));
+//
+//		System.out.println(oddSum(13));
+		ack(1, 3);
 
 	}
 
@@ -130,8 +131,29 @@ public class Labs {
 
 	}
 
+	/**
+	 * Write a method called ack that takes two ints as parameters and that computes
+	 * and returns the value of the Ackermann function. Test your implementation of
+	 * Ackermann by invoking it from main and displaying the return value. Note the
+	 * return value gets very big very quickly. You should try it only for small
+	 * values of m and n (not bigger than 3).
+	 * 
+	 * @param m
+	 * @param n
+	 * @return
+	 */
 	public static int ack(int m, int n) {
-		return n;
+		if (m == 0) {
+			return n + 1;
+		} else if (m > 0 && m == 0) {
+			System.out.println("m-1: " + (m - 1));
+			return ack(m - 1, 1);
+		} else if (m > 0 && n > 0) {
+			return ack(m - 1, ack(m, n - 1));
+		} else {
+			return 0;
+		}
+
 	}
 
 }
