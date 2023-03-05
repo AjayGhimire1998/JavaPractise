@@ -1,13 +1,25 @@
 package Loops;
 
+/**
+ * @author ajayghimire
+ *
+ */
+/**
+ * @author ajayghimire
+ *
+ */
 public class Labs {
 
 	public static void main(String[] args) {
 //		loop(10);
 		System.out.println(sqaureRoot(16));
 		System.out.println(power(2.0, 3));
-		System.out.println(factorial(3));
+		System.out.println(factorial(12));
 		System.out.println(myExp(2, 3));
+		System.out.println(myExpTwo(2, 3));
+		System.out.println(myEXPwithOneParam(2));
+		System.out.println(Math.exp(2.0));
+		check(1);
 
 	}
 
@@ -94,15 +106,15 @@ public class Labs {
 	 * @return
 	 */
 	public static int factorial(int n) {
-		int result = n;
+		int result = 1;
 
-//		for (int i = 1; i < n; i++) {
-//			result *= n - i;
-//		}
-		while (n > 1) {
-			result *= n - 1;
-			n--;
+		for (int i = 1; i <= n; i++) {
+			result *= i;
 		}
+//		while (n > 1) {
+//			result *= n - 1;
+//			n--;
+//		}
 		return result;
 
 	}
@@ -120,12 +132,53 @@ public class Labs {
 	public static double myExp(double x, int n) {
 //		double power = power(x, n);
 //		int factorail = factorial(n);
-		double result = 1;
+		double result = 0;
 
 		for (int i = 1; i <= n; i++) {
 			result += power(x, i) / factorial(i);
 		}
 		return result;
+
+	}
+
+	/**
+	 * You can make this method more efficient if you realize that the numerator of
+	 * each term is the same as its predecessor multiplied by x, and the denominator
+	 * is the same as its predecessor multiplied by i. Use this observation to
+	 * eliminate the use of Math.pow and factorial, and check that you get the same
+	 * result.
+	 * 
+	 * @param x
+	 * @param n
+	 * @return
+	 */
+	public static double myExpTwo(double x, int n) {
+//		double power = power(x, n);
+//		int factorail = factorial(n);
+		double result = 0;
+
+		for (int i = 0; i < n; i++) {
+			result += Math.pow(x, i) / factorial(i);
+		}
+		return result;
+
+	}
+
+	/**
+	 * . Write a method called check that takes a parameter, x, and displays x,
+	 * myexp(x), and Math.exp(x). The output should look something like: 1.0
+	 * 2.708333333333333 2.718281828459045 You can use the escape sequence "\t" to
+	 * put a tab character between columns of a table.
+	 * 
+	 * @param x
+	 * @return
+	 */
+	public static double myEXPwithOneParam(int x) {
+		return power(2.71828, x);
+	}
+
+	public static void check(int x) {
+		System.out.printf("%.1f \t %.9f \t %.9f ", (double) x, myEXPwithOneParam(x), Math.exp(x));
 
 	}
 
