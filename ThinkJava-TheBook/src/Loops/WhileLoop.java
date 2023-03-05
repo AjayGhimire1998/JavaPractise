@@ -5,7 +5,8 @@ public class WhileLoop {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //		countDown(10);
-		sequence(97);
+//		sequence(97);
+		logTable();
 
 	}
 
@@ -18,7 +19,7 @@ public class WhileLoop {
 	 */
 	public static void countDown(int n) {
 		while (n > 0) {
-			System.out.println(n);
+			System.out.printf("n: %d  \n", n);
 			n--;
 		}
 		System.out.println("Boom");
@@ -42,6 +43,21 @@ public class WhileLoop {
 			} else {
 				n = n * 3 + 1;
 			}
+		}
+	}
+
+	/**
+	 * Although a “log table” is not as useful as it once was, it still makes a good
+	 * example of iteration. The following loop displays a table with a sequence of
+	 * values in the left col‐ umn and their logarithms in the right column:
+	 * 
+	 */
+	public static void logTable() {
+		int i = 1;
+		while (i < 10) {
+			double x = (double) i;
+			System.out.printf("%.1f       %.3f \n", x, Math.log(x));
+			i++;
 		}
 	}
 
