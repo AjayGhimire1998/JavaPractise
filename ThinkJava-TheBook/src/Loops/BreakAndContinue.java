@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class BreakAndContinue {
 
 	public static void main(String[] args) {
-		validateInputWithBreak();
+//		validateInputWithBreak();
+		validateInputWithContinue();
 	}
 
 	/**
@@ -33,6 +34,19 @@ public class BreakAndContinue {
 		}
 		System.out.println(in.nextDouble());
 
+	}
+
+	public static void validateInputWithContinue() {
+		Scanner in = new Scanner(System.in);
+		while (true) {
+			System.out.println("Enter a number: ");
+			if (!in.hasNextDouble()) {
+				System.err.println(in.next() + "is not a number");
+				continue;
+			}
+			System.out.println(in.nextDouble());
+			break;
+		}
 	}
 
 }
