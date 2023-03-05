@@ -5,8 +5,9 @@ public class Labs {
 	public static void main(String[] args) {
 //		loop(10);
 		System.out.println(sqaureRoot(16));
-		System.out.println(power(2.0, 2));
-		System.out.println(factorial(5));
+		System.out.println(power(2.0, 3));
+		System.out.println(factorial(3));
+		System.out.println(myExp(2, 3));
 
 	}
 
@@ -79,7 +80,6 @@ public class Labs {
 //			result *= x;
 //			n--;
 //		}
-
 		for (int i = 0; i < n; i++) {
 			result *= x;
 		}
@@ -102,6 +102,28 @@ public class Labs {
 		while (n > 1) {
 			result *= n - 1;
 			n--;
+		}
+		return result;
+
+	}
+
+	/**
+	 * One way to calculate e x is to use the infinite series expansion: e x = 1 + x
+	 * + x 2 /2! + x 3 /3! + x 4 /4! + . . . The ith term in the series is xi/i!.
+	 * 
+	 * 1. Write a method called myexp that takes x and n as parameters and estimates
+	 * e x by adding the first n terms of this series. You can use the factorial
+	 * method from “More Recursion” on page 79 or your iterative version from the
+	 * previous exercise.
+	 * 
+	 */
+	public static double myExp(double x, int n) {
+//		double power = power(x, n);
+//		int factorail = factorial(n);
+		double result = 1;
+
+		for (int i = 1; i <= n; i++) {
+			result += power(x, i) / factorial(i);
 		}
 		return result;
 
