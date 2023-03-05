@@ -7,6 +7,8 @@ public class ArrayTraversal {
 		int index = search(integers, 2);
 		System.out.println(index);
 
+		System.out.println(sum(integers));
+
 	}
 
 	/**
@@ -32,6 +34,25 @@ public class ArrayTraversal {
 			}
 		}
 		return -1;
+	}
+
+	/**
+	 * Another common traversal is a reduce operation, which “reduces” an array of
+	 * values down to a single value. Examples include the sum or product of the
+	 * elements, the minimum, and the maximum. The following method takes a double
+	 * array and returns the sum of the elements:
+	 * 
+	 * @param a
+	 * @return
+	 */
+	public static int sum(int[] a) {
+		int i = 0;
+		int sum = 0;
+		while (i < a.length) {
+			sum += a[i];
+			i++;
+		}
+		return sum;
 	}
 
 }
