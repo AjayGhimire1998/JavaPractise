@@ -6,7 +6,8 @@ public class WhileLoop {
 		// TODO Auto-generated method stub
 //		countDown(10);
 //		sequence(97);
-		logTable();
+//		logTable();
+		baseTwoLogarithm();
 
 	}
 
@@ -58,6 +59,21 @@ public class WhileLoop {
 			double x = (double) i;
 			System.out.printf("%.1f       %.3f \n", x, Math.log(x));
 			i++;
+		}
+	}
+
+	/**
+	 * Math.log computes natural logarithms, that is, logarithms base e. For
+	 * computer sci‐ ence applications, we often want logarithms with respect to
+	 * base 2. To compute them, we can apply this equation:
+	 */
+	public static void baseTwoLogarithm() {
+		int i = 1;
+		while (i < 10) {
+			double x = i;
+			System.out.println(x + "     " + Math.log(x) / Math.log(2));
+			i++;
+
 		}
 	}
 
