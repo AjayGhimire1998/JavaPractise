@@ -16,7 +16,7 @@ public class Labs {
 //		System.out.println(prod(1, 4));
 //
 //		System.out.println(oddSum(13));
-		ack(1, 3);
+		System.out.println(ack(3, 5));
 
 	}
 
@@ -145,13 +145,10 @@ public class Labs {
 	public static int ack(int m, int n) {
 		if (m == 0) {
 			return n + 1;
-		} else if (m > 0 && m == 0) {
-			System.out.println("m-1: " + (m - 1));
+		} else if (m > 0 && n == 0) {
 			return ack(m - 1, 1);
-		} else if (m > 0 && n > 0) {
-			return ack(m - 1, ack(m, n - 1));
 		} else {
-			return 0;
+			return ack(m - 1, ack(m, n - 1));
 		}
 
 	}
