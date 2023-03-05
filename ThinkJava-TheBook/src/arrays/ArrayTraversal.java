@@ -9,6 +9,8 @@ public class ArrayTraversal {
 
 		System.out.println(sum(integers));
 
+		System.out.println(product(integers));
+
 	}
 
 	/**
@@ -53,6 +55,14 @@ public class ArrayTraversal {
 			i++;
 		}
 		return sum;
+	}
+
+	public static int product(int[] a) {
+		int result = 1;
+		for (int i = 0; i < a.length; i++) {
+			result *= a[i];
+		}
+		return result;
 	}
 
 }
