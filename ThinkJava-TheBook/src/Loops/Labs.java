@@ -20,6 +20,9 @@ public class Labs {
 		System.out.println(myEXPwithOneParam(2));
 		System.out.println(Math.exp(2.0));
 		check(1);
+		System.out.println();
+
+		System.out.println(gauss(1, 2));
 
 	}
 
@@ -180,6 +183,28 @@ public class Labs {
 	public static void check(int x) {
 		System.out.printf("%.1f \t %.9f \t %.9f ", (double) x, myEXPwithOneParam(x), Math.exp(x));
 
+	}
+
+	/**
+	 * One way to evaluate exp − x 2 is to use the infinite series expansion: exp −
+	 * x 2 = 1 − x 2 + x 4 /2 − x 6 /6 + ... The ith term in this series is − 1 i x
+	 * 2i /i!. Write a method named gauss that takes x and n as arguments and
+	 * returns the sum of the first n terms of the series. You should not use
+	 * factorial or pow.
+	 * 
+	 * @param x
+	 * @param n
+	 * @return
+	 */
+	public static double gauss(double x, int n) {
+		double sum = 1.0;
+		double term = 1.0;
+
+		for (int i = 1; i <= n; i++) {
+			term *= (-1 * x * x) / i;
+			sum += term;
+		}
+		return sum;
 	}
 
 }
