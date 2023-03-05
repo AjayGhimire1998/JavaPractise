@@ -17,6 +17,7 @@ public class Labs {
 //
 //		System.out.println(oddSum(13));
 		System.out.println(ack(3, 5));
+		System.out.println(power(2.0, 8));
 
 	}
 
@@ -151,6 +152,25 @@ public class Labs {
 			return ack(m - 1, ack(m, n - 1));
 		}
 
+	}
+
+	/**
+	 * Write a recursive method called power that takes a double x and an integer n
+	 * and returns x n . Hint: A recursive definition of this operation is x n = x ·
+	 * x n − 1. Also, remember that anything raised to the zeroth power is 1.
+	 * 
+	 * @param x
+	 * @param n
+	 * @return
+	 */
+	public static double power(double x, int n) {
+		if (n == 0) {
+			return 1;
+		} else if (n % 2 == 0) {
+			return power(x, n / 2) * power(x, n / 2);
+		} else {
+			return x * power(x, n - 1);
+		}
 	}
 
 }
