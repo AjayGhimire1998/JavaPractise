@@ -5,6 +5,8 @@ public class Labs {
 	public static void main(String[] args) {
 //		loop(10);
 		System.out.println(sqaureRoot(16));
+		System.out.println(power(2.0, 2));
+		System.out.println(factorial(5));
 
 	}
 
@@ -59,6 +61,49 @@ public class Labs {
 			diff = Math.abs(x1 - x0);
 		}
 		return x1;
+
+	}
+
+	/**
+	 * In Exercise 6-9 we wrote a recursive version of power, which takes a double x
+	 * and an integer n and returns x n . Now write an iterative method to perform
+	 * the same calcula‐ tion.
+	 * 
+	 * @param x
+	 * @param n
+	 * @return
+	 */
+	public static double power(double x, int n) {
+		double result = 1;
+//		while (n > 0) {
+//			result *= x;
+//			n--;
+//		}
+
+		for (int i = 0; i < n; i++) {
+			result *= x;
+		}
+		return result;
+	}
+
+	/**
+	 * “More Recursion” on page 79 presents a recursive method that computes the
+	 * factorial function. Write an iterative version of factorial.
+	 * 
+	 * @param n
+	 * @return
+	 */
+	public static int factorial(int n) {
+		int result = n;
+
+//		for (int i = 1; i < n; i++) {
+//			result *= n - i;
+//		}
+		while (n > 1) {
+			result *= n - 1;
+			n--;
+		}
+		return result;
 
 	}
 
