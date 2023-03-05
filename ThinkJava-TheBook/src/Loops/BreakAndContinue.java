@@ -6,7 +6,8 @@ public class BreakAndContinue {
 
 	public static void main(String[] args) {
 //		validateInputWithBreak();
-		validateInputWithContinue();
+//		validateInputWithContinue();
+		validatingInputWithContinueAgain();
 	}
 
 	/**
@@ -47,6 +48,29 @@ public class BreakAndContinue {
 			System.out.println(in.nextDouble());
 			break;
 		}
+	}
+
+	/**
+	 * In addition to the break statement, which exits the loop, Java provides a
+	 * continue statement that moves on to the next iteration. For example, the
+	 * following code reads integers from the keyboard and computes a running total.
+	 * The continue statement causes the program to skip over any negative values.
+	 */
+	public static void validatingInputWithContinueAgain() {
+		Scanner in = new Scanner(System.in);
+		int x = -1;
+		int sum = 0;
+
+		while (x != 0) {
+			x = in.nextInt();
+			if (x <= 0) {
+				continue;
+			}
+			System.out.println("Adding " + x);
+			sum += x;
+			System.out.println("sum: " + sum);
+		}
+
 	}
 
 }
