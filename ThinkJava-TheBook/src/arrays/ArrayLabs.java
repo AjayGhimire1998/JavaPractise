@@ -23,6 +23,7 @@ public class ArrayLabs {
 
 		int[] primeFactors = { 2, 3, 5 };
 		System.out.println(areFactors(30, primeFactors));
+		System.out.println(maxInRange(primeFactors, 0, 2));
 
 	}
 
@@ -159,6 +160,37 @@ public class ArrayLabs {
 			}
 		}
 		return true;
+
+	}
+
+	/**
+	 * Write a method called maxInRange that takes an array of integers and two
+	 * indexes, lowIndex and highIndex, and finds the maximum value in the array,
+	 * but only considering the elements between lowIndex and highIndex, including
+	 * both.
+	 * 
+	 * This method should be recursive. If the length of the range is 1, that is, if
+	 * lowIn dex == highIndex, we know immediately that the sole element in the
+	 * range must be the maximum. So that’s the base case.
+	 * 
+	 * If there is more than one element in the range, we can break the array into
+	 * two pieces, find the maximum in each of the pieces, and then find the maximum
+	 * of the maxima.
+	 * 
+	 * @param a
+	 * @param lowIndex
+	 * @param highIndex
+	 * @return
+	 */
+	public static int maxInRange(int[] a, int lowIndex, int highIndex) {
+		if (lowIndex == highIndex) {
+			return a[lowIndex];
+		} else {
+			int midIndex = (lowIndex + highIndex) / 2;
+			int maxLeft = maxInRange(a, lowIndex, midIndex);
+			int maxRight = maxInRange(a, midIndex + 1, highIndex);
+			return Math.max(maxLeft, maxRight);
+		}
 
 	}
 }
