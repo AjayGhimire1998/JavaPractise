@@ -9,6 +9,12 @@ public class ArrayLabs {
 		double[] nums = { 2, 4, 6, 8 };
 		System.out.println(Arrays.toString(powArray(nums, 3)));
 
+		int[] scores = { 3, 2, 4, 6, 2, 1, 8, 5, 0, 7 };
+
+		System.out.println(Arrays.toString(scores));
+
+		System.out.println(Arrays.toString(histogram(scores, 13)));
+
 	}
 
 	/**
@@ -33,4 +39,27 @@ public class ArrayLabs {
 		}
 		return results;
 	}
+
+	/**
+	 * Starting with the code in “The Enhanced for Loop” on page 111, write a method
+	 * called histogram that takes an int array of scores from 0 to (but not
+	 * including) 100, and returns a histogram of 100 counters. Generalize it to
+	 * take the number of counters as an argument.
+	 * 
+	 * @param scores
+	 * @param numCounters
+	 * @return
+	 */
+	public static int[] histogram(int[] scores, int numCounters) {
+		int[] counters = new int[numCounters];
+		int maxScore = numCounters - 1;
+		for (int score : scores) {
+			if (score > maxScore) {
+				throw new IllegalArgumentException("Score " + score + " is out of range.");
+			}
+			counters[score]++;
+		}
+		return counters;
+	}
+
 }
