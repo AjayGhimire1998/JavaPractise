@@ -21,6 +21,9 @@ public class ArrayLabs {
 
 		System.out.println(areFactors(2, scores));
 
+		int[] primeFactors = { 2, 3, 5 };
+		System.out.println(areFactors(30, primeFactors));
+
 	}
 
 	/**
@@ -129,5 +132,33 @@ public class ArrayLabs {
 			}
 		}
 		return true;
+	}
+
+	/**
+	 * Write a method named arePrimeFactors that takes an integer n and an array of
+	 * inte‐ gers, and that returns true if the numbers in the array are all prime
+	 * and their product is n.
+	 * 
+	 * @param n
+	 * @param a
+	 * @return
+	 */
+	public static boolean arePrimeFactors(int n, int[] a) {
+		if (n < 2) {
+			return false;
+		}
+		int product = 1;
+		for (int i = 0; i < a.length; i++) {
+			product *= a[i];
+		}
+
+		for (int i = 2; i <= Math.sqrt(n); i++) {
+
+			if (n % i == 0 && product != n) {
+				return false;
+			}
+		}
+		return true;
+
 	}
 }
