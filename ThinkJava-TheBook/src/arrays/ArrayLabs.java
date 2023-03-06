@@ -17,6 +17,8 @@ public class ArrayLabs {
 
 		System.out.println(indexOfMax(scores));
 
+		System.out.println(Arrays.toString(sieve(20)));
+
 	}
 
 	/**
@@ -81,5 +83,23 @@ public class ArrayLabs {
 		}
 		return maxIndex;
 	}
+
+	public static boolean[] sieve(int n) {
+	    boolean[] isPrime = new boolean[n];
+	    Arrays.fill(isPrime, true);
+
+	    for (int i = 2; i <= Math.sqrt(n); i++) {
+	        if (isPrime[i]) {
+	            for (int j = i * i; j < n; j += i) {
+	                isPrime[j] = false;
+	            }
+	        }
+	    }
+	    isPrime[0] = false;
+	    isPrime[1] = false;
+
+	    return isPrime;
+	}
+
 
 }
