@@ -25,6 +25,23 @@ public class TraverseAndCount {
 		}
 		System.out.println(Arrays.toString(counts));
 
+		/*
+		 * Notice that we are using the loop variable i three times: as an index into
+		 * the counts array, and as two arguments for inRange. The code works, but it is
+		 * not as efficient as it could be. Every time the loop invokes inRange, it
+		 * traverses the entire array.
+		 * 
+		 * It would be better to make a single pass through the array, and for each
+		 * score, com‐ pute which range it falls in and increment the corresponding
+		 * counter. This code tra‐ verses the array of scores only once to generate the
+		 * histogram:
+		 */
+		for (int i = 0; i < scores.length; i++) {
+			int index = scores[i];
+			counts[index]++;
+		}
+
+		System.out.println(Arrays.toString(counts));
 	}
 
 	/**
