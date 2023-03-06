@@ -84,22 +84,31 @@ public class ArrayLabs {
 		return maxIndex;
 	}
 
+	/**
+	 * The Sieve of Eratosthenes is “a simple, ancient algorithm for finding all
+	 * prime num‐ bers up to any given limit,” which you can read about at
+	 * https://en.wikipedia.org/wiki/ Sieve_of_Eratosthenes. Write a method called
+	 * sieve that takes an integer parameter, n, and returns a boolean array that
+	 * indicates, for each number from 0 to n - 1, whether the number is prime.
+	 * 
+	 * @param n
+	 * @return
+	 */
 	public static boolean[] sieve(int n) {
-	    boolean[] isPrime = new boolean[n];
-	    Arrays.fill(isPrime, true);
+		boolean[] isPrime = new boolean[n];
+		Arrays.fill(isPrime, true);
 
-	    for (int i = 2; i <= Math.sqrt(n); i++) {
-	        if (isPrime[i]) {
-	            for (int j = i * i; j < n; j += i) {
-	                isPrime[j] = false;
-	            }
-	        }
-	    }
-	    isPrime[0] = false;
-	    isPrime[1] = false;
+		for (int i = 2; i <= Math.sqrt(n); i++) {
+			if (isPrime[i]) {
+				for (int j = i * i; j < n; j += i) {
+					isPrime[j] = false;
+				}
+			}
+		}
+		isPrime[0] = false;
+		isPrime[1] = false;
 
-	    return isPrime;
+		return isPrime;
 	}
-
 
 }
