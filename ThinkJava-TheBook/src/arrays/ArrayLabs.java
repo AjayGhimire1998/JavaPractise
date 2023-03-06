@@ -24,6 +24,7 @@ public class ArrayLabs {
 		int[] primeFactors = { 2, 3, 5 };
 		System.out.println(areFactors(30, primeFactors));
 		System.out.println(maxInRange(primeFactors, 0, 2));
+		System.out.println(max(scores));
 
 	}
 
@@ -192,5 +193,21 @@ public class ArrayLabs {
 			return Math.max(maxLeft, maxRight);
 		}
 
+	}
+
+	/**
+	 * Methods like maxInRange can be awkward to use. To find the largest element in
+	 * an array, we have to provide the range for the entire array.
+	 * 
+	 * double max =maxInRange(a, 0, a.length - 1);
+	 * 
+	 * Write a method called max that takes an array and uses maxInRange to find and
+	 * return the largest element.
+	 * 
+	 * @param a
+	 * @return
+	 */
+	public static int max(int[] a) {
+		return maxInRange(a, 0, a.length - 1);
 	}
 }
