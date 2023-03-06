@@ -15,6 +15,8 @@ public class ArrayLabs {
 
 		System.out.println(Arrays.toString(histogram(scores, 13)));
 
+		System.out.println(indexOfMax(scores));
+
 	}
 
 	/**
@@ -60,6 +62,24 @@ public class ArrayLabs {
 			counters[score]++;
 		}
 		return counters;
+	}
+
+	/**
+	 * Write a method called indexOfMax that takes an array of integers and returns
+	 * the index of the largest element. Can you write this method using an enhanced
+	 * for loop? Why or why not?
+	 * 
+	 * @param a
+	 * @return
+	 */
+	public static int indexOfMax(int[] a) {
+		int maxIndex = 0;
+		for (int i = 0; i < a.length; i++) {
+			if (a[i] > a[maxIndex]) {
+				maxIndex = i;
+			}
+		}
+		return maxIndex;
 	}
 
 }
