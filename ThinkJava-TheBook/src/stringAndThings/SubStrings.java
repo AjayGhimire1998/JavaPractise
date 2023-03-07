@@ -21,8 +21,13 @@ public class SubStrings {
 		 * Like most string methods, substring is overloaded. That is, there are other
 		 * versions of substring that have different parameters. If it’s invoked with
 		 * two arguments, they are treated as a start and end index:
+		 * 
+		 * Notice that the character indicated by the end index is not included.
+		 * Defining sub string this way simplifies some common operations.
 		 */
 		System.out.println(fruit.substring(1, 5));
+		System.out.println(fruit.substring(6, 6));
+
 	}
 
 }
