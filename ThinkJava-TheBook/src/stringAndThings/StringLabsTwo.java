@@ -14,6 +14,9 @@ public class StringLabsTwo {
 
 		System.out.println(isDoubloon("ajaj"));
 
+		System.out.println(sortString("olay"));
+		System.out.println(isAnagram("allen downey", "well annoyed"));
+
 	}
 
 	/**
@@ -192,9 +195,23 @@ public class StringLabsTwo {
 		return true;
 	}
 
-	public static String isAnagram(String str1, String str2) {
-		char temp = 'a';
-		String sortedStr = "";
+	public static boolean isAnagram(String str1, String str2) {
+		return sortString(str1).equals(sortString(str2));
+
+	}
+
+	public static String sortString(String str) {
+		char[] chars = str.toCharArray();
+		for (int i = 0; i < chars.length - 1; i++) {
+			for (int j = i + 1; j < chars.length; j++) {
+				if (chars[j] < chars[i]) {
+					char temp = chars[i];
+					chars[i] = chars[j];
+					chars[j] = temp;
+				}
+			}
+		}
+		return new String(chars);
 	}
 
 }
