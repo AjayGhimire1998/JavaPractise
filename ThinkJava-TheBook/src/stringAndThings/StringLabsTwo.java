@@ -12,6 +12,8 @@ public class StringLabsTwo {
 		System.out.println(isAbecedarian("dimpsy"));
 		System.out.println(isPalindrome("noon"));
 
+		System.out.println(isDoubloon("ajaj"));
+
 	}
 
 	/**
@@ -153,6 +155,46 @@ public class StringLabsTwo {
 			}
 		}
 
+	}
+
+	/**
+	 * A word is said to be a “doubloon” if every letter that appears in the word
+	 * appears exactly twice. Here are some example doubloons found in the
+	 * dictionary:
+	 * 
+	 * Abba, Anna, appall, appearer, appeases, arraigning, beriberi, bilabial, boob,
+	 * Caucasus, coco, Dada, deed, Emmett, Hannah, horseshoer, intestines, Isis,
+	 * mama, Mimi, murmur, noon, Otto, papa, peep, reappear, redder, sees,
+	 * Shanghaiings, Toto
+	 * 
+	 * Write a method called isDoubloon that takes a string and checks whether it is
+	 * a dou‐ bloon. To ignore case, invoke the toLowerCase method before checking.
+	 * 
+	 * @param word
+	 * @return
+	 */
+	public static boolean isDoubloon(String word) {
+		word = word.toLowerCase();
+		int[] counts = new int[26];
+
+		for (int i = 0; i < word.length(); i++) {
+			char c = word.charAt(i);
+			if (c >= 'a' && c <= 'z') {
+				counts[c - 'a']++;
+			}
+		}
+
+		for (int i = 0; i < 26; i++) {
+			if (counts[i] != 0 && counts[i] != 2) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public static String isAnagram(String str1, String str2) {
+		char temp = 'a';
+		String sortedStr = "";
 	}
 
 }
