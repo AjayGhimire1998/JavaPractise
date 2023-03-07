@@ -19,6 +19,13 @@ public class StringFormatting {
 
 		System.out.println(Float.MAX_VALUE);
 		System.out.println(Float.MIN_VALUE);
+
+		String str = "12334456";
+		System.out.println(Integer.parseInt(str));
+
+		int num = 123455;
+		System.out.println(Integer.toString(num));
+
 	}
 
 	/*
