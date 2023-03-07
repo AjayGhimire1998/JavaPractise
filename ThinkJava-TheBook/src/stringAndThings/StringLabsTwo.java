@@ -8,6 +8,8 @@ public class StringLabsTwo {
 		printBack("HelloWorld");
 		String reversed = reverseString("hello world");
 		System.out.println(reversed);
+
+		System.out.println(isAbecedarian("ajjyyy"));
 	}
 
 	/**
@@ -81,6 +83,28 @@ public class StringLabsTwo {
 			result += s.charAt(i);
 		}
 		return result;
+	}
+
+	/**
+	 * A word is said to be “abecedarian” if the letters in the word appear in
+	 * alphabetical order. For example, the following are all six-letter English
+	 * abecedarian words: abdest, acknow, acorsy, adempt, adipsy, agnosy, befist,
+	 * behint, beknow, bijoux, biopsy, cestuy, chintz, deflux, dehors, dehort,
+	 * deinos, diluvy, dimpsy Write a method called isAbecedarian that takes a
+	 * String and returns a boolean indicating whether the word is abecedarian. Your
+	 * method can be iterative or recur‐ sive.
+	 * 
+	 * @param s
+	 * @return
+	 */
+	public static boolean isAbecedarian(String s) {
+		for (int i = 1; i < s.length(); i++) {
+			if (s.charAt(i) < s.charAt(i - 1)) {
+				return false;
+			}
+		}
+		return true;
+
 	}
 
 }
