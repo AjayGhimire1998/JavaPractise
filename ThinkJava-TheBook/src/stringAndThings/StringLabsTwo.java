@@ -9,7 +9,9 @@ public class StringLabsTwo {
 		String reversed = reverseString("hello world");
 		System.out.println(reversed);
 
-		System.out.println(isAbecedarian("ajjyyy"));
+		System.out.println(isAbecedarian("dimpsy"));
+		System.out.println(isPalindrome("noon"));
+
 	}
 
 	/**
@@ -86,6 +88,42 @@ public class StringLabsTwo {
 	}
 
 	/**
+	 * . A palindrome is a word that reads the same both forward and backward, like
+	 * “otto” and “palindromeemordnilap”. Here’s one way to test whether a string is
+	 * a palindrome: A single letter is a palindrome, a two-letter word is a
+	 * palindrome if the letters are the same, and any other word is a palindrome if
+	 * the first letter is the same as the last and the middle is a palindrome.
+	 * Write a recursive method named isPalindrome that takes a String and returns a
+	 * boolean indicating whether the word is a palindrome
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static boolean isPalindrome(String str) {
+//		if (str.length() == 1) {
+//			return true;
+//		} else if (str.length() == 2) {
+//			return str.charAt(0) == str.charAt(1);
+//		}
+//
+//		if (str.charAt(0) == str.charAt(str.length() - 1)) {
+//			return isPalindrome(middle(str));
+//		}
+//		return false;
+
+		if (str.length() == 1 || (str.length() == 2 && str.charAt(1) == str.charAt(1))) {
+			return true;
+
+		}
+		for (int i = 0; i < str.length(); i++) {
+			if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
 	 * A word is said to be “abecedarian” if the letters in the word appear in
 	 * alphabetical order. For example, the following are all six-letter English
 	 * abecedarian words: abdest, acknow, acorsy, adempt, adipsy, agnosy, befist,
@@ -98,12 +136,22 @@ public class StringLabsTwo {
 	 * @return
 	 */
 	public static boolean isAbecedarian(String s) {
-		for (int i = 1; i < s.length(); i++) {
-			if (s.charAt(i) < s.charAt(i - 1)) {
+//		for (int i = 1; i < s.length(); i++) {
+//			if (s.charAt(i) < s.charAt(i - 1)) {
+//				return false;
+//			}
+//		}
+//		return true;
+
+		if (s.length() <= 1) {
+			return true;
+		} else {
+			if (s.charAt(0) > s.charAt(1)) {
 				return false;
+			} else {
+				return isAbecedarian(s.substring(1));
 			}
 		}
-		return true;
 
 	}
 
