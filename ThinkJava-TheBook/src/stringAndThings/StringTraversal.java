@@ -59,7 +59,7 @@ public class StringTraversal {
 		return result;
 	}
 
-	/* reversing an array */ƒ
+	/* reversing an array */
 	public static int[] reverse(int[] a) {
 		int[] result = new int[a.length];
 
