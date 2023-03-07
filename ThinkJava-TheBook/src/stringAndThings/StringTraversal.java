@@ -41,6 +41,19 @@ public class StringTraversal {
 		String fruit = "banana";
 		System.out.println(fruit.toCharArray()[fruit.length() - 1]);
 
+		System.out.println(reverse(fruit));
+		System.out.println(reverse(text));
+
+	}
+
+	/* reversing a string */
+	public static String reverse(String s) {
+		String result = "";
+		for (int i = s.length() - 1; i >= 0; i--) {
+			result += s.charAt(i);
+
+		}
+		return result;
 	}
 
 }
