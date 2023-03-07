@@ -14,6 +14,20 @@ public class StringsAreImmutable {
 		String capitalName = name.toUpperCase();
 		System.out.println("capital name: " + capitalName);
 		System.out.println("nme: " + name);
+
+		String str = new String();
+		str = "Hello";
+		System.out.println(System.identityHashCode(str));
+		System.out.println(str.toString());
+
+		str = str + " World";
+		System.out.println(System.identityHashCode(str));
+		System.out.println(str.toString());
+
+		String text = "Computer Science is fun";
+		text = text.replace("Computer Science", "CS");
+		System.out.println(text);
+
 	}
 
 }
