@@ -1,5 +1,7 @@
 package stringAndThings;
 
+import java.util.Arrays;
+
 public class StringLabsTwo {
 
 	public static void main(String[] args) {
@@ -16,6 +18,9 @@ public class StringLabsTwo {
 
 		System.out.println(sortString("olay"));
 		System.out.println(isAnagram("allen downey", "well annoyed"));
+
+		int[] nums = { 1, 7, 3, 9, 2, 4, 9, 1 };
+		System.out.println(Arrays.toString(sortArray(nums)));
 
 	}
 
@@ -195,6 +200,18 @@ public class StringLabsTwo {
 		return true;
 	}
 
+	/**
+	 * Two words are anagrams if they contain the same letters and the same number
+	 * of each letter. For example, “stop” is an anagram of “pots” and “allen
+	 * downey” is an ana‐ gram of “well annoyed”.
+	 * 
+	 * Write a method that takes two strings and checks whether they are anagrams of
+	 * each other.
+	 * 
+	 * @param str1
+	 * @param str2
+	 * @return
+	 */
 	public static boolean isAnagram(String str1, String str2) {
 		return sortString(str1).equals(sortString(str2));
 
@@ -212,6 +229,27 @@ public class StringLabsTwo {
 			}
 		}
 		return new String(chars);
+	}
+
+	/**
+	 * Sorting an array
+	 * 
+	 * @param nums
+	 * @return
+	 */
+	public static int[] sortArray(int[] nums) {
+
+		for (int i = 0; i < nums.length - 1; i++) {
+			for (int j = i + 1; j < nums.length; j++) {
+				if (nums[i] > nums[j]) {
+					int temp = nums[i];
+					nums[i] = nums[j];
+					nums[j] = temp;
+				}
+
+			}
+		}
+		return nums;
 	}
 
 }
