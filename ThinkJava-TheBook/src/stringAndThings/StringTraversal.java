@@ -30,6 +30,17 @@ public class StringTraversal {
 			System.out.print(letter);
 		}
 
+		System.out.println();
+
+		/*
+		 * This code compiles and runs, but invoking the charAt method throws a
+		 * StringIndex OutOfBoundsException. The problem is that there is no sixth
+		 * letter in "banana". Since we started counting at 0, the 6 letters are indexed
+		 * from 0 to 5. To get the last character, you have to subtract 1 from length.
+		 */
+		String fruit = "banana";
+		System.out.println(fruit.toCharArray()[fruit.length() - 1]);
+
 	}
 
 }
