@@ -1,5 +1,7 @@
 package stringAndThings;
 
+import java.util.Arrays;
+
 public class StringTraversal {
 
 	public static void main(String[] args) {
@@ -15,8 +17,19 @@ public class StringTraversal {
 		 */
 		for (int i = 0; i < text.length(); i++) {
 
-			System.out.println(text.charAt(i));
+			System.out.print(text.charAt(i));
+
 		}
+		System.out.println();
+
+		/* converting a string into an array of charcters */
+		System.out.println(Arrays.toString(text.toCharArray()));
+
+		/* inhanced for loop can work on string after conversion */
+		for (char letter : text.toCharArray()) {
+			System.out.print(letter);
+		}
+
 	}
 
 }
