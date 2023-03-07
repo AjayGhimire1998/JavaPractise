@@ -24,6 +24,13 @@ public class StringsAreImmutable {
 		System.out.println(System.identityHashCode(str));
 		System.out.println(str.toString());
 
+		/*
+		 * This example demonstrates a common way to work with string methods. It
+		 * invokes text.replace, which returns a reference to a new string,
+		 * "CS is fun!". Then it assigns the new string to text, replacing the old
+		 * string. This assignment is important; if you don’t save the return value,
+		 * invoking text.replace has no effect.
+		 */
 		String text = "Computer Science is fun";
 		text = text.replace("Computer Science", "CS");
 		System.out.println(text);
