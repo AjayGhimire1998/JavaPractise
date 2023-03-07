@@ -44,6 +44,9 @@ public class StringTraversal {
 		System.out.println(reverse(fruit));
 		System.out.println(reverse(text));
 
+		int[] nums = { 1, 2, 4, 5, 6, 7 };
+		System.out.println(Arrays.toString(reverse(nums)));
+
 	}
 
 	/* reversing a string */
@@ -51,6 +54,17 @@ public class StringTraversal {
 		String result = "";
 		for (int i = s.length() - 1; i >= 0; i--) {
 			result += s.charAt(i);
+
+		}
+		return result;
+	}
+
+	/* reversing an array */ƒ
+	public static int[] reverse(int[] a) {
+		int[] result = new int[a.length];
+
+		for (int i = a.length - 1; i >= 0; i--) {
+			result[i] = a[a.length - 1 - i];
 
 		}
 		return result;
