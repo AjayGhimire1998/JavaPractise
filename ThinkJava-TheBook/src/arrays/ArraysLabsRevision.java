@@ -9,6 +9,7 @@ public class ArraysLabsRevision {
 		double[] test = { 1, 2, 3, 4, 5 };
 		int[] test3 = { 1, 2, 3, 4, 5 };
 		int[] test2 = { 1, 2, 4, 5, 6, 9, 9, 99, 1, 7, 2, 99, 98 };
+		int[] scores = { 3, 6, 9 };
 		System.out.println(Arrays.toString(powArray(test)));
 		System.out.println(Arrays.toString(powArrayTwo(test, 3)));
 		System.out.println(Arrays.toString(histogram(test2)));
@@ -16,6 +17,8 @@ public class ArraysLabsRevision {
 		System.out.println(maxValue(test3));
 		System.out.println(indexOfMax(test2));
 		System.out.println(Arrays.toString(sieve(9)));
+		System.out.println(areFactors(100, test2));
+		System.out.println(areFactors(36, scores));
 	}
 
 	public static double[] powArray(double[] a) {
@@ -84,5 +87,18 @@ public class ArraysLabsRevision {
 		}
 		return result;
 	}
+
+	public static boolean areFactors(int n, int[] a) {
+		for (int i = 0; i < a.length; i++) {
+			if (n % a[i] != 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+//	public static boolean arePrimeFactors(int n, int [] a) {
+//		
+//	}
 
 }
