@@ -97,8 +97,22 @@ public class ArraysLabsRevision {
 		return true;
 	}
 
-//	public static boolean arePrimeFactors(int n, int [] a) {
-//		
-//	}
+	public static boolean arePrimeFactors(int n, int[] a) {
+		if (n < 2) {
+			return false;
+		}
+
+		int product = 1;
+		for (int i = 0; i < a.length; i++) {
+			product *= a[i];
+		}
+
+		for (int i = 2; i < Math.sqrt(n); i++) {
+			if (n % i == 0 && product != n) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 }
