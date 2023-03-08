@@ -133,13 +133,13 @@ public class ArraysLabsRevision {
 	}
 
 	public static int maxInRange(int[] a, int minIndex, int maxIndex) {
-		if (maxIndex == minIndex) {
+		if (minIndex == maxIndex) {
 			return a[minIndex];
 		} else {
 			int midIndex = (minIndex + maxIndex) / 2;
-			int maxInleft = maxInRange(a, minIndex, midIndex);
+			int maxInLeft = maxInRange(a, minIndex, midIndex);
 			int maxInRight = maxInRange(a, midIndex + 1, maxIndex);
-			return Math.max(maxInleft, maxInRight);
+			return Math.max(maxInLeft, maxInRight);
 		}
 
 	}
