@@ -8,6 +8,7 @@ public class StringLabsRevisionTwo {
 //		printBackwards("Ghimire");
 //		System.out.println(reverseString("Coffee"));
 		System.out.println(isPalindrome("pndrrdnilap"));
+		System.out.println(isAbecedarian("dimpsyzzz"));
 	}
 
 	public static void printString(String str) {
@@ -56,6 +57,25 @@ public class StringLabsRevisionTwo {
 
 		return true;
 
+	}
+
+	public static boolean isAbecedarian(String str) {
+//		if (str.length() <= 1) {
+//			return true;
+//		} else {
+//			if (str.charAt(0) > str.charAt(1)) {
+//				return false;
+//			} else {
+//				return isAbecedarian(str.substring(1));
+//			}
+//		}
+
+		for (int i = 1; i < str.length(); i++) {
+			if (str.charAt(i) < str.charAt(i - 1)) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 }
