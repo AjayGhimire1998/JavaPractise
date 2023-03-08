@@ -19,6 +19,8 @@ public class ArraysLabsRevision {
 		System.out.println(Arrays.toString(sieve(9)));
 		System.out.println(areFactors(100, test2));
 		System.out.println(areFactors(36, scores));
+
+		System.out.println(isPrime(98));
 	}
 
 	public static double[] powArray(double[] a) {
@@ -109,6 +111,19 @@ public class ArraysLabsRevision {
 
 		for (int i = 2; i < Math.sqrt(n); i++) {
 			if (n % i == 0 && product != n) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public static boolean isPrime(int n) {
+		if (n == 0 || n == 1) {
+			return false;
+		}
+
+		for (int i = 2; i < Math.sqrt(n); i++) {
+			if (n % i == 0) {
 				return false;
 			}
 		}
