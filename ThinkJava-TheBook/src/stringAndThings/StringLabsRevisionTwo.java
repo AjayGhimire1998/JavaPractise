@@ -1,5 +1,7 @@
 package stringAndThings;
 
+import java.util.Arrays;
+
 public class StringLabsRevisionTwo {
 
 	public static void main(String[] args) {
@@ -12,6 +14,9 @@ public class StringLabsRevisionTwo {
 		System.out.println(isDoubloon("abba"));
 		System.out.println(sortString("apqzfjsgzq"));
 		System.out.println(isAnagram("strop", "prot"));
+
+		int[] nums = { 1, 8, 2, 5, 3, 9, 0, 10, 9, 26, 21 };
+		System.out.println(Arrays.toString(sortArray(nums)));
 	}
 
 	public static void printString(String str) {
@@ -115,5 +120,18 @@ public class StringLabsRevisionTwo {
 
 	public static boolean isAnagram(String str1, String str2) {
 		return sortString(str1).equals(sortString(str2));
+	}
+
+	public static int[] sortArray(int[] a) {
+		for (int i = 0; i < a.length; i++) {
+			for (int j = i + 1; j < a.length; j++) {
+				if (a[i] > a[j]) {
+					int temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+		}
+		return a;
 	}
 }
