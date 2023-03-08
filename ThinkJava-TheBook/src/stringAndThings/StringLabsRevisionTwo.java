@@ -9,6 +9,9 @@ public class StringLabsRevisionTwo {
 //		System.out.println(reverseString("Coffee"));
 		System.out.println(isPalindrome("pndrrdnilap"));
 		System.out.println(isAbecedarian("dimpsyzzz"));
+		System.out.println(isDoubloon("abba"));
+		System.out.println(sortString("apqzfjsgzq"));
+		System.out.println(isAnagram("strop", "prot"));
 	}
 
 	public static void printString(String str) {
@@ -78,4 +81,39 @@ public class StringLabsRevisionTwo {
 		return true;
 	}
 
+	public static boolean isDoubloon(String str) {
+		str = str.toLowerCase();
+		int[] chars = new int[26];
+
+		for (int i = 0; i < str.length(); i++) {
+			char c = str.charAt(i);
+			chars[c - 'a']++;
+		}
+
+		for (int j = 0; j < 26; j++) {
+			if (chars[j] != 0 && chars[j] != 2) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public static String sortString(String str) {
+		char[] chars = str.toCharArray();
+
+		for (int i = 0; i < chars.length; i++) {
+			for (int j = i + 1; j < chars.length; j++) {
+				if (chars[i] > chars[j]) {
+					char temp = chars[i];
+					chars[i] = chars[j];
+					chars[j] = temp;
+				}
+			}
+		}
+		return new String(chars);
+	}
+
+	public static boolean isAnagram(String str1, String str2) {
+		return sortString(str1).equals(sortString(str2));
+	}
 }
