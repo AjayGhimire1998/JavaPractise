@@ -6,7 +6,8 @@ public class StringLabsRevisionTwo {
 		// TODO Auto-generated method stub
 //		printString("AjayGhimire");
 //		printBackwards("Ghimire");
-		System.out.println(reverseString("Coffee"));
+//		System.out.println(reverseString("Coffee"));
+		System.out.println(isPalindrome("pndrrdnilap"));
 	}
 
 	public static void printString(String str) {
@@ -27,6 +28,34 @@ public class StringLabsRevisionTwo {
 			result += str.charAt(i);
 		}
 		return result;
+	}
+
+	public static boolean isPalindrome(String str) {
+//		if (str.length() == 1) {
+//			return true;
+//		} else if (str.length() == 2) {
+//			return str.charAt(0) == str.charAt(1);
+//		}
+//
+//		if (str.charAt(0) == str.charAt(str.length() - 1)) {
+//			return isPalindrome(str.substring(1, str.length() - 1));
+//		}
+//		return false;
+
+		if (str.length() == 1) {
+			return true;
+		} else if (str.length() == 2) {
+			return str.charAt(0) == str.charAt(1);
+		}
+
+		for (int i = 0; i < str.length(); i++) {
+			if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+				return false;
+			}
+		}
+
+		return true;
+
 	}
 
 }
