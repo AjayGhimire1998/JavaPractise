@@ -8,6 +8,8 @@ public class ValueMethodsLabRevision {
 		boolean isDivisble = isDivisible(3, 2);
 		System.out.println(isDivisble);
 		System.out.println(isTriangle(2, 1, 12));
+		System.out.println(multAdd(1, 2, 3));
+		System.out.println(oddSum(13));
 
 	}
 
@@ -27,6 +29,20 @@ public class ValueMethodsLabRevision {
 
 		return true;
 
+	}
+
+	public static double multAdd(double a, double b, double c) {
+		return a * b + c;
+	}
+
+	public static int oddSum(int a) {
+		if (a % 2 == 0 || a == 1) {
+			return 1;
+		} else {
+			int hehe = a;
+			hehe += oddSum(a - 2);
+			return hehe;
+		}
 	}
 
 }
