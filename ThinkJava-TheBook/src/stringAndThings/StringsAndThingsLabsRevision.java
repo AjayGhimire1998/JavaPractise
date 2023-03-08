@@ -7,6 +7,7 @@ public class StringsAndThingsLabsRevision {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(Arrays.toString(letterHist("AAAABBBCCCZZZ")));
+		System.out.println(checkBrac("Ajay)Ghimire(("));
 	}
 
 	public static int[] letterHist(String str) {
@@ -19,6 +20,19 @@ public class StringsAndThingsLabsRevision {
 			}
 		}
 		return chars;
+	}
+
+	public static boolean checkBrac(String str) {
+		int count = 0;
+		for (int i = 0; i < str.length(); i++) {
+			char c = str.charAt(i);
+			if (c == '(') {
+				count++;
+			} else if (c == ')') {
+				count--;
+			}
+		}
+		return count == 0;
 	}
 
 }
