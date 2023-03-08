@@ -43,8 +43,20 @@ public class IOLabsRevision {
 		int yourGuess = in.nextInt();
 		System.out.println("your guess is: " + yourGuess);
 		System.out.println("the number I was thinking is: " + randGuess);
-		System.out.println(
-				"you were off by: " + (randGuess > yourGuess ? (randGuess - yourGuess) : (yourGuess - randGuess)));
+//		System.out.println(
+//				"you were off by: " + (randGuess > yourGuess ? (randGuess - yourGuess) : (yourGuess - randGuess)));
+
+		if (randGuess == yourGuess) {
+			System.out.println("Damn, youy got it right!!");
+		} else {
+			if (yourGuess > randGuess) {
+				System.out.println("you were off by: " + (yourGuess - randGuess));
+			} else {
+				System.out.println("you were off by: " + (randGuess - yourGuess));
+			}
+			guessStarter();
+
+		}
 	}
 
 }
