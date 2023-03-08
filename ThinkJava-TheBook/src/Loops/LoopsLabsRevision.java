@@ -5,6 +5,7 @@ public class LoopsLabsRevision {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(squareRoot(16.0));
+		System.out.println(power(2.0, 5));
 	}
 
 	public static double squareRoot(double x) {
@@ -17,6 +18,14 @@ public class LoopsLabsRevision {
 			diff = Math.abs(x1 - x0);
 		}
 		return x1;
+	}
+
+	public static double power(double x, int n) {
+		double result = 1;
+		for (int i = 1; i <= n; i++) {
+			result *= x;
+		}
+		return result;
 	}
 
 }
