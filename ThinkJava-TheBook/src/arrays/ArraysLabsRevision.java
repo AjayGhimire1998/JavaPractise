@@ -15,6 +15,7 @@ public class ArraysLabsRevision {
 		System.out.println(maxValue(test2));
 		System.out.println(maxValue(test3));
 		System.out.println(indexOfMax(test2));
+		System.out.println(Arrays.toString(sieve(9)));
 	}
 
 	public static double[] powArray(double[] a) {
@@ -66,6 +67,22 @@ public class ArraysLabsRevision {
 			}
 		}
 		return maxIndex;
+	}
+
+	public static boolean[] sieve(int n) {
+		boolean[] result = new boolean[n];
+		Arrays.fill(result, true);
+
+		result[0] = false;
+		result[1] = false;
+		for (int i = 2; i <= Math.sqrt(n); i++) {
+			if (result[i]) {
+				for (int j = i * i; j < n; j += i) {
+					result[j] = false;
+				}
+			}
+		}
+		return result;
 	}
 
 }
