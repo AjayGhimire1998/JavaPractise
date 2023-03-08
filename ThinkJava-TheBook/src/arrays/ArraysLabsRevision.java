@@ -21,6 +21,8 @@ public class ArraysLabsRevision {
 		System.out.println(areFactors(36, scores));
 
 		System.out.println(isPrime(98));
+
+		System.out.println(maxInRange(test2, 2, 6));
 	}
 
 	public static double[] powArray(double[] a) {
@@ -128,6 +130,18 @@ public class ArraysLabsRevision {
 			}
 		}
 		return true;
+	}
+
+	public static int maxInRange(int[] a, int minIndex, int maxIndex) {
+		if (maxIndex == minIndex) {
+			return a[minIndex];
+		} else {
+			int midIndex = (minIndex + maxIndex) / 2;
+			int maxInleft = maxInRange(a, minIndex, midIndex);
+			int maxInRight = maxInRange(a, midIndex + 1, maxIndex);
+			return Math.max(maxInleft, maxInRight);
+		}
+
 	}
 
 }
