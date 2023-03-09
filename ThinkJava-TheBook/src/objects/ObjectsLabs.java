@@ -5,9 +5,28 @@ import java.math.BigInteger;
 public class ObjectsLabs {
 	public static void main(String[] args) {
 //		System.out.println(factorial(17));
-		tableOfFactorials();
+//		tableOfFactorials();
+		BigInteger result = factorial(17);
+		System.out.println(result);
+		result.add(new BigInteger("1"));
+		System.out.println(result);
+
+		BigInteger num = new BigInteger("123456789");
+		num.add(new BigInteger("1"));
+		System.out.println(num);
 	}
 
+	/**
+	 * Create a new program called Big.java and write (or reuse) an iterative
+	 * version of factorial.
+	 * 
+	 * Convert factorial so that it performs its calculation using BigIntegers and
+	 * returns a BigInteger as a result. You can leave the parameter alone; it will
+	 * still be an integer.
+	 * 
+	 * @param n
+	 * @return
+	 */
 	public static BigInteger factorial(int n) {
 		BigInteger result = BigInteger.ONE;
 		for (int i = 1; i <= n; i++) {
@@ -16,6 +35,12 @@ public class ObjectsLabs {
 		return result;
 	}
 
+	/**
+	 * Display a table of the integers from 0 to 30 along with their factorials. At
+	 * some point around 15, you will probably see that the answers are not right
+	 * anymore. Why not?
+	 * 
+	 */
 	public static void tableOfFactorials() {
 		for (int i = 0; i <= 30; i++) {
 
