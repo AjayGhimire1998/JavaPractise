@@ -8,9 +8,13 @@ public class PointObjects {
 		// TODO Auto-generated method stub
 		Point blank;
 		blank = new Point(3, 4);
-
+		printPoint(blank);
 		int x = blank.x;
 		System.out.println(x);
+	}
+
+	public static void printPoint(Point p) {
+		System.out.println("(" + p.x + ", " + p.y + ")");
 	}
 
 }
