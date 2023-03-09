@@ -13,6 +13,12 @@ public class PointObjects {
 		System.out.println(x);
 	}
 
+	/**
+	 * This method takes a point as an argument and displays its attributes in
+	 * parentheses. If you invoke printPoint(blank), it displays (3, 4).
+	 * 
+	 * @param p
+	 */
 	public static void printPoint(Point p) {
 		System.out.println("(" + p.x + ", " + p.y + ")");
 	}
