@@ -2,7 +2,7 @@ package objects;
 
 import java.awt.Point;
 
-public class PointObjects {
+public class ObjectAsParamter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
