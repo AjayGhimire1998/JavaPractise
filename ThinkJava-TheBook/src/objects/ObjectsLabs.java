@@ -14,6 +14,8 @@ public class ObjectsLabs {
 		BigInteger num = new BigInteger("123456789");
 		num.add(new BigInteger("1"));
 		System.out.println(num);
+
+		System.out.println(pow(8, 12));
 	}
 
 	/**
@@ -47,4 +49,41 @@ public class ObjectsLabs {
 			System.out.println(i + "      " + factorial(i));
 		}
 	}
+
+	/**
+	 * Many encryption algorithms depend on the ability to raise large integers to a
+	 * power. Here is a method that implements an efficient algorithm for integer
+	 * exponentiation:
+	 * 
+	 * @param x
+	 * @param n
+	 * @return
+	 */
+	public static BigInteger pow(int x, int n) {
+//		if (n == 0)
+//			return 1;
+//
+//		// find x to the n/2 recursively
+//		int t = pow(x, n / 2);
+//
+//		// if n is even, the result is t squared
+//		// if n is odd, the result is t squared times x
+//		if (n % 2 == 0) {
+//			return t * t;
+//		} else {
+//			return t * t * x;
+//		}
+
+		if (n == 0)
+			return BigInteger.ONE;
+
+		BigInteger t = pow(x, n / 2);
+
+		if (n % 2 == 0) {
+			return t.multiply(t);
+		} else {
+			return t.multiply(t).multiply(BigInteger.valueOf(x));
+		}
+	}
+
 }
