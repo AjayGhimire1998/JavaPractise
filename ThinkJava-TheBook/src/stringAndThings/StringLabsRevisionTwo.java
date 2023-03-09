@@ -17,6 +17,7 @@ public class StringLabsRevisionTwo {
 
 		int[] nums = { 1, 8, 2, 5, 3, 9, 0, 10, 9, 26, 21 };
 		System.out.println(Arrays.toString(sortArray(nums)));
+
 	}
 
 	public static void printString(String str) {
