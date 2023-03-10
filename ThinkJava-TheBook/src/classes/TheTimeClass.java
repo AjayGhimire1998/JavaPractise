@@ -3,10 +3,11 @@ package classes;
 public class TheTimeClass {
 
 	public static void main(String[] args) {
-		TheTimeClass time1 = new TheTimeClass();
-		System.out.println(time1.hour);
-		printTime(time1);
-		time1.printMinutesOnly();
+		TheTimeClass time1 = new TheTimeClass(2, 67, 22);
+		System.out.println(time1.toString());
+//		System.out.println(time1.hour);
+//		printTime(time1);
+//		time1.printMinutesOnly();
 
 	}
 
@@ -48,6 +49,10 @@ public class TheTimeClass {
 
 		System.out.printf("%02d:%02d:%04.1f\n", time.hour, time.minute, time.second);
 
+	}
+
+	public String toString() {
+		return String.format("%02d:%02d:%04.1f\n", this.hour, this.minute, this.second);
 	}
 
 	// passing this as arguments
