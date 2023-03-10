@@ -5,7 +5,7 @@ public class TheTimeClass {
 	public static void main(String[] args) {
 		TheTimeClass time1 = new TheTimeClass();
 		System.out.println(time1.hour);
-		time1.printValues();
+		printTime(time1);
 		time1.printMinutesOnly();
 
 	}
@@ -37,8 +37,16 @@ public class TheTimeClass {
 	}
 
 	// printing values
-	public void printValues() {
-		System.out.println(this.hour + " hour : " + this.minute + " minute : " + this.second + " second");
+	public static void printTime(TheTimeClass time) {
+//		System.out.println(this.hour + " hour : " + this.minute + " minute : " + this.second + " second");
+//		System.out.print(time.hour);
+//		System.out.print(":");
+//		System.out.print(time.minute);
+//		System.out.print(":");
+//		System.out.print(time.second);
+//		System.out.println();
+
+		System.out.printf("%02d:%02d:%04.1f\n", time.hour, time.minute, time.second);
 
 	}
 
