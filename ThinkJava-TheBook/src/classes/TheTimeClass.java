@@ -131,4 +131,31 @@ public class TheTimeClass {
 		sum.second = time1.second + time2.second;
 		return sum;
 	}
+
+	// We could write an instance method that gets invoked on one object and takes
+	// the
+	// other as a parameter
+	public TheTimeClass add(TheTimeClass time) {
+		TheTimeClass sum = new TheTimeClass();
+		sum.hour = this.hour + time.hour;
+		sum.minute = this.minute + time.minute;
+		sum.second = this.second + time.second;
+
+		if (sum.second >= 60) {
+			while (sum.second >= 60) {
+				sum.second -= 60;
+				sum.minute += 1;
+
+			}
+		}
+		if (sum.minute >= 60) {
+			while (sum.minute >= 60) {
+				sum.minute -= 60;
+				sum.hour += 1;
+
+			}
+
+		}
+		return sum;
+	}
 }

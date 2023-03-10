@@ -34,9 +34,11 @@ public class TimeClient {
 		System.out.println(time == time3);
 		System.out.println(time2 == time3);
 
-		TheTimeClass startTime = new TheTimeClass(18, 30, 0);
-		TheTimeClass movieLength = new TheTimeClass(2, 16, 0);
-		System.out.println("Movie End Time: " + TheTimeClass.add(startTime, movieLength));
+		TheTimeClass startTime = new TheTimeClass(18, 30, 30);
+		TheTimeClass movieLength = new TheTimeClass(0, 220, 220);
+		System.out.println(
+				"Movie End Time using 2 time params static method: " + TheTimeClass.add(startTime, movieLength));
+		System.out.println("Movie End Time using one time param instance method: " + startTime.add(movieLength));
 	}
 
 }
