@@ -10,6 +10,8 @@ public class ClassLabs {
 		Tile.printTile(tile);
 		Tile.testTile();
 		System.out.println(tile);
+		Tile tile2 = new Tile('A', 33);
+		System.out.println(tile.equals(tile2));
 	}
 
 	/**
@@ -81,5 +83,9 @@ class Tile {
 	 */
 	public String toString() {
 		return String.format("Letter = %s \nValue = %d", this.letter, this.value);
+	}
+
+	public boolean equals(Tile tile) {
+		return this.letter == tile.letter && this.value == tile.value;
 	}
 }
