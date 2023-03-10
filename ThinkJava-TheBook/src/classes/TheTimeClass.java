@@ -51,8 +51,14 @@ public class TheTimeClass {
 
 	}
 
+	// overriding default toString method
 	public String toString() {
 		return String.format("%02d:%02d:%04.1f\n", this.hour, this.minute, this.second);
+	}
+
+	// overriding default equals method
+	public boolean equals(TheTimeClass time) {
+		return this.hour == time.hour && this.minute == time.minute && this.second == time.second;
 	}
 
 	// passing this as arguments
