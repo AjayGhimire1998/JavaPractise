@@ -3,7 +3,7 @@ package classes;
 public class TheTimeClass {
 
 	public static void main(String[] args) {
-		TheTimeClass time1 = new TheTimeClass(2, 5);
+		TheTimeClass time1 = new TheTimeClass();
 		System.out.println(time1.hour);
 		time1.printValues();
 		time1.printMinutesOnly();
@@ -38,11 +38,11 @@ public class TheTimeClass {
 	}
 
 	public void printMinutesOnly() {
-		System.out.println(this.inMinutes(this.hour, this.minute));
+		System.out.println(this.inMinutes(this.hour, this.minute, this.second));
 	}
 
-	public int inMinutes(int hour, int minutes) {
-		return hour * 60 + minutes;
+	public int inMinutes(int hour, int minutes, double second) {
+		return hour * 60 + minutes + (int) second / 60;
 
 	}
 
