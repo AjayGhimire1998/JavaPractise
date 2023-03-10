@@ -78,4 +78,23 @@ public class TheTimeClass {
 		return (int) this.second;
 	}
 
+	// setters
+	/*
+	 * These methods are formally called“mutators”, but more commonly known as
+	 * setters. The naming convention is similar; the method that sets something is
+	 * usually called setSomething.
+	 */
+
+	public void setHour(int hour) {
+		this.hour = hour;
+	}
+
+	public void setMinute(int minute) {
+		this.minute = minute;
+	}
+
+	public void setSecond(int second) {
+		this.second = second;
+	}
+
 }

@@ -9,6 +9,9 @@ public class TimeClient {
 		time.printMinutesOnly();
 		System.out.println(time.getHour());
 		System.out.println(time.getSecond());
+		time.setHour(10);
+		System.out.println(time.getHour());
+		time.printMinutesOnly();
 	}
 
 }
