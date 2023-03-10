@@ -12,6 +12,9 @@ public class ClassLabs {
 		System.out.println(tile);
 		Tile tile2 = new Tile('A', 33);
 		System.out.println(tile.equals(tile2));
+		System.out.println(tile2.getLetter());
+		tile.setValue(5);
+		System.out.println(tile);
 	}
 
 	/**
@@ -79,7 +82,6 @@ class Tile {
 
 	/**
 	 * Implement the toString and equals methods for a Tile.
-	 *
 	 */
 	public String toString() {
 		return String.format("Letter = %s \nValue = %d", this.letter, this.value);
@@ -87,5 +89,23 @@ class Tile {
 
 	public boolean equals(Tile tile) {
 		return this.letter == tile.letter && this.value == tile.value;
+	}
+
+	/* Create getters and setters for each of the attributes. */
+
+	public char getLetter() {
+		return this.letter;
+	}
+
+	public int getValue() {
+		return this.value;
+	}
+
+	public void setLetter(char letter) {
+		this.letter = letter;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
 	}
 }
