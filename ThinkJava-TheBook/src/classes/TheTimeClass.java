@@ -3,9 +3,11 @@ package classes;
 public class TheTimeClass {
 
 	public static void main(String[] args) {
-		TheTimeClass time1 = new TheTimeClass(2);
+		TheTimeClass time1 = new TheTimeClass(2, 5);
 		System.out.println(time1.hour);
 		time1.printValues();
+		time1.printMinutesOnly();
+
 	}
 
 	private int hour;
@@ -32,6 +34,15 @@ public class TheTimeClass {
 
 	public void printValues() {
 		System.out.println(this.hour + " hour : " + this.minute + " minute : " + this.second + " second");
+
+	}
+
+	public void printMinutesOnly() {
+		System.out.println(this.inMinutes(this.hour, this.minute));
+	}
+
+	public int inMinutes(int hour, int minutes) {
+		return hour * 60 + minutes;
 
 	}
 
