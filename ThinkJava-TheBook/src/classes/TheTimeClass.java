@@ -8,6 +8,10 @@ public class TheTimeClass {
 //		System.out.println(time1.hour);
 //		printTime(time1);
 //		time1.printMinutesOnly();
+		time1.increment(200);
+		System.out.println(time1);
+		time1.incrementTwo(200);
+		System.out.println(time1);
 
 	}
 
@@ -52,6 +56,7 @@ public class TheTimeClass {
 	}
 
 	// overriding default toString method
+	@Override
 	public String toString() {
 		return String.format("%02d:%02d:%04.1f\n", this.hour, this.minute, this.second);
 	}
@@ -153,5 +158,27 @@ public class TheTimeClass {
 
 		}
 		return sum;
+	}
+
+	public void increment(double seconds) {
+		this.second += seconds;
+		while (this.second >= 60) {
+			this.second -= 60;
+			this.minute += 1;
+		}
+
+		while (this.minute >= 60) {
+			this.minute -= 60;
+			this.hour += 1;
+		}
+
+	}
+
+	public void incrementTwo(double second) {
+		this.second += second;
+		this.minute += this.second / 60;
+		this.second %= 60;
+		this.hour += this.minute / 60;
+		this.minute %= 60;
 	}
 }

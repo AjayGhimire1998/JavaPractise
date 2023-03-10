@@ -39,6 +39,11 @@ public class TimeClient {
 		System.out.println(
 				"Movie End Time using 2 time params static method: " + TheTimeClass.add(startTime, movieLength));
 		System.out.println("Movie End Time using one time param instance method: " + startTime.add(movieLength));
+
+		String name = "Ajay";
+		String ajay = "Ajay";
+		System.out.println(name == ajay);
+		System.out.println(name.equals(ajay));
 	}
 
 }
