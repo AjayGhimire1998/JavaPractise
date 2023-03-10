@@ -7,6 +7,8 @@ public class TimeClient {
 		TheTimeClass time = new TheTimeClass(2, 6, 90);
 		time.printValues();
 		time.printMinutesOnly();
+		System.out.println(time.getHour());
+		System.out.println(time.getSecond());
 	}
 
 }

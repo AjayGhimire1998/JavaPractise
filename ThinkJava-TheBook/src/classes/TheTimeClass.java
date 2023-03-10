@@ -53,6 +53,29 @@ public class TheTimeClass {
 
 	}
 
-//	public 
+	/*
+	 * Recall that the instance variables of Time are private. We can access them
+	 * from within the Time class, but if we try to access them from another class,
+	 * the compiler generates an error.
+	 */
+
+	// getters
+
+	/*
+	 * Methods like these are formally called “accessors”, but more commonly
+	 * referred to as getters. By convention, the method that gets a variable named
+	 * something is called getSomething.
+	 */
+	public int getHour() {
+		return this.hour;
+	}
+
+	public int getMinute() {
+		return this.minute;
+	}
+
+	public int getSecond() {
+		return (int) this.second;
+	}
 
 }
