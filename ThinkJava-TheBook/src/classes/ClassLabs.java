@@ -8,6 +8,8 @@ public class ClassLabs {
 	public static void main(String[] args) {
 		Tile tile = new Tile('A', 33);
 		Tile.printTile(tile);
+		Tile.testTile();
+		System.out.println(tile);
 	}
 
 	/**
@@ -62,5 +64,22 @@ class Tile {
 	 */
 	public static void printTile(Tile tile) {
 		System.out.println("{ letter: " + tile.letter + ", value: " + tile.value + " }");
+	}
+
+	/**
+	 * Write a method named testTile that creates a Tile object with the letter Z
+	 * and the value 10, and then uses printTile to display the state of the object.
+	 * 
+	 */
+	public static void testTile() {
+		printTile(new Tile('Z', 10));
+	}
+
+	/**
+	 * Implement the toString and equals methods for a Tile.
+	 *
+	 */
+	public String toString() {
+		return String.format("Letter = %s \nValue = %d", this.letter, this.value);
 	}
 }
