@@ -14,6 +14,10 @@ public class TheTimeClass {
 	private int minute;
 	private double second;
 
+//	Like other methods, constructors can be overloaded, which means you can provide
+//	multiple constructors with different parameters. Java knows which constructor to
+//	invoke by matching the arguments you provide with the parameters of the construc‐
+//	tors.
 	public TheTimeClass() {
 		this(0, 0, 0);
 	}
@@ -32,18 +36,23 @@ public class TheTimeClass {
 		this.second = second;
 	}
 
+	// printing values
 	public void printValues() {
 		System.out.println(this.hour + " hour : " + this.minute + " minute : " + this.second + " second");
 
 	}
 
+	// passing this as arguments
 	public void printMinutesOnly() {
-		System.out.println(this.inMinutes(this.hour, this.minute, this.second));
+		System.out.println(this.inMinutes(this.hour, this.minute, this.second) + " minutes");
 	}
 
+	// returning total number of minutes
 	public int inMinutes(int hour, int minutes, double second) {
 		return hour * 60 + minutes + (int) second / 60;
 
 	}
+
+//	public 
 
 }
