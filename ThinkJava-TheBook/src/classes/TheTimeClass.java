@@ -141,19 +141,15 @@ public class TheTimeClass {
 		sum.minute = this.minute + time.minute;
 		sum.second = this.second + time.second;
 
-		if (sum.second >= 60) {
-			while (sum.second >= 60) {
-				sum.second -= 60;
-				sum.minute += 1;
+		while (sum.second >= 60) {
+			sum.second -= 60;
+			sum.minute += 1;
 
-			}
 		}
-		if (sum.minute >= 60) {
-			while (sum.minute >= 60) {
-				sum.minute -= 60;
-				sum.hour += 1;
 
-			}
+		while (sum.minute >= 60) {
+			sum.minute -= 60;
+			sum.hour += 1;
 
 		}
 		return sum;
