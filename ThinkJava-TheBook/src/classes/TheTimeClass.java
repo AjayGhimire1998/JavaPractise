@@ -116,4 +116,19 @@ public class TheTimeClass {
 		this.second = second;
 	}
 
+	// adding time
+
+	/*
+	 * Suppose you are going to a movie that starts at 18:50 (or 6:50 PM), and the
+	 * running time is 2 hours 16 minutes. What time does the movie end?
+	 */
+
+	// We could write a static method that takes the two Time objects as parameters.
+	public static TheTimeClass add(TheTimeClass time1, TheTimeClass time2) {
+		TheTimeClass sum = new TheTimeClass();
+		sum.hour = time1.hour + time2.hour;
+		sum.minute = time1.minute + time2.minute;
+		sum.second = time1.second + time2.second;
+		return sum;
+	}
 }
