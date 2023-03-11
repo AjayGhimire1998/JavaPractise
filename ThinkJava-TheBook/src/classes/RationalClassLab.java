@@ -21,11 +21,17 @@ public class RationalClassLab {
 	/*
 	 * Write a main method that creates a new object with type Rational, sets its
 	 * instance variables to some values, and displays the object.
+	 * 
+	 * Write a toString method for Rational and test it using println.
 	 *
 	 */
 	public static void main(String[] args) {
-		RationalClassLab rational = new RationalClassLab();
+		RationalClassLab rational = new RationalClassLab(2, 5);
 //		rational.printRational();
+		System.out.println(rational);
+		rational.negate();
+		System.out.println(rational);
+		rational.inverse();
 		System.out.println(rational);
 	}
 
@@ -58,6 +64,27 @@ public class RationalClassLab {
 	@Override
 	public String toString() {
 		return String.format("%d:%d", this.numerator, this.denominator);
+	}
+
+	/*
+	 * Write an instance method called negate that reverses the sign of a rational
+	 * num‐ ber. This method should be a modifier, so it should be void. Add lines
+	 * to main to test the new method.
+	 */
+	public void negate() {
+		this.numerator = -this.numerator;
+	}
+
+	/*
+	 * Write an instance method called invert that inverts the number by swapping
+	 * the numerator and denominator. It should be a modifier. Add lines to main to
+	 * test the new method.
+	 */
+	public void inverse() {
+		int temp = this.numerator;
+		this.numerator = this.denominator;
+		this.denominator = temp;
+		;
 	}
 
 }
