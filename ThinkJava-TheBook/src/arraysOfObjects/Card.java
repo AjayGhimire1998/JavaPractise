@@ -1,19 +1,26 @@
 package arraysOfObjects;
 
+import java.util.Arrays;
+
 public class Card {
 
 	public static void main(String[] args) {
-		Card card = new Card(11, 1);
-		System.out.println(card);
+//		Card card = new Card(11, 1);
+//		System.out.println(card);
+		System.out.println(Arrays.toString(fillCards()));
 	}
 
 	/*
 	 * The instance variables are private: we can access them from inside this
 	 * class, but not from other classes.
+	 * 
+	 * That’s easy enough, but it is not foolproof, because some fool might come
+	 * along later and add a modifier. We can prevent that possibility by declaring
+	 * the instance variables final:
 	 */
 
-	private int rank;
-	private int suit;
+	private final int rank;
+	private final int suit;
 
 	/*
 	 * Local variables are created when a method is invoked, and their space is
@@ -96,4 +103,23 @@ public class Card {
 		}
 		return 0;
 	}
+
+	/*
+	 * The outer loop iterates suits from 0 to 3. For each suit, the inner loop
+	 * iterates ranks from 1 to 13. Since the outer loop runs 4 times, and the inner
+	 * loop runs 13 times for each suit, the body is executed 52 times.
+	 * 
+	 */
+	public static Card[] fillCards() {
+		Card[] cards = new Card[52];
+		int index = 0;
+		for (int rank = 1; rank < RANKS.length; rank++) {
+			for (int suit = 0; suit < SUITS.length; suit++) {
+				cards[index] = new Card(rank, suit);
+				index++;
+			}
+		}
+		return cards;
+	}
+
 }
