@@ -125,6 +125,14 @@ public class RationalClassLab {
 		}
 	}
 
+	/*
+	 * Write an instance method called add that takes a Rational number as an argu‐
+	 * ment, adds it to this, and returns a new Rational object. There are several
+	 * ways to add fractions. You can use any one you want, but you should make sure
+	 * that the result of the operation is reduced so that the numera‐ tor and
+	 * denominator have no common divisor (other than 1).
+	 * 
+	 */
 	public RationalClassLab add(RationalClassLab rational) {
 		RationalClassLab result = new RationalClassLab();
 //		if (this.denominator == rational.denominator) {
