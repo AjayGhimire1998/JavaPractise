@@ -26,7 +26,7 @@ public class RationalClassLab {
 	 *
 	 */
 	public static void main(String[] args) {
-		RationalClassLab rational = new RationalClassLab(10, 5);
+		RationalClassLab rational = new RationalClassLab(1, 3);
 //		rational.printRational();
 		System.out.println(rational);
 //		rational.negate();
@@ -34,9 +34,13 @@ public class RationalClassLab {
 //		rational.inverse();
 		System.out.println(rational);
 
-		System.out.println(rational.toDouble());
+//		System.out.println(rational.toDouble());
 
 		System.out.println(rational.reduce());
+
+		RationalClassLab rational2 = new RationalClassLab(1, 5);
+		System.out.println(rational.add(rational2));
+
 	}
 
 	/*
@@ -119,6 +123,25 @@ public class RationalClassLab {
 		} else {
 			return gcd(b, a % b);
 		}
+	}
+
+	public RationalClassLab add(RationalClassLab rational) {
+		RationalClassLab result = new RationalClassLab();
+		if (this.denominator == rational.denominator) {
+			result.numerator = this.numerator + rational.numerator;
+			result.denominator = this.denominator;
+		} else if (rational.denominator % this.denominator == 0) {
+			result.numerator = this.numerator * (rational.denominator / this.denominator) + rational.numerator;
+			result.denominator = rational.denominator;
+		} else if (this.denominator % rational.denominator == 0) {
+			result.numerator = rational.numerator * (this.denominator / rational.denominator) + this.numerator;
+			result.denominator = this.denominator;
+		} else {
+			result.numerator = this.numerator * rational.denominator + rational.numerator * this.denominator;
+			result.denominator = this.denominator * rational.denominator;
+		}
+		return result.reduce();
+
 	}
 
 }
