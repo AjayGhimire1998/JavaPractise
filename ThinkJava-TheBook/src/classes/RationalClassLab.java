@@ -26,15 +26,17 @@ public class RationalClassLab {
 	 *
 	 */
 	public static void main(String[] args) {
-		RationalClassLab rational = new RationalClassLab(2, 5);
+		RationalClassLab rational = new RationalClassLab(10, 5);
 //		rational.printRational();
 		System.out.println(rational);
-		rational.negate();
+//		rational.negate();
 		System.out.println(rational);
-		rational.inverse();
+//		rational.inverse();
 		System.out.println(rational);
 
 		System.out.println(rational.toDouble());
+
+		System.out.println(rational.reduce());
 	}
 
 	/*
@@ -91,6 +93,32 @@ public class RationalClassLab {
 
 	public double toDouble() {
 		return (double) this.numerator / this.denominator;
+	}
+
+	/*
+	 * Write an instance method named reduce that reduces a rational number to its
+	 * lowest terms by finding the greatest common divisor (GCD) of the numerator
+	 * and denominator and dividing through. This method should be a pure method; it
+	 * should not modify the instance variables of the object on which it is
+	 * invoked.
+	 * 
+	 * Hint: Finding the GCD only takes a few lines of code. Search the web for
+	 * “Eucli‐ dean algorithm”
+	 * 
+	 */
+	public RationalClassLab reduce() {
+		int gcd = gcd(this.numerator, this.denominator);
+		int reducedNum = this.numerator / gcd;
+		int reducedDenom = this.denominator / gcd;
+		return new RationalClassLab(reducedNum, reducedDenom);
+	}
+
+	public int gcd(int a, int b) {
+		if (b == 0) {
+			return a;
+		} else {
+			return gcd(b, a % b);
+		}
 	}
 
 }
