@@ -33,6 +33,8 @@ public class RationalClassLab {
 		System.out.println(rational);
 		rational.inverse();
 		System.out.println(rational);
+
+		System.out.println(rational.toDouble());
 	}
 
 	/*
@@ -57,13 +59,13 @@ public class RationalClassLab {
 	 * some reasonable format.
 	 */
 	public void printRational() {
-		System.out.printf("%d:%d", this.numerator, this.denominator);
+		System.out.printf("%d/%d", this.numerator, this.denominator);
 	}
 
 	/* Write a toString method for Rational and test it using println. */
 	@Override
 	public String toString() {
-		return String.format("%d:%d", this.numerator, this.denominator);
+		return String.format("%d/%d", this.numerator, this.denominator);
 	}
 
 	/*
@@ -85,6 +87,10 @@ public class RationalClassLab {
 		this.numerator = this.denominator;
 		this.denominator = temp;
 		;
+	}
+
+	public double toDouble() {
+		return (double) this.numerator / this.denominator;
 	}
 
 }
