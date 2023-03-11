@@ -26,7 +26,7 @@ public class RationalClassLab {
 	 *
 	 */
 	public static void main(String[] args) {
-		RationalClassLab rational = new RationalClassLab(1, 3);
+		RationalClassLab rational = new RationalClassLab(1, 2);
 //		rational.printRational();
 		System.out.println(rational);
 //		rational.negate();
@@ -127,19 +127,21 @@ public class RationalClassLab {
 
 	public RationalClassLab add(RationalClassLab rational) {
 		RationalClassLab result = new RationalClassLab();
-		if (this.denominator == rational.denominator) {
-			result.numerator = this.numerator + rational.numerator;
-			result.denominator = this.denominator;
-		} else if (rational.denominator % this.denominator == 0) {
-			result.numerator = this.numerator * (rational.denominator / this.denominator) + rational.numerator;
-			result.denominator = rational.denominator;
-		} else if (this.denominator % rational.denominator == 0) {
-			result.numerator = rational.numerator * (this.denominator / rational.denominator) + this.numerator;
-			result.denominator = this.denominator;
-		} else {
-			result.numerator = this.numerator * rational.denominator + rational.numerator * this.denominator;
-			result.denominator = this.denominator * rational.denominator;
-		}
+//		if (this.denominator == rational.denominator) {
+//			result.numerator = this.numerator + rational.numerator;
+//			result.denominator = this.denominator;
+//		} else if (rational.denominator % this.denominator == 0) {
+//			result.numerator = this.numerator * (rational.denominator / this.denominator) + rational.numerator;
+//			result.denominator = rational.denominator;
+//		} else if (this.denominator % rational.denominator == 0) {
+//			result.numerator = rational.numerator * (this.denominator / rational.denominator) + this.numerator;
+//			result.denominator = this.denominator;
+//		} else {
+//			result.numerator = this.numerator * rational.denominator + rational.numerator * this.denominator;
+//			result.denominator = this.denominator * rational.denominator;
+//		}
+		result.numerator = this.numerator * rational.denominator + rational.numerator * this.denominator;
+		result.denominator = this.denominator * rational.denominator;
 		return result.reduce();
 
 	}
