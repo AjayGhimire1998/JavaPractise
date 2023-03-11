@@ -54,11 +54,46 @@ public class Card {
 	 * To display Card objects in a way that humans can read easily, we need to map
 	 * the integer codes onto words. A natural way to do that is with an array of
 	 * Strings.
-	 *
 	 */
 	public String toString() {
 		return String.format("%s of %s", RANKS[this.rank], SUITS[this.suit]);
 
 	}
 
+	/*
+	 * It would also be nice to have a method for comparing cards, so we can tell if
+	 * one is higher or lower than another. For primitive types, we can use the
+	 * comparison opera‐ tors—<, >, etc.—to compare values. But these operators
+	 * don’t work for object types.
+	 */
+	public boolean equals(Card card) {
+		return this.rank == card.rank && this.suit == card.suit;
+	}
+
+	/*
+	 * To make cards comparable, we have to decide which is more important: rank or
+	 * suit. The choice is arbitrary, and it might be different for different games.
+	 * But when you buy a new deck of cards, it comes sorted with all the Clubs
+	 * together, followed by all the Diamonds, and so on. So for now, let’s say that
+	 * suit is more important.
+	 * 
+	 * compareTo returns 1 if this wins, -1 if that wins, and 0 if they are
+	 * equivalent. It com‐ pares suits first. If the suits are the same, it compares
+	 * ranks. If the ranks are also the same, it returns 0.
+	 */
+	public int compareTo(Card card) {
+		if (this.suit < card.suit) {
+			return -1;
+		}
+		if (this.suit > card.suit) {
+			return 1;
+		}
+		if (this.rank < card.rank) {
+			return -1;
+		}
+		if (this.rank > card.rank) {
+			return 1;
+		}
+		return 0;
+	}
 }
