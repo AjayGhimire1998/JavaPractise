@@ -18,8 +18,15 @@ public class RationalClassLab {
 	private int numerator;
 	private int denominator;
 
+	/*
+	 * Write a main method that creates a new object with type Rational, sets its
+	 * instance variables to some values, and displays the object.
+	 *
+	 */
 	public static void main(String[] args) {
-
+		RationalClassLab rational = new RationalClassLab();
+//		rational.printRational();
+		System.out.println(rational);
 	}
 
 	/*
@@ -45,6 +52,12 @@ public class RationalClassLab {
 	 */
 	public void printRational() {
 		System.out.printf("%d:%d", this.numerator, this.denominator);
+	}
+
+	/* Write a toString method for Rational and test it using println. */
+	@Override
+	public String toString() {
+		return String.format("%d:%d", this.numerator, this.denominator);
 	}
 
 }
