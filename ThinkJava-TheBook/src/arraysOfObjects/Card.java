@@ -15,6 +15,7 @@ public class Card {
 		int indexOfBinarySeacrh = binarySearch(fillCards(), card);
 
 		System.out.println(indexOfBinarySeacrh);
+		System.out.println(recursiveBinarySearch(fillCards(), card, 1, 10));
 
 	}
 
@@ -181,6 +182,22 @@ public class Card {
 		}
 		System.out.println("Hello");
 		return -1;
+	}
+
+	public static int recursiveBinarySearch(Card[] cards, Card target, int low, int high) {
+		if (high < low) {
+			return -1;
+		}
+		int mid = (low + high) / 2;
+		int comp = cards[mid].compareTo(target);
+
+		if (comp == 0) {
+			return mid;
+		} else if (comp < 0) {
+			return recursiveBinarySearch(cards, target, mid + 1, high);
+		} else {
+			return recursiveBinarySearch(cards, target, low, mid - 1);
+		}
 	}
 
 }
