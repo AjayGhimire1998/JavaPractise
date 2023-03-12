@@ -10,6 +10,9 @@ public class Card {
 		printDeck(fillCards());
 		int indexOfSeacrhedCard = search(fillCards(), card);
 		System.out.println(indexOfSeacrhedCard);
+		int indexOfBinarySeacrh = binarySearch(fillCards(), card);
+
+		System.out.println(indexOfBinarySeacrh);
 
 	}
 
@@ -150,6 +153,29 @@ public class Card {
 				return i;
 			}
 		}
+		return -1;
+	}
+
+	public static int binarySearch(Card[] cards, Card target) {
+		int low = 0;
+		int high = cards.length - 1;
+
+		System.out.println(low + ", " + high);
+
+		while (low <= high) {
+			int mid = (low + high) / 2;
+			int comp = cards[mid].compareTo(target);
+
+			if (comp == 0) {
+				return mid;
+
+			} else if (comp < 0) {
+				low = mid + 1;
+			} else {
+				high = mid + 1;
+			}
+		}
+		System.out.println("Hello");
 		return -1;
 	}
 
