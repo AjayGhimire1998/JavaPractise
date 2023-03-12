@@ -7,19 +7,19 @@ public class Card {
 	public static void main(String[] args) {
 		Card card = new Card(11, 2);
 //		System.out.println(card);
-		System.out.println(Arrays.toString(fillCards()));
+		System.out.println(Arrays.toString(makeDeck()));
 
-		printDeck(fillCards());
-		int indexOfSeacrhedCard = search(fillCards(), card);
+		printDeck(makeDeck());
+		int indexOfSeacrhedCard = search(makeDeck(), card);
 		System.out.println(indexOfSeacrhedCard);
 
-		int indexOfBinarySeacrh = binarySearch(fillCards(), card);
+		int indexOfBinarySeacrh = binarySearch(makeDeck(), card);
 		System.out.println(indexOfBinarySeacrh);
-		System.out.println(recursiveBinarySearch(fillCards(), card, 1, 52));
+		System.out.println(recursiveBinarySearch(makeDeck(), card, 1, 52));
 
-		System.out.printf("%d practise methods result", binarySearchPractise(fillCards(), card));
+		System.out.printf("%d practise methods result", binarySearchPractise(makeDeck(), card));
 		System.out.println();
-		System.out.printf("%d practise two methods result", recursiveBinarySearchPractise(fillCards(), card, 1, 52));
+		System.out.printf("%d practise two methods result", recursiveBinarySearchPractise(makeDeck(), card, 1, 52));
 
 	}
 
@@ -123,7 +123,7 @@ public class Card {
 	 * loop runs 13 times for each suit, the body is executed 52 times.
 	 * 
 	 */
-	public static Card[] fillCards() {
+	public static Card[] makeDeck() {
 		Card[] cards = new Card[52];
 		int index = 0;
 		for (int suit = 0; suit < SUITS.length; suit++) {
@@ -164,6 +164,44 @@ public class Card {
 		return -1;
 	}
 
+	/*
+	 * When you look for a word in a dictionary, you don’t just search page by page
+	 * from front to back. Since the words are in alphabetical order, you probably
+	 * use a binary search algorithm:
+	 * 
+	 * 
+	 * 1. Start on a page near the middle of the dictionary. 2. Compare a word on
+	 * the page to the word you are looking for. If you find it, stop.
+	 * 
+	 * 3. If the word * on the page comes before the word you are looking for, flip
+	 * to some‐ where later in the dictionary and go to step 2.
+	 * 
+	 * 4. If the word on the page comes after the word you are looking for, flip to
+	 * some‐ where earlier in the dictionary and go to step 2.
+	 * 
+	 * If you find two adjacent words on the page and your word comes between them,
+	 * you can conclude that your word is not in the dictionary.
+	 * 
+	 * First, we declare low and high variables to represent the range we are
+	 * searching. Ini‐ tially we search the entire array, from 0 to length - 1.
+	 * 
+	 * Inside the while loop, we repeat the four steps of binary search:
+	 * 
+	 * 1. Choose an index between low and high—call it mid—and compare the card at
+	 * mid to the target.
+	 * 
+	 * 2. If you found the target, return the index.
+	 * 
+	 * 3. If the card at mid is lower than the target, search the range from mid + 1
+	 * to high.
+	 * 
+	 * 4. If the card at mid is higher than the target, search the range from low to
+	 * mid - 1.
+	 * 
+	 * If low exceeds high, there are no cards in the range, so we break out of the
+	 * loop and return -1. Notice that this algorithm depends on the compareTo
+	 * method of the object.
+	 */
 	public static int binarySearch(Card[] cards, Card target) {
 
 		int low = 0;
