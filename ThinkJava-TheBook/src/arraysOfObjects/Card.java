@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Card {
 
 	public static void main(String[] args) {
-		Card card = new Card(11, 2);
+		Card card = new Card(11, 1);
 //		System.out.println(card);
 		System.out.println(Arrays.toString(makeDeck()));
 
@@ -15,11 +15,11 @@ public class Card {
 
 		int indexOfBinarySeacrh = binarySearch(makeDeck(), card);
 		System.out.println(indexOfBinarySeacrh);
-		System.out.println(recursiveBinarySearch(makeDeck(), card, 1, 52));
+		System.out.println(recursiveBinarySearch(makeDeck(), card, 2, 52));
 
 		System.out.printf("%d practise methods result", binarySearchPractise(makeDeck(), card));
 		System.out.println();
-		System.out.printf("%d practise two methods result", recursiveBinarySearchPractise(makeDeck(), card, 1, 52));
+		System.out.printf("%d practise two methods result", recursiveBinarySearchPractise(makeDeck(), card, 2, 52));
 
 	}
 
@@ -100,21 +100,29 @@ public class Card {
 	 * compareTo returns 1 if this wins, -1 if that wins, and 0 if they are
 	 * equivalent. It com‐ pares suits first. If the suits are the same, it compares
 	 * ranks. If the ranks are also the same, it returns 0.
+	 * 
+	 * In some card games, Aces are ranked higher than Kings. Modify the compareTo
+	 * method to implement this ordering.
 	 */
 	public int compareTo(Card card) {
 		if (this.suit < card.suit) {
 			return -1;
-		}
-		if (this.suit > card.suit) {
+		} else if (this.suit > card.suit) {
 			return 1;
+		} else {
+			if (this.rank == 1 && card.rank != 1) {
+				return 1;
+			} else if (this.rank != 1 && card.rank == 1) {
+				return -1;
+			} else if (this.rank < card.rank) {
+				return -1;
+			} else if (this.rank > card.rank) {
+				return 1;
+			} else {
+				return 0;
+			}
 		}
-		if (this.rank < card.rank) {
-			return -1;
-		}
-		if (this.rank > card.rank) {
-			return 1;
-		}
-		return 0;
+
 	}
 
 	/*
@@ -286,7 +294,7 @@ public class Card {
 		} else if (comp < 0) {
 			return recursiveBinarySearchPractise(cards, target, mid + 1, high);
 		} else {
-			return recursiveBinarySearchPractise(cards, target, low, mid + 1);
+			return recursiveBinarySearchPractise(cards, target, low, mid - 1);
 		}
 	}
 }
