@@ -1,13 +1,14 @@
 package arraysOfObjects;
 
-import java.util.Arrays;
-
 public class Card {
 
 	public static void main(String[] args) {
 //		Card card = new Card(11, 1);
 //		System.out.println(card);
-		System.out.println(Arrays.toString(fillCards()));
+//		System.out.println(Arrays.toString(fillCards()));
+
+		printDeck(fillCards());
+
 	}
 
 	/*
@@ -120,6 +121,18 @@ public class Card {
 			}
 		}
 		return cards;
+	}
+
+	/*
+	 * Since cards has type Card[], an element of cards has type Card. So println
+	 * invokes the toString method in the Card class. This method is similar to
+	 * invoking System.out.println(Arrays.toString(cards)).
+	 * 
+	 */
+	public static void printDeck(Card[] cards) {
+		for (int i = 0; i < cards.length; i++) {
+			System.out.println(cards[i]);
+		}
 	}
 
 }
