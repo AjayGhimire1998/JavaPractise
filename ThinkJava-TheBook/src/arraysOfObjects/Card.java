@@ -5,17 +5,19 @@ import java.util.Arrays;
 public class Card {
 
 	public static void main(String[] args) {
-		Card card = new Card(11, 0);
+		Card card = new Card(11, 2);
 //		System.out.println(card);
 		System.out.println(Arrays.toString(fillCards()));
 
 		printDeck(fillCards());
 		int indexOfSeacrhedCard = search(fillCards(), card);
 		System.out.println(indexOfSeacrhedCard);
-		int indexOfBinarySeacrh = binarySearch(fillCards(), card);
 
+		int indexOfBinarySeacrh = binarySearch(fillCards(), card);
 		System.out.println(indexOfBinarySeacrh);
-		System.out.println(recursiveBinarySearch(fillCards(), card, 1, 10));
+		System.out.println(recursiveBinarySearch(fillCards(), card, 1, 52));
+
+		System.out.printf("%d practise methods result", binarySearchPractise(fillCards(), card));
 
 	}
 
@@ -161,6 +163,7 @@ public class Card {
 	}
 
 	public static int binarySearch(Card[] cards, Card target) {
+
 		int low = 0;
 		int high = cards.length - 1;
 
@@ -181,6 +184,25 @@ public class Card {
 			}
 		}
 		System.out.println("Hello");
+		return -1;
+	}
+
+	public static int binarySearchPractise(Card[] cards, Card target) {
+		int low = 0;
+		int high = cards.length - 1;
+
+		while (low <= high) {
+			int mid = (low + high) / 2;
+			int comp = cards[mid].compareTo(target);
+
+			if (comp == 0) {
+				return mid;
+			} else if (comp > 0) {
+				high = mid - 1;
+			} else {
+				low = mid + 1;
+			}
+		}
 		return -1;
 	}
 
