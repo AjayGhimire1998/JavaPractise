@@ -246,6 +246,16 @@ public class Card {
 		return -1;
 	}
 
+	/*
+	 * Instead of a while loop, we have an if statement to terminate the recursion.
+	 * If high is less than low, there are no cards between them, and we conclude
+	 * that the card is not in the array.
+	 * 
+	 * Two common errors in recursive programs are (1) forgetting to include a base
+	 * case, and (2) writing the recursive call so that the base case is never
+	 * reached. Either error causes infinite recursion and a StackOverflowException.
+	 * 
+	 */
 	public static int recursiveBinarySearch(Card[] cards, Card target, int low, int high) {
 		if (high < low) {
 			return -1;
