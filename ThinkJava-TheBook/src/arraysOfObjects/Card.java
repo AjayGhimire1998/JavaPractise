@@ -3,11 +3,13 @@ package arraysOfObjects;
 public class Card {
 
 	public static void main(String[] args) {
-//		Card card = new Card(11, 1);
+		Card card = new Card(11, 1);
 //		System.out.println(card);
 //		System.out.println(Arrays.toString(fillCards()));
 
 		printDeck(fillCards());
+		int indexOfSeacrhedCard = search(fillCards(), card);
+		System.out.println(indexOfSeacrhedCard);
 
 	}
 
@@ -133,6 +135,22 @@ public class Card {
 		for (int i = 0; i < cards.length; i++) {
 			System.out.println(cards[i]);
 		}
+	}
+
+	/*
+	 * The next method we’ll write is search, which takes an array of cards and a
+	 * Card object as parameters. It returns the index where the Card appears in the
+	 * array, or -1 if it doesn’t. This version of search uses the algorithm we saw
+	 * in “Array Traversal” on page 107, which is called sequential search:
+	 * 
+	 */
+	public static int search(Card[] cards, Card target) {
+		for (int i = 0; i < cards.length; i++) {
+			if (cards[i].equals(target)) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 }
