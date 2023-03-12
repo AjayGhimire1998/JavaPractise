@@ -18,6 +18,8 @@ public class Card {
 		System.out.println(recursiveBinarySearch(fillCards(), card, 1, 52));
 
 		System.out.printf("%d practise methods result", binarySearchPractise(fillCards(), card));
+		System.out.println();
+		System.out.printf("%d practise two methods result", recursiveBinarySearchPractise(fillCards(), card, 1, 52));
 
 	}
 
@@ -197,10 +199,10 @@ public class Card {
 
 			if (comp == 0) {
 				return mid;
-			} else if (comp > 0) {
-				high = mid - 1;
-			} else {
+			} else if (comp < 0) {
 				low = mid + 1;
+			} else {
+				high = mid - 1;
 			}
 		}
 		return -1;
@@ -222,4 +224,21 @@ public class Card {
 		}
 	}
 
+	public static int recursiveBinarySearchPractise(Card[] cards, Card target, int low, int high) {
+
+		if (high < low) {
+			return -1;
+		}
+
+		int mid = (low + high) / 2;
+		int comp = cards[mid].compareTo(target);
+
+		if (comp == 0) {
+			return mid;
+		} else if (comp < 0) {
+			return recursiveBinarySearchPractise(cards, target, mid + 1, high);
+		} else {
+			return recursiveBinarySearchPractise(cards, target, low, mid + 1);
+		}
+	}
 }
