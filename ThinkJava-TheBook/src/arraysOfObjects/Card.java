@@ -1,11 +1,13 @@
 package arraysOfObjects;
 
+import java.util.Arrays;
+
 public class Card {
 
 	public static void main(String[] args) {
-		Card card = new Card(11, 1);
+		Card card = new Card(11, 0);
 //		System.out.println(card);
-//		System.out.println(Arrays.toString(fillCards()));
+		System.out.println(Arrays.toString(fillCards()));
 
 		printDeck(fillCards());
 		int indexOfSeacrhedCard = search(fillCards(), card);
@@ -119,8 +121,9 @@ public class Card {
 	public static Card[] fillCards() {
 		Card[] cards = new Card[52];
 		int index = 0;
-		for (int rank = 1; rank < RANKS.length; rank++) {
-			for (int suit = 0; suit < SUITS.length; suit++) {
+		for (int suit = 0; suit < SUITS.length; suit++) {
+			for (int rank = 1; rank < RANKS.length; rank++) {
+
 				cards[index] = new Card(rank, suit);
 				index++;
 			}
@@ -160,19 +163,20 @@ public class Card {
 		int low = 0;
 		int high = cards.length - 1;
 
-		System.out.println(low + ", " + high);
-
 		while (low <= high) {
+			System.out.println(low + ", " + high);
 			int mid = (low + high) / 2;
+			System.out.println(mid);
 			int comp = cards[mid].compareTo(target);
 
 			if (comp == 0) {
 				return mid;
-
 			} else if (comp < 0) {
 				low = mid + 1;
+				System.out.println("new low: " + low);
 			} else {
-				high = mid + 1;
+				high = mid - 1;
+				System.out.println("new high: " + high);
 			}
 		}
 		System.out.println("Hello");
