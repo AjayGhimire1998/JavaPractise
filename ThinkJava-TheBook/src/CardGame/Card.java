@@ -1,4 +1,4 @@
-package arraysOfObjects;
+package CardGame;
 
 import java.util.Arrays;
 
