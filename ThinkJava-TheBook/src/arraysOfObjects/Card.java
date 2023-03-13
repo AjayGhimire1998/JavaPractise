@@ -7,8 +7,11 @@ public class Card {
 	public static void main(String[] args) {
 		Card card = new Card(11, 1);
 		Card card2 = new Card(12, 1);
+		Card card3 = new Card(2, 1);
+		Card card4 = new Card(4, 1);
+		Card card5 = new Card(6, 1);
 
-		Card[] cards = { card, card2 };
+		Card[] cards = { card, card2, card3, card4, card5 };
 //		System.out.println(card);
 		System.out.println(Arrays.toString(makeDeck()));
 
@@ -26,6 +29,7 @@ public class Card {
 
 		System.out.println();
 		System.out.println(Arrays.toString(suitHist(cards)));
+		System.out.println(hasFlush(cards));
 
 	}
 
@@ -319,5 +323,20 @@ public class Card {
 		}
 		return hist;
 
+	}
+
+	/*
+	 * Write a method called hasFlush that takes an array of cards as a parameter
+	 * and returns true if the hand contains a flush (and false otherwise).
+	 * 
+	 */
+	public static boolean hasFlush(Card[] cards) {
+		int[] hist = suitHist(cards);
+		for (int i = 0; i < hist.length; i++) {
+			if (hist[i] >= 5) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
