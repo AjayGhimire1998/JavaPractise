@@ -241,7 +241,6 @@ public class Card {
 		while (low <= high) {
 			int mid = (low + high) / 2;
 			int comp = cards[mid].compareTo(target);
-
 			if (comp == 0) {
 				return mid;
 			} else if (comp < 0) {
@@ -295,5 +294,18 @@ public class Card {
 		} else {
 			return recursiveBinarySearchPractise(cards, target, low, mid - 1);
 		}
+	}
+
+	/*
+	 * In Poker a “flush” is a hand that contains five or more cards of the same
+	 * suit. A hand can contain any number of cards.
+	 * 
+	 * 1. Write a method called suitHist that takes an array of cards as a parameter
+	 * and that returns a histogram of the suits in the hand. Your solution should
+	 * only tra‐ verse the array once.
+	 */
+	public int[] suitHist(Card[] cards) {
+		int[] hist = new int[SUITS.length];
+		int count = 0;
 	}
 }
