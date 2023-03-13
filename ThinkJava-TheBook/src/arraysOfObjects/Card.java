@@ -6,6 +6,9 @@ public class Card {
 
 	public static void main(String[] args) {
 		Card card = new Card(11, 1);
+		Card card2 = new Card(12, 1);
+
+		Card[] cards = { card, card2 };
 //		System.out.println(card);
 		System.out.println(Arrays.toString(makeDeck()));
 
@@ -20,6 +23,9 @@ public class Card {
 		System.out.printf("%d practise methods result", binarySearchPractise(makeDeck(), card));
 		System.out.println();
 		System.out.printf("%d practise two methods result", recursiveBinarySearchPractise(makeDeck(), card, 2, 52));
+
+		System.out.println();
+		System.out.println(Arrays.toString(suitHist(cards)));
 
 	}
 
@@ -304,8 +310,14 @@ public class Card {
 	 * and that returns a histogram of the suits in the hand. Your solution should
 	 * only tra‐ verse the array once.
 	 */
-	public int[] suitHist(Card[] cards) {
+	public static int[] suitHist(Card[] cards) {
 		int[] hist = new int[SUITS.length];
-		int count = 0;
+
+		for (int i = 0; i < cards.length; i++) {
+			hist[cards[i].suit]++;
+
+		}
+		return hist;
+
 	}
 }
