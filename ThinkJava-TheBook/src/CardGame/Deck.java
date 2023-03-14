@@ -16,6 +16,7 @@ public class Deck {
 		System.out.println();
 		deck.selectionSort();
 		deck.print();
+		System.out.println(deck.cards.length);
 //		System.out.println(deck.cards.length);
 
 //		System.out.println(randomInt(2, 9));
@@ -108,14 +109,28 @@ public class Deck {
 	}
 
 	public void selectionSort() {
+//		for (int i = 0; i < this.cards.length - 1; i++) {
+//			int lowIndex = i;
+//			for (int j = i + 1; j < this.cards.length; j++) {
+//				if (this.cards[lowIndex].compareTo(this.cards[j]) > 0) {
+//					lowIndex = j;
+//				}
+//			}
+//			Card temp = this.cards[i];
+//			this.cards[i] = this.cards[lowIndex];
+//			this.cards[lowIndex] = temp;
+//
+//		}
 
 		for (int i = 0; i < this.cards.length; i++) {
-			Card lowestCard = this.cards[indexLowest(i, this.cards.length - 1)];
-			Card temp = this.cards[i];
-			this.cards[i] = lowestCard;
-			this.cards[indexLowest(i, this.cards.length - 1)] = temp;
-
+			int lowIndex = indexLowest(i, this.cards.length - 1);
+			if (lowIndex != i) {
+				Card temp = this.cards[i];
+				this.cards[i] = this.cards[lowIndex];
+				this.cards[lowIndex] = temp;
+			}
 		}
+
 	}
 
 }
