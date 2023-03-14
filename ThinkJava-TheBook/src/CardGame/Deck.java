@@ -6,11 +6,13 @@ public class Deck {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		Deck deck = new Deck();
+		Deck deck = new Deck();
 //		deck.print();
+		deck.swapCards(0, 1);
+		deck.print();
 
-		System.out.println(randomInt(2, 9));
-		System.out.println(randomInt(1, 3));
+//		System.out.println(randomInt(2, 9));
+//		System.out.println(randomInt(1, 3));
 	}
 
 	private Card[] cards;
@@ -51,6 +53,16 @@ public class Deck {
 	 */
 	public static int randomInt(int low, int high) {
 		return rand.nextInt(high - low + 1) + low;
+	}
+
+	/*
+	 * Write a method called swapCards that takes two indexes and swaps the cards at
+	 * the given locations.
+	 */
+	public void swapCards(int lowIndex, int highIndex) {
+		Card temp = this.cards[lowIndex];
+		this.cards[lowIndex] = this.cards[highIndex];
+		this.cards[highIndex] = temp;
 	}
 
 }
