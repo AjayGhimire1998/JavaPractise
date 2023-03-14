@@ -33,6 +33,10 @@ public class Deck {
 		}
 	}
 
+	public Card[] getCards() {
+		return this.cards;
+	}
+
 	/*
 	 * When you transform a static method into an instance method, it usually gets
 	 * shorter. We can simply type deck.print() to invoke the instance method.
