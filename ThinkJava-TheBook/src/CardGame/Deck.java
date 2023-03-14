@@ -13,12 +13,15 @@ public class Deck {
 		System.out.println();
 		deck.shuffle();
 		deck.print();
+		System.out.println();
+		deck.selectionSort();
+		deck.print();
 //		System.out.println(deck.cards.length);
 
 //		System.out.println(randomInt(2, 9));
 //		System.out.println(randomInt(1, 3));
 
-		System.out.println(deck.indexLowest(49, 51));
+//		System.out.println(deck.indexLowest(49, 51));
 	}
 
 	private Card[] cards;
@@ -100,8 +103,19 @@ public class Deck {
 				lowestIndex = i;
 			}
 		}
-		System.out.println("Lowest card: " + this.cards[lowestIndex]);
+//		System.out.println("Lowest card: " + this.cards[lowestIndex]);
 		return lowestIndex;
+	}
+
+	public void selectionSort() {
+
+		for (int i = 0; i < this.cards.length; i++) {
+			Card lowestCard = this.cards[indexLowest(i, this.cards.length - 1)];
+			Card temp = this.cards[i];
+			this.cards[i] = lowestCard;
+			this.cards[indexLowest(i, this.cards.length - 1)] = temp;
+
+		}
 	}
 
 }
