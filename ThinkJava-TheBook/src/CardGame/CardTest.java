@@ -17,4 +17,12 @@ public class CardTest extends TestCase {
 		assertTrue((testDeck.getCards()[2].equals(swappedDeck.getCards()[4])
 				&& (testDeck.getCards()[4].equals(swappedDeck.getCards()[2]))));
 	}
+
+	public void testShuffle() {
+		Deck testDeck = new Deck();
+		Deck shuffledDeck = new Deck();
+		shuffledDeck.shuffle();
+
+		assertTrue((testDeck.getCards().length == shuffledDeck.getCards().length));
+	}
 }

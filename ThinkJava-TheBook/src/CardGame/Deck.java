@@ -13,10 +13,12 @@ public class Deck {
 		System.out.println();
 		deck.shuffle();
 		deck.print();
-		System.out.println(deck.cards.length);
+//		System.out.println(deck.cards.length);
 
 //		System.out.println(randomInt(2, 9));
 //		System.out.println(randomInt(1, 3));
+
+		System.out.println(deck.indexLowest(0, 51));
 	}
 
 	private Card[] cards;
@@ -83,6 +85,22 @@ public class Deck {
 			int randomIndex = randomInt(i, this.cards.length - 1);
 			swapCards(i, randomIndex);
 		}
+	}
+
+	/*
+	 * Write a method called indexLowest that uses the compareCard method to find
+	 * the lowest card in a given range of the deck (from lowIndex to highIndex,
+	 * including both).
+	 * 
+	 */
+	public int indexLowest(int lowIndex, int highIndex) {
+		int lowestIndex = lowIndex;
+		for (int i = lowIndex + 1; i <= highIndex; i++) {
+			if (this.cards[lowestIndex].compareTo(this.cards[i]) > 0) {
+				lowestIndex = i;
+			}
+		}
+		return lowestIndex;
 	}
 
 }
