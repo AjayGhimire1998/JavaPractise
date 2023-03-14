@@ -8,8 +8,12 @@ public class Deck {
 		// TODO Auto-generated method stub
 		Deck deck = new Deck();
 //		deck.print();
-		deck.swapCards(0, 1);
+//		deck.swapCards(0, 1);
 		deck.print();
+		System.out.println();
+		deck.shuffle();
+		deck.print();
+		System.out.println(deck.cards.length);
 
 //		System.out.println(randomInt(2, 9));
 //		System.out.println(randomInt(1, 3));
@@ -67,6 +71,18 @@ public class Deck {
 		Card temp = this.cards[lowIndex];
 		this.cards[lowIndex] = this.cards[highIndex];
 		this.cards[highIndex] = temp;
+	}
+
+	/*
+	 * Write a method called shuffle that uses the algorithm in “Shuffling Decks” on
+	 * page 176.
+	 * 
+	 */
+	public void shuffle() {
+		for (int i = 0; i < this.cards.length; i++) {
+			int randomIndex = randomInt(i, this.cards.length - 1);
+			swapCards(i, randomIndex);
+		}
 	}
 
 }
