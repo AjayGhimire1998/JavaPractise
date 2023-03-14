@@ -1,11 +1,15 @@
 package CardGame;
 
+import java.util.Random;
+
 public class Deck {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Deck deck = new Deck();
-		deck.print();
+//		Deck deck = new Deck();
+//		deck.print();
+
+		System.out.println(randomInt(2, 9));
 	}
 
 	private Card[] cards;
@@ -31,12 +35,9 @@ public class Deck {
 		}
 	}
 
-	public Deck subdeck(int low, int high) {
-		Deck sub = new Deck(high - low + 1);
-		for (int i = 0; i < sub.cards.length; i++) {
-			sub.cards[i] = this.cards[low + i];
-		}
-		return sub;
+	public static int randomInt(int low, int high) {
+		Random rand = new Random();
+		return rand.nextInt(high - low) + 2;
 	}
 
 }
