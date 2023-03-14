@@ -9,13 +9,16 @@ public class Deck {
 		Deck deck = new Deck();
 //		deck.print();
 //		deck.swapCards(0, 1);
+
 		deck.print();
+		System.out.println(deck.lowIndexWithoutParams());
 		System.out.println();
 		deck.shuffle();
 		deck.print();
 		System.out.println();
-		deck.selectionSort();
+//		deck.selectionSort();
 		deck.print();
+		System.out.println(deck.lowIndexWithoutParams());
 		System.out.println(deck.cards.length);
 //		System.out.println(deck.cards.length);
 
@@ -106,6 +109,16 @@ public class Deck {
 		}
 //		System.out.println("Lowest card: " + this.cards[lowestIndex]);
 		return lowestIndex;
+	}
+
+	public int lowIndexWithoutParams() {
+		int lowIndex = 0;
+		for (int i = 1; i < this.cards.length; i++) {
+			if (this.cards[lowIndex].compareTo(this.cards[i]) > 0) {
+				lowIndex = i;
+			}
+		}
+		return lowIndex;
 	}
 
 	public void selectionSort() {
