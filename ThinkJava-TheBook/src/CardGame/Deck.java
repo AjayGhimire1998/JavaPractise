@@ -10,9 +10,11 @@ public class Deck {
 //		deck.print();
 
 		System.out.println(randomInt(2, 9));
+		System.out.println(randomInt(1, 3));
 	}
 
 	private Card[] cards;
+	private static final Random rand = new Random();
 
 	Deck(int n) {
 		this.cards = new Card[n];
@@ -29,15 +31,26 @@ public class Deck {
 		}
 	}
 
+	/*
+	 * When you transform a static method into an instance method, it usually gets
+	 * shorter. We can simply type deck.print() to invoke the instance method.
+	 * 
+	 */
 	public void print() {
 		for (int i = 0; i < this.cards.length; i++) {
 			System.out.println(this.cards[i]);
 		}
 	}
 
+	/*
+	 * Add a Deck method called randomInt that takes two integers, low and high, and
+	 * returns a random integer between low and high, including both. You can use
+	 * the nextInt provided by java.util.Random, which we saw in “Random Numbers” on
+	 * page 108. But you should avoid creating a Random object every time random Int
+	 * is invoked.
+	 */
 	public static int randomInt(int low, int high) {
-		Random rand = new Random();
-		return rand.nextInt(high - low) + 2;
+		return rand.nextInt(high - low + 1) + low;
 	}
 
 }
