@@ -13,8 +13,10 @@ public class Deck {
 		deck.print();
 		System.out.println(deck.lowIndexWithoutParams());
 		System.out.println();
-		deck.shuffle();
-		deck.print();
+
+		Deck deck2 = new Deck();
+		deck2.shuffle();
+		deck2.print();
 		System.out.println();
 //		deck.selectionSort();
 		deck.print();
@@ -26,6 +28,8 @@ public class Deck {
 //		System.out.println(randomInt(1, 3));
 
 //		System.out.println(deck.indexLowest(49, 51));
+
+		System.out.println(merge(deck, deck2));
 	}
 
 	private Card[] cards;
@@ -121,6 +125,11 @@ public class Deck {
 		return lowIndex;
 	}
 
+	/*
+	 * Write a method called selectionSort that implements the selection sort algo‐
+	 * rithm in “Selection Sort” on page 177.
+	 * 
+	 */
 	public void selectionSort() {
 
 //		for (int i = 0; i < this.cards.length; i++) {
@@ -145,6 +154,49 @@ public class Deck {
 
 		}
 
+	}
+
+	/*
+	 * The first line creates an unpopulated subdeck. Inside the for loop, the
+	 * subdeck gets populated with copies of references from the deck.
+	 * 
+	 * The length of the subdeck is high - low + 1, because both the low card and
+	 * the high card are included. This sort of computation can be confusing, and
+	 * forgetting the + 1 often leads to “off-by-one” errors. Drawing a picture is
+	 * usually the best way to avoid them.
+	 * 
+	 */
+	public Deck subdeck(int low, int high) {
+		Deck sub = new Deck(high - low + 1);
+		for (int i = 0; i < sub.cards.length; i++) {
+			sub.cards[i] = this.cards[low + i];
+		}
+		return sub;
+	}
+
+	public static Deck merge(Deck deck1, Deck deck2) {
+		Deck result = new Deck(deck1.cards.length + deck2.cards.length);
+		int i = 0;
+		int j = 0;
+
+		for (int k = 0; k < result.cards.length; k++) {
+			if (deck1.cards.length == i) {
+				result = deck2;
+				i++;
+			} else if (deck2.cards.length == 0) {
+				result = deck1;
+				j++;
+			} else {
+				if (deck1.cards[i].compareTo(deck2.cards[j]) > 0) {
+					result.cards[k] = deck1.cards[i];
+					i++;
+				} else {
+					result.cards[k] = deck2.cards[j];
+					j++;
+				}
+			}
+		}
+		return result;
 	}
 
 }
