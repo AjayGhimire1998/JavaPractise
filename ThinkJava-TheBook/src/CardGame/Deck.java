@@ -18,7 +18,7 @@ public class Deck {
 //		System.out.println(randomInt(2, 9));
 //		System.out.println(randomInt(1, 3));
 
-		System.out.println(deck.indexLowest(0, 51));
+		System.out.println(deck.indexLowest(49, 51));
 	}
 
 	private Card[] cards;
@@ -100,6 +100,7 @@ public class Deck {
 				lowestIndex = i;
 			}
 		}
+		System.out.println("Lowest card: " + this.cards[lowestIndex]);
 		return lowestIndex;
 	}
 
