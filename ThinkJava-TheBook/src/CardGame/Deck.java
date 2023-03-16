@@ -24,7 +24,8 @@ public class Deck {
 //		subDeck2.print();
 //		System.out.println();
 		System.out.println();
-		deck2.almostMergeSortRecursively().print();
+//		deck2.almostMergeSortRecursively().print();
+		deck2.almostMergeSort().print();
 
 //		deck.selectionSort();
 //		deck.print();
@@ -227,6 +228,20 @@ public class Deck {
 	}
 
 	/*
+	 * Write the simple version of mergeSort, the one that divides the deck in half,
+	 * uses selectionSort to sort the two halves, and uses merge to create a new,
+	 * sorted deck.
+	 */
+	public Deck almostMergeSort() {
+		Deck d1 = this.subdeck(0, this.cards.length / 2 - 1);
+		Deck d2 = this.subdeck(this.cards.length / 2, this.cards.length - 1);
+		d1.selectionSort();
+		d2.selectionSort();
+		return merge(d1, d2);
+
+	}
+
+	/*
 	 * The magical thing about merge sort is that it is inherently recursive.
 	 * 
 	 * At the point where you sort the subdecks, why should you invoke the slower
@@ -239,6 +254,10 @@ public class Deck {
 	 * mergeSort receives such a small subdeck, it can return it unmodified since it
 	 * would already be sorted.
 	 * 
+	 * 
+	 * Write a recursive version of mergeSort. Remember that selectionSort is a
+	 * modifier and mergeSort is a pure method, which means that they get invoked
+	 * differently:
 	 */
 	public Deck almostMergeSortRecursively() {
 		if (this.cards.length <= 1) {
