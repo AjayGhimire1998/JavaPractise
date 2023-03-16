@@ -16,6 +16,20 @@ public class Player {
 	}
 
 	/*
+	 * Gets the player's name.
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/*
+	 * Gets the player's hand.
+	 */
+	public Hand getHand() {
+		return hand;
+	}
+
+	/*
 	 * The primary method that Player provides is play, which decides which card to
 	 * dis‐ card during each turn:
 	 * 
@@ -110,5 +124,19 @@ public class Player {
 			}
 		}
 		return sum;
+	}
+
+	/**
+	 * Displays the player's hand.
+	 */
+	public void display() {
+		hand.display();
+	}
+
+	/**
+	 * Displays the player's name and score.
+	 */
+	public void displayScore() {
+		System.out.println(name + " has " + score() + " points");
 	}
 }
