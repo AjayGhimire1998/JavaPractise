@@ -25,8 +25,9 @@ public class Deck {
 //		System.out.println();
 		System.out.println();
 //		deck2.almostMergeSortRecursively().print();
-		deck2.almostMergeSort().print();
-
+//		deck2.almostMergeSort().print();
+//		deck2.print();
+		System.out.println(deck2.toString());
 //		deck.selectionSort();
 //		deck.print();
 //		System.out.println(deck.lowIndexWithoutParams());
@@ -270,6 +271,25 @@ public class Deck {
 			d2 = d2.almostMergeSortRecursively();
 			return merge(d1, d2);
 		}
+	}
+
+	/*
+	 * Write a toString method for the Deck class. It should return a single string
+	 * that rep‐ resents the cards in the deck. When it’s printed, this string
+	 * should display the same results as the print method in “The Deck Class” on
+	 * page 175.
+	 * 
+	 * Hint: You can use the + operator to concatenate strings, but it is not very
+	 * efficient. Consider using java.util.StringBuilder; you can find the
+	 * documentation by doing a web search for “Java StringBuilder”.
+	 */
+	public String toString() {
+		StringBuilder result = new StringBuilder();
+		for (Card card : this.cards) {
+			result.append(card.toString()).append("\n");
+		}
+		return result.toString();
+
 	}
 
 }
