@@ -100,4 +100,12 @@ public class CardCollection {
 		return cards.size();
 	}
 
+	/*
+	 * For convenience, CardCollection also provides an empty method that returns
+	 * true when size is zero:
+	 */
+	public boolean empty() {
+		return cards.size() == 0;
+	}
+
 }
