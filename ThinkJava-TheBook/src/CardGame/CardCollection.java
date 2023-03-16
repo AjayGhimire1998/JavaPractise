@@ -1,6 +1,7 @@
 package CardGame;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /*
  *To implement this game, we need to represent a deck of cards, a discard pile, a draw
@@ -147,6 +148,18 @@ public class CardCollection {
 		Card temp = cards.get(i);
 		cards.set(i, cards.get(j));
 		cards.set(j, temp);
+	}
+
+	/*
+	 * We use swapCards to implement shuffle, which we described in “Shuffling
+	 * Decks” on page 176:
+	 */
+	public void shuffle() {
+		Random random = new Random();
+		for (int i = size() - 1; i > 0; i--) {
+			int j = random.nextInt(i);
+			swapCards(i, j);
+		}
 	}
 
 }
