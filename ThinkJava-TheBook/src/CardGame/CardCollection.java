@@ -103,9 +103,24 @@ public class CardCollection {
 	/*
 	 * For convenience, CardCollection also provides an empty method that returns
 	 * true when size is zero:
+	 * 
+	 * Methods like addCard, popCard, and size, which invoke another method without
+	 * doing much additional work, are called wrapper methods.
 	 */
 	public boolean empty() {
 		return cards.size() == 0;
+	}
+
+	/*
+	 * The deal method removes cards from the collection it is invoked on, this, and
+	 * adds them to the collection it gets as a parameter, that. The second
+	 * parameter, n, is the number of cards to deal.
+	 */
+	public void deal(CardCollection that, int n) {
+		for (int i = 0; i < n; i++) {
+			Card card = popCard();
+			that.addCard(card);
+		}
 	}
 
 }
