@@ -10,7 +10,35 @@ public class GeniusPlayer extends Player {
 
 	@Override
 	public Card play(Eights eights, Card prev) {
+		ArrayList<Card> playableCards = getPlayableCards(prev);
 
+		ArrayList<Card> matchingSuitCards = new ArrayList<>();
+
+		// prioritize playing cards that match the previous card's suit
+		for (Card card : playableCards) {
+			if (card.getSuit() == prev.getSuit()) {
+				matchingSuitCards.add(card);
+			}
+		}
+
+		if (!matchingSuitCards.isEmpty()) {
+			Card highRankedMatchingSuitCard = getHighRankedCard(matchingSuitCards);
+			matchingSuitCards.remove(highRankedMatchingSuitCard);
+			return highRankedMatchingSuitCard;
+		}
+
+		// play an eight if available
+		for (Card card : playableCards) {
+
+			if (card.getRank() == 8) {
+				playableCards.remove(card);
+				return card;
+			}
+		}
+
+		Card highestRankingCard = getHighRankedCard(playableCards);
+		playableCards.remove(highestRankingCard);
+		return highestRankingCard;
 	}
 
 	private ArrayList<Card> getPlayableCards(Card prev) {
