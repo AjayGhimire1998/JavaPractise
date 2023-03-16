@@ -1,5 +1,6 @@
 package CardGame;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Deck {
@@ -7,21 +8,23 @@ public class Deck {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Deck deck = new Deck();
+		deck.shuffle();
 //		deck.print();
 //		deck.swapCards(0, 1);
-
+		deck.subdeck(0, 10);
 		deck.print();
-		System.out.println(deck.lowIndexWithoutParams());
+//		System.out.println(deck.lowIndexWithoutParams());
 		System.out.println();
 
 		Deck deck2 = new Deck();
 		deck2.shuffle();
+		deck2.subdeck(0, 10);
 		deck2.print();
 		System.out.println();
 //		deck.selectionSort();
-		deck.print();
-		System.out.println(deck.lowIndexWithoutParams());
-		System.out.println(deck.cards.length);
+//		deck.print();
+//		System.out.println(deck.lowIndexWithoutParams());
+//		System.out.println(deck.cards.length);
 //		System.out.println(deck.cards.length);
 
 //		System.out.println(randomInt(2, 9));
@@ -29,7 +32,7 @@ public class Deck {
 
 //		System.out.println(deck.indexLowest(49, 51));
 
-		System.out.println(merge(deck, deck2));
+		System.out.println(Arrays.toString(merge(deck, deck2).cards));
 	}
 
 	private Card[] cards;
@@ -180,19 +183,16 @@ public class Deck {
 		int j = 0;
 
 		for (int k = 0; k < result.cards.length; k++) {
-			if (deck1.cards.length == i) {
-				result = deck2;
-				i++;
+			if (deck1.cards.length == 0) {
+				result.cards = deck2.cards;
+
 			} else if (deck2.cards.length == 0) {
-				result = deck1;
-				j++;
+				result.cards = deck1.cards;
 			} else {
-				if (deck1.cards[i].compareTo(deck2.cards[j]) > 0) {
-					result.cards[k] = deck1.cards[i];
-					i++;
-				} else {
+				if (deck1.cards[i].compareTo(deck2.cards[j]) < 0) {
 					result.cards[k] = deck2.cards[j];
-					j++;
+					i++;
+					k++;
 				}
 			}
 		}
