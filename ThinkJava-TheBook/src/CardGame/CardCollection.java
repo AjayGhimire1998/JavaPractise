@@ -60,6 +60,10 @@ public class CardCollection {
 		this.cards = new ArrayList<Card>();
 	}
 
+	public String getLabel() {
+		return this.label;
+	}
+
 	/*
 	 * ArrayList provides a method, add, that adds an element to the collection. We
 	 * will write a CardCollection method that does the same thing:
@@ -122,6 +126,14 @@ public class CardCollection {
 			Card card = popCard();
 			that.addCard(card);
 		}
+	}
+
+	/*
+	 * Moves all remaining cards to the given collection.
+	 */
+	public void dealAll(CardCollection that) {
+		int n = size();
+		deal(that, n);
 	}
 
 	/*
