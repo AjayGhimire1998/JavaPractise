@@ -123,4 +123,30 @@ public class CardCollection {
 		}
 	}
 
+	/*
+	 * To access the elements of an ArrayList, you can’t use the array [] operator.
+	 * Instead, you have to use the methods get and set. Here is a wrapper for get:
+	 */
+	public Card getCard(int i) {
+		return cards.get(i);
+	}
+
+	/*
+	 * The last method gets the last card (but doesn’t remove it):
+	 */
+	public Card last() {
+		return cards.get(size() - 1);
+	}
+
+	/*
+	 * In order to control the ways card collections are modified, we don’t provide
+	 * a wrap‐ per for set. The only modifiers we provide are the two versions of
+	 * popCard and the following version of swapCards:
+	 */
+	public void swapCards(int i, int j) {
+		Card temp = cards.get(i);
+		cards.set(i, cards.get(j));
+		cards.set(j, temp);
+	}
+
 }
