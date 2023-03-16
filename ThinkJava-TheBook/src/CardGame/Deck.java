@@ -6,22 +6,26 @@ public class Deck {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Deck deck = new Deck();
-		deck.shuffle();
+//		Deck deck = new Deck();
+//		deck.shuffle();
 //		deck.print();
 //		deck.swapCards(0, 1);
-		Deck subDeck = deck.subdeck(0, 9);
-		subDeck.selectionSort();
-		subDeck.print();
+//		Deck subDeck = deck.subdeck(0, 9);
+//		subDeck.selectionSort();
+//		subDeck.print();
 //		System.out.println(deck.lowIndexWithoutParams());
-		System.out.println();
+//		System.out.println();
 
 		Deck deck2 = new Deck();
+//		deck2.print();
 		deck2.shuffle();
-		Deck subDeck2 = deck2.subdeck(0, 9);
-		subDeck2.selectionSort();
-		subDeck2.print();
+//		Deck subDeck2 = deck2.subdeck(0, 9);
+//		subDeck2.selectionSort();
+//		subDeck2.print();
+//		System.out.println();
 		System.out.println();
+		deck2.almostMergeSortRecursively().print();
+
 //		deck.selectionSort();
 //		deck.print();
 //		System.out.println(deck.lowIndexWithoutParams());
@@ -33,8 +37,8 @@ public class Deck {
 
 //		System.out.println(deck.indexLowest(49, 51));
 
-		Deck mergedDeck = merge(subDeck, subDeck2);
-		mergedDeck.print();
+//		Deck mergedDeck = merge(subDeck, subDeck2);
+//		mergedDeck.print();
 	}
 
 	private Card[] cards;
@@ -220,6 +224,33 @@ public class Deck {
 		}
 		return result;
 
+	}
+
+	/*
+	 * The magical thing about merge sort is that it is inherently recursive.
+	 * 
+	 * At the point where you sort the subdecks, why should you invoke the slower
+	 * algo‐ rithm, selectionSort? Why not invoke the spiffy new mergeSort you are
+	 * in the pro‐ cess of writing? Not only is that a good idea, it is necessary to
+	 * achieve the log2performance advantage.
+	 * 
+	 * To make mergeSort work recursively, you have to add a base case; otherwise it
+	 * repeats forever. A simple base case is a subdeck with 0 or 1 cards. If
+	 * mergeSort receives such a small subdeck, it can return it unmodified since it
+	 * would already be sorted.
+	 * 
+	 */
+	public Deck almostMergeSortRecursively() {
+		if (this.cards.length <= 1) {
+			return this;
+		} else {
+			int mid = this.cards.length / 2;
+			Deck d1 = this.subdeck(0, mid - 1);
+			Deck d2 = this.subdeck(mid, this.cards.length - 1);
+			d1 = d1.almostMergeSortRecursively();
+			d2 = d2.almostMergeSortRecursively();
+			return merge(d1, d2);
+		}
 	}
 
 }
