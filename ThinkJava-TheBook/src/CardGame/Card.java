@@ -85,7 +85,7 @@ public class Card {
 	}
 
 	public int getRank() {
-		return this,rank;
+		return this.rank;
 	}
 
 	/*
