@@ -1,6 +1,5 @@
 package CardGame;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Deck {
@@ -11,15 +10,17 @@ public class Deck {
 		deck.shuffle();
 //		deck.print();
 //		deck.swapCards(0, 1);
-		deck.subdeck(0, 10);
-		deck.print();
+		Deck subDeck = deck.subdeck(0, 9);
+		subDeck.selectionSort();
+		subDeck.print();
 //		System.out.println(deck.lowIndexWithoutParams());
 		System.out.println();
 
 		Deck deck2 = new Deck();
 		deck2.shuffle();
-		deck2.subdeck(0, 10);
-		deck2.print();
+		Deck subDeck2 = deck2.subdeck(0, 9);
+		subDeck2.selectionSort();
+		subDeck2.print();
 		System.out.println();
 //		deck.selectionSort();
 //		deck.print();
@@ -32,7 +33,8 @@ public class Deck {
 
 //		System.out.println(deck.indexLowest(49, 51));
 
-		System.out.println(Arrays.toString(merge(deck, deck2).cards));
+		Deck mergedDeck = merge(subDeck, subDeck2);
+		mergedDeck.print();
 	}
 
 	private Card[] cards;
@@ -177,26 +179,47 @@ public class Deck {
 		return sub;
 	}
 
+	/*
+	 * 
+	 * The next helper method we need is merge, which takes two sorted subdecks and
+	 * returns a new deck containing all cards from both decks, in order. Here’s
+	 * what the algorithm looks like in pseudocode, assuming the subdecks are named
+	 * d1 and d2:
+	 * 
+	 * public static Deck merge(Deck d1, Deck d2) { // create a new deck big enough
+	 * for all the cards // use the index i to keep track of where we are at in //
+	 * the first deck, and the index j for the second deck int i = 0; int j = 0; //
+	 * the index k traverses the result deck for (int k = 0; k <
+	 * result.cards.length; k++) { // if d1 is empty, d2 wins // if d2 is empty, d1
+	 * wins // otherwise, compare the two cards // add the winner to the new deck at
+	 * position k // increment either i or j } // return the new deck }
+	 * 
+	 */
 	public static Deck merge(Deck deck1, Deck deck2) {
 		Deck result = new Deck(deck1.cards.length + deck2.cards.length);
+
 		int i = 0;
 		int j = 0;
+		int k = 0;
 
-		for (int k = 0; k < result.cards.length; k++) {
-			if (deck1.cards.length == 0) {
-				result.cards = deck2.cards;
-
-			} else if (deck2.cards.length == 0) {
-				result.cards = deck1.cards;
+		while (k < result.cards.length) {
+			if (i >= deck1.cards.length) {
+				result.cards[k] = deck2.cards[j];
+				j++;
+			} else if (j >= deck2.cards.length) {
+				result.cards[k] = deck1.cards[i];
+				i++;
+			} else if (deck1.cards[i].compareTo(deck2.cards[j]) < 0) {
+				result.cards[k] = deck1.cards[i];
+				i++;
 			} else {
-				if (deck1.cards[i].compareTo(deck2.cards[j]) < 0) {
-					result.cards[k] = deck2.cards[j];
-					i++;
-					k++;
-				}
+				result.cards[k] = deck2.cards[j];
+				j++;
 			}
+			k++;
 		}
 		return result;
+
 	}
 
 }
