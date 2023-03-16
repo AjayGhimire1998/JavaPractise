@@ -53,7 +53,7 @@ public class CardCollection {
 	 */
 
 	private String label;
-	private ArrayList<Card> cards;
+	protected ArrayList<Card> cards;
 
 	public CardCollection(String label) {
 		this.label = label;
