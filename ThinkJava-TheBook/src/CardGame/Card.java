@@ -80,6 +80,14 @@ public class Card {
 		this.suit = suit;
 	}
 
+	public int getSuit() {
+		return this.suit;
+	}
+
+	public int getRank() {
+		return this,rank;
+	}
+
 	/*
 	 * To display Card objects in a way that humans can read easily, we need to map
 	 * the integer codes onto words. A natural way to do that is with an array of
