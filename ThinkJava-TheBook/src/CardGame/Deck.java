@@ -17,8 +17,12 @@ public class Deck {
 //		System.out.println();
 
 		Deck deck2 = new Deck();
+
 //		deck2.print();
 		deck2.shuffle();
+		deck2.selectionSortPractise();
+		deck2.print();
+		System.out.println(deck2.indexLowestPractise(0, 5));
 //		Deck subDeck2 = deck2.subdeck(0, 9);
 //		subDeck2.selectionSort();
 //		subDeck2.print();
@@ -27,7 +31,7 @@ public class Deck {
 //		deck2.almostMergeSortRecursively().print();
 //		deck2.almostMergeSort().print();
 //		deck2.print();
-		System.out.println(deck2.toString());
+//		System.out.println(deck2.toString());
 //		deck.selectionSort();
 //		deck.print();
 //		System.out.println(deck.lowIndexWithoutParams());
@@ -126,6 +130,17 @@ public class Deck {
 		return lowestIndex;
 	}
 
+	public int indexLowestPractise(int lowIndex, int highIndex) {
+		int result = lowIndex;
+
+		for (int i = result + 1; i <= highIndex; i++) {
+			if (this.cards[i].compareTo(this.cards[result]) < 0) {
+				result = i;
+			}
+		}
+		return result;
+	}
+
 	public int lowIndexWithoutParams() {
 		int lowIndex = 0;
 		for (int i = 1; i < this.cards.length; i++) {
@@ -165,6 +180,22 @@ public class Deck {
 
 		}
 
+	}
+
+	public void selectionSortPractise() {
+
+		for (int i = 0; i < this.cards.length - 1; i++) {
+			int lowIndex = i;
+			for (int j = i + 1; j < this.cards.length; j++) {
+				if (this.cards[lowIndex].compareTo(this.cards[j]) > 0) {
+					lowIndex = j;
+				}
+			}
+			Card temp = this.cards[i];
+			this.cards[i] = this.cards[lowIndex];
+			this.cards[lowIndex] = temp;
+
+		}
 	}
 
 	/*
