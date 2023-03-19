@@ -357,6 +357,15 @@ public class Card {
 
 	}
 
+	public static int[] suitHistPractise(Card[] cards) {
+		int[] hist = new int[SUITS.length];
+
+		for (int i = 0; i < cards.length; i++) {
+			hist[cards[i].suit]++;
+		}
+		return hist;
+	}
+
 	/*
 	 * Write a method called hasFlush that takes an array of cards as a parameter
 	 * and returns true if the hand contains a flush (and false otherwise).
