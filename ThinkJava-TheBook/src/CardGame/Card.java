@@ -142,6 +142,25 @@ public class Card {
 
 	}
 
+	public int compareToPractise(Card card) {
+		if (this.suit < card.suit) {
+			return -1;
+		} else if (this.suit > card.suit) {
+			return 1;
+		} else {
+			if (this.rank == 1 && card.rank != 1) {
+				return 1;
+			} else if (this.rank != 1 && card.rank == 1) {
+				return -1;
+			} else if (this.rank < card.rank) {
+				return -1;
+			} else if (this.rank > card.rank) {
+				return 1;
+			}
+		}
+		return 0;
+	}
+
 	/*
 	 * The outer loop iterates suits from 0 to 3. For each suit, the inner loop
 	 * iterates ranks from 1 to 13. Since the outer loop runs 4 times, and the inner
@@ -254,14 +273,16 @@ public class Card {
 
 	public static int binarySearchPractise(Card[] cards, Card target) {
 		int low = 0;
-		int high = cards.length - 1;
+		int high = 0;
 
 		while (low <= high) {
 			int mid = (low + high) / 2;
 			int comp = cards[mid].compareTo(target);
+
 			if (comp == 0) {
 				return mid;
-			} else if (comp < 0) {
+			}
+			if (comp < 0) {
 				low = mid + 1;
 			} else {
 				high = mid - 1;
@@ -303,15 +324,6 @@ public class Card {
 		}
 
 		int mid = (low + high) / 2;
-		int comp = cards[mid].compareTo(target);
-
-		if (comp == 0) {
-			return mid;
-		} else if (comp < 0) {
-			return recursiveBinarySearchPractise(cards, target, mid + 1, high);
-		} else {
-			return recursiveBinarySearchPractise(cards, target, low, mid - 1);
-		}
 	}
 
 	/*
