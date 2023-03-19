@@ -324,6 +324,18 @@ public class Card {
 		}
 
 		int mid = (low + high) / 2;
+		int comp = cards[mid].compareTo(target);
+
+		if (comp == 0) {
+			return mid;
+		} else {
+			if (comp < 0) {
+				return recursiveBinarySearch(cards, target, mid + 1, high);
+			} else {
+				return recursiveBinarySearch(cards, target, low, mid + 1);
+			}
+		}
+
 	}
 
 	/*
