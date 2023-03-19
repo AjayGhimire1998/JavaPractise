@@ -6,28 +6,31 @@ public class Deck {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		Deck deck = new Deck();
-//		deck.shuffle();
+		Deck deck = new Deck();
+		deck.shuffle();
 //		deck.print();
 //		deck.swapCards(0, 1);
-//		Deck subDeck = deck.subdeck(0, 9);
-//		subDeck.selectionSort();
-//		subDeck.print();
+		Deck subDeck = deck.subdeck(0, 9);
+		subDeck.selectionSort();
+		subDeck.print();
 //		System.out.println(deck.lowIndexWithoutParams());
-//		System.out.println();
+		System.out.println();
 
 		Deck deck2 = new Deck();
 
 //		deck2.print();
 		deck2.shuffle();
-		deck2.selectionSortPractise();
-		deck2.print();
-		System.out.println(deck2.indexLowestPractise(0, 5));
-//		Deck subDeck2 = deck2.subdeck(0, 9);
-//		subDeck2.selectionSort();
-//		subDeck2.print();
+//		deck2.selectionSortPractise();
+//		deck2.print();
+//		System.out.println(deck2.indexLowestPractise(0, 5));
+		Deck subDeck2 = deck2.subdeck(0, 9);
+		subDeck2.selectionSort();
+		subDeck2.print();
 //		System.out.println();
 		System.out.println();
+
+		Deck result = mergePractise(subDeck, subDeck2);
+		System.out.println(result.toString());
 //		deck2.almostMergeSortRecursively().print();
 //		deck2.almostMergeSort().print();
 //		deck2.print();
@@ -255,6 +258,34 @@ public class Deck {
 			}
 			k++;
 		}
+		return result;
+
+	}
+
+	public static Deck mergePractise(Deck deck1, Deck deck2) {
+		Deck result = new Deck(deck1.cards.length + deck2.cards.length);
+		int i = 0;
+		int j = 0;
+		int k = 0;
+
+		while (k < result.cards.length) {
+			if (i >= deck1.cards.length) {
+				result.cards[k] = deck2.cards[j];
+				j++;
+			} else if (j >= deck2.cards.length) {
+				result.cards[k] = deck1.cards[i];
+				i++;
+			} else if (deck1.cards[i].compareTo(deck2.cards[j]) < 0) {
+				result.cards[k] = deck1.cards[i];
+				i++;
+			} else {
+				result.cards[k] = deck2.cards[j];
+				j++;
+
+			}
+			k++;
+		}
+
 		return result;
 
 	}
