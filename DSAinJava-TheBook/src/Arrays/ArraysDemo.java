@@ -18,6 +18,7 @@ public class ArraysDemo {
 		}
 
 		System.out.println(Arrays.toString(hist));
+		System.out.println(Math.sqrt(3));
 
 	}
 
