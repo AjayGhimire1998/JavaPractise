@@ -1,19 +1,20 @@
 package StringBuilderClass;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class StringBuilder {
 
 	public static void main(String[] args) {
 		StringBuilder str = new StringBuilder();
+		System.out.println(str.str);
 	}
 
-	Scanner in;
-	char[] charSequence;
+	static Scanner in;
+	static char[] charSequence;
+	String str = "";
 
 	StringBuilder() {
-		String result = "";
+
 		System.out.println("Please enter the str upto 5 char");
 		in = new Scanner(System.in);
 		charSequence = new char[5];
@@ -24,7 +25,11 @@ public class StringBuilder {
 		if (charSequence.length == 5) {
 			in.close();
 		}
-		System.out.println(Arrays.toString(charSequence));
+		int index = 0;
+		while (index < charSequence.length) {
+			str += charSequence[index];
+			index++;
+		}
 
 	}
 
