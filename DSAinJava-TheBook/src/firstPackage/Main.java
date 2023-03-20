@@ -18,7 +18,8 @@ public class Main {
 
 		Person jay = new Person("ajay", 24);
 		Person hehe = new Person("hehe", 25);
-		jay.printName(hehe);
+		Person person = new Person();
+		person.printName(jay);
 
 	}
 
@@ -27,6 +28,10 @@ public class Main {
 class Person {
 	String name;
 	int age;
+
+	Person() {
+		this("person", 0);
+	}
 
 	Person(String name, int age) {
 		this.name = name;
