@@ -23,8 +23,10 @@ public class Operators {
 //		int n = 9 + --i;
 //		System.out.println(n);
 
-		System.out.println(intToBinary(900));
+		System.out.println(intToBinary(4));
 		System.out.println(intToHex(900));
+
+		System.out.println(binaryToInt("100"));
 		// Bitwise operators
 
 	}
@@ -50,4 +52,11 @@ public class Operators {
 		return hex;
 	}
 
+	public static int binaryToInt(String binary) {
+		int result = 0;
+		for (int i = 0; i < binary.length(); i++) {
+			result = result * 2 + Character.getNumericValue(binary.charAt(i));
+		}
+		return result;
+	}
 }
