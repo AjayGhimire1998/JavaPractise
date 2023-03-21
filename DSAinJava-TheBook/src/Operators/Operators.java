@@ -30,13 +30,18 @@ public class Operators {
 
 		// Bitwise operators
 
-//		int a = 12;
-//		System.out.println(a);
-//
-//		int b = ~a;
-//		System.out.println(b);
+		int a = 12;
+		System.out.println(a);
 
-		System.out.println(unaryOperate(12));
+		int b = ~a;
+		System.out.println(b + 1);
+
+		int i = 12;
+		int j = 10;
+		System.out.println(i & j);
+		System.out.println(binaryToInt("1000"));
+
+//		System.out.println(unaryOperate(12));
 
 	}
 
