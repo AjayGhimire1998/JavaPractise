@@ -30,18 +30,33 @@ public class Operators {
 
 		// Bitwise operators
 
-		int a = 12;
-		System.out.println(a);
-
-		int b = ~a;
-		System.out.println(b + 1);
-
-		int i = 12;
-		int j = 10;
-		System.out.println(i & j);
-		System.out.println(binaryToInt("1000"));
+//		int a = 12;
+//		System.out.println(a);
+//
+//		int b = ~a;
+//		System.out.println(b + 1);
+//
+//		int i = 12;
+//		int j = 10;
+//		System.out.println(i & j);
+//		System.out.println(binaryToInt("1000"));
 
 //		System.out.println(unaryOperate(12));
+
+		int[] nums = { 1, 2, 3, 4, 5, 6 };
+		int j = 5;
+		nums[j++] += 2;
+//		System.out.println(j);
+//		System.out.println(Arrays.toString(nums));
+
+		int a = 1;
+		int b = 2;
+		int c = 3;
+
+		int result = --a + b++ * --c;
+		int resultTwo = a + b * c;
+		System.out.println(result);
+		System.out.println(resultTwo);
 
 	}
 
