@@ -8,7 +8,12 @@ public class Casting {
 		int j = 4;
 
 		double d = i / j;
+		double d2 = (double) i / j;
 		System.out.println(d);
+		System.out.println(d2);
+
+		String s = Integer.toString(i);
+		System.out.println(s + 8);
 	}
 
 }
