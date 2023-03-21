@@ -24,6 +24,7 @@ public class Operators {
 //		System.out.println(n);
 
 		System.out.println(intToBinary(900));
+		System.out.println(intToHex(900));
 		// Bitwise operators
 
 	}
@@ -38,4 +39,15 @@ public class Operators {
 		}
 		return binary;
 	}
+
+	public static String intToHex(int n) {
+		String hex = "";
+
+		while (n > 0) {
+			hex = n % 16 + hex;
+			n /= 16;
+		}
+		return hex;
+	}
+
 }
