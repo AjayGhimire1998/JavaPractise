@@ -49,13 +49,11 @@ public class Operators {
 //		System.out.println(j);
 //		System.out.println(Arrays.toString(nums));
 
-		int a = 1;
-		int b = 2;
-		int c = 3;
+		int a = 1, b = 2, c = 3;
 
 		int result = --a + b++ * --c;
 		int resultTwo = a + b * c;
-		System.out.println(result);
+		System.out.println(result + resultTwo);
 		System.out.println(resultTwo);
 
 	}
