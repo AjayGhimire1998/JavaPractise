@@ -7,4 +7,10 @@ public class CreditCard {
 
 	}
 
+	String customer;
+	String bank;
+	String account;
+	int limit;
+	double balance;
+
 }
