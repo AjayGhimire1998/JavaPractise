@@ -12,7 +12,8 @@ public class ChapterOneLab {
 //		System.out.println(Operators.intToBinary(12));
 
 //		System.out.println(sumOfPositiveInts(10));
-		System.out.println(sumOfOddInts(9));
+//		System.out.println(sumOfOddInts(9));
+		System.out.println(sumOfSquares(10));
 
 	}
 
@@ -87,6 +88,20 @@ public class ChapterOneLab {
 		}
 		return sum;
 
+	}
+
+	/*
+	 * Write a short Java method that takes an integer n and returns the sum of the
+	 * squares of all positive integers less than or equal to n.
+	 */
+
+	public static int sumOfSquares(int i) {
+		int sum = 0;
+
+		for (int j = i; j >= 0; j--) {
+			sum += j * j;
+		}
+		return sum;
 	}
 
 }
