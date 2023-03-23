@@ -13,6 +13,15 @@ public class CreditCard {
 	int limit;
 	double balance;
 
+	/**
+	 * Constructs a new credit card instance
+	 * 
+	 * @param customer
+	 * @param bank
+	 * @param account
+	 * @param limit
+	 * @param balance
+	 */
 	CreditCard(String customer, String bank, String account, int limit, int balance) {
 		this.customer = customer;
 		this.bank = bank;
