@@ -7,7 +7,12 @@ public class ChapterOneLab {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //		inputAllBaseTypes();
-		System.out.println(isMultiple(10000, 23));
+//		System.out.println(isMultiple(10000, 23));
+//		System.out.println(isEven(12));
+//		System.out.println(Operators.intToBinary(12));
+
+		System.out.println(sumOfPositiveInts(10));
+
 	}
 
 	/*
@@ -37,6 +42,31 @@ public class ChapterOneLab {
 
 	public static boolean isMultiple(long n, long m) {
 		return n % m == 0;
+	}
+
+	/*
+	 * R-1.4 Write a short Java method, isEven, that takes an int i and returns true
+	 * if and only if i is even. Your method cannot use the multiplication, modulus,
+	 * or division operators, however.
+	 */
+	public static boolean isEven(int i) {
+		return (i & 1) == 0;
+	}
+
+	/*
+	 * R-1.5 Write a short Java method that takes an integer n and returns the sum
+	 * of all positive integers less than or equal to n.
+	 */
+
+	public static int sumOfPositiveInts(int i) {
+		int sum = 0;
+
+		for (int j = i; j >= 0; j--) {
+			sum += j;
+		}
+
+		return sum;
+
 	}
 
 }
