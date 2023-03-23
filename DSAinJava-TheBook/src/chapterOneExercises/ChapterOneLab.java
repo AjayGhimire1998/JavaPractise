@@ -11,7 +11,8 @@ public class ChapterOneLab {
 //		System.out.println(isEven(12));
 //		System.out.println(Operators.intToBinary(12));
 
-		System.out.println(sumOfPositiveInts(10));
+//		System.out.println(sumOfPositiveInts(10));
+		System.out.println(sumOfOddInts(9));
 
 	}
 
@@ -65,6 +66,25 @@ public class ChapterOneLab {
 			sum += j;
 		}
 
+		return sum;
+
+	}
+
+	/*
+	 * R-1.6 Write a short Java method that takes an integer n and returns the sum
+	 * of all the odd positive integers less than or equal to n.
+	 */
+
+	public static int sumOfOddInts(int i) {
+		int sum = 0;
+
+		for (int j = i; j >= 0; j--) {
+
+			if (j % 2 != 0) {
+				sum += j;
+			}
+
+		}
 		return sum;
 
 	}
