@@ -4,6 +4,7 @@ public class CreditCard {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+//		System.out.println(CardName.AMEX);
 
 	}
 
@@ -12,6 +13,10 @@ public class CreditCard {
 	String account;
 	int limit;
 	double intialBalance;
+
+	public enum CardName {
+		VISA, MASTERCARD, AMEX
+	}
 
 	/**
 	 * Constructs a new credit card instance
