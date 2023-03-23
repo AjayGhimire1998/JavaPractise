@@ -13,4 +13,13 @@ public class CreditCard {
 	int limit;
 	double balance;
 
+	CreditCard(String customer, String bank, String account, int limit, int balance) {
+		this.customer = customer;
+		this.bank = bank;
+		this.account = account;
+		this.limit = limit;
+		this.balance = balance;
+
+	}
+
 }
