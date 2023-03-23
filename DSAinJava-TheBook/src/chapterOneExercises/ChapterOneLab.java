@@ -13,7 +13,9 @@ public class ChapterOneLab {
 
 //		System.out.println(sumOfPositiveInts(10));
 //		System.out.println(sumOfOddInts(9));
-		System.out.println(sumOfSquares(10));
+//		System.out.println(sumOfSquares(10));
+
+		System.out.println(vowelCount("Ajay"));
 
 	}
 
@@ -102,6 +104,22 @@ public class ChapterOneLab {
 			sum += j * j;
 		}
 		return sum;
+	}
+
+	/*
+	 * R-1.8 Write a short Java method that counts the number of vowels in a given
+	 * character string.
+	 */
+
+	public static int vowelCount(String str) {
+		int count = 0;
+		for (int i = 0; i < str.length(); i++) {
+			char current = Character.toLowerCase(str.charAt(i));
+			if (current == 'a' || current == 'e' || current == 'i' || current == 'o' || current == 'u') {
+				count++;
+			}
+		}
+		return count;
 	}
 
 }
