@@ -11,7 +11,7 @@ public class CreditCard {
 	String bank;
 	String account;
 	int limit;
-	double balance;
+	double intialBalance;
 
 	/**
 	 * Constructs a new credit card instance
@@ -27,8 +27,22 @@ public class CreditCard {
 		this.bank = bank;
 		this.account = account;
 		this.limit = limit;
-		this.balance = balance;
+		this.intialBalance = balance;
 
+	}
+
+	/**
+	 * Charges the given price to the card, assuming it has sufficient credit limit
+	 * 
+	 * @param price the amount to be charged
+	 * @return true if charge was accepted; false if charge was denied
+	 */
+	public boolean charge(double price) {
+		if (price + intialBalance > limit) {
+			return false;
+		}
+		intialBalance += price;
+		return true;
 	}
 
 }
