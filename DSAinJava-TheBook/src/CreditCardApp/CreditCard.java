@@ -45,4 +45,13 @@ public class CreditCard {
 		return true;
 	}
 
+	/**
+	 * processes customer payment that reduces balance
+	 * 
+	 * @param amount the amount of payment made
+	 */
+	public void makePayment(double amount) { // make a payment
+		intialBalance -= amount;
+	}
+
 }
