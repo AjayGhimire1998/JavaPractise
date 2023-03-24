@@ -20,11 +20,12 @@ public class Flower {
 
 		flower.setName("Lily");
 		System.out.println(flower.name);
+		System.out.println(flower.getName());
 	}
 
-	String name;
-	int numberOfPetals;
-	float price;
+	private String name;
+	private int numberOfPetals;
+	private float price;
 
 	Flower() {
 
@@ -46,5 +47,17 @@ public class Flower {
 
 	public void setPrice(float price) {
 		this.price = price;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public int getNumberOfPetals() {
+		return this.numberOfPetals;
+	}
+
+	public float getPrice() {
+		return this.price;
 	}
 }

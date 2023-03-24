@@ -19,6 +19,10 @@ public class ChapterOneLab {
 		System.out.println(removePunc("HEHHE, what's up?"));
 //		System.out.println(Character.getType('-'));
 
+		Flower flower = new Flower();
+		flower.setName("PHilly");
+//		System.out.println(flower.getName());
+
 	}
 
 	/*
