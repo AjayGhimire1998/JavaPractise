@@ -65,4 +65,8 @@ public class Flower {
 	public String toString() {
 		return String.format("Name: %s\nPetalsCount: %d\nPrice: %f", this.name, this.numberOfPetals, this.price);
 	}
+
+	public void printFlower() {
+		System.out.printf("Name: %s\nPetalsCount: %d\nPrice: %f", this.name, this.numberOfPetals, this.price);
+	}
 }
