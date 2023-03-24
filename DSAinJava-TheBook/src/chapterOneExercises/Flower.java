@@ -13,9 +13,22 @@ package chapterOneExercises;
  *
  */
 public class Flower {
+
+	public static void main(String[] args) {
+		Flower flower = new Flower();
+		System.out.println(flower.name);
+
+		flower.setName("Lily");
+		System.out.println(flower.name);
+	}
+
 	String name;
 	int numberOfPetals;
 	float price;
+
+	Flower() {
+
+	}
 
 	Flower(String name, int numP, float price) {
 		this.name = name;
