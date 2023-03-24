@@ -21,7 +21,8 @@ public class Flower {
 		flower.setName("Lily");
 		System.out.println(flower.name);
 		System.out.println(flower.getName());
-		System.out.println(flower.toString());
+//		System.out.println(flower.toString());
+		flower.printFlower();
 	}
 
 	private String name;
