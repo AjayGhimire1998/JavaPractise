@@ -15,7 +15,7 @@ public class ChapterOneLab {
 //		System.out.println(sumOfOddInts(9));
 //		System.out.println(sumOfSquares(10));
 
-		System.out.println(vowelCount("Ajay"));
+//		System.out.println(vowelCount("Ajay"));
 		System.out.println(removePunc("HEHHE, what's up?"));
 
 	}
@@ -132,7 +132,10 @@ public class ChapterOneLab {
 	public static StringBuilder removePunc(String str) {
 		StringBuilder result = new StringBuilder(str);
 		for (int i = 0; i < result.length(); i++) {
-			if (!Character.isAlphabetic(i)) {
+			char current = str.charAt(i);
+			if (current == Character.CONNECTOR_PUNCTUATION || current == Character.DASH_PUNCTUATION
+					|| current == Character.END_PUNCTUATION || current == Character.FINAL_QUOTE_PUNCTUATION
+					|| current == Character.INITIAL_QUOTE_PUNCTUATION) {
 				result.deleteCharAt(i);
 				i--;
 			}
