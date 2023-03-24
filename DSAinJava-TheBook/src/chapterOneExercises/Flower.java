@@ -22,4 +22,16 @@ public class Flower {
 		this.numberOfPetals = numP;
 		this.price = price;
 	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setNumberOfPetals(int numP) {
+		this.numberOfPetals = numP;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
 }
