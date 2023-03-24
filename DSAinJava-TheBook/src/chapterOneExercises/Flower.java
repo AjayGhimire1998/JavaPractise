@@ -16,4 +16,10 @@ public class Flower {
 	String name;
 	int numberOfPetals;
 	float price;
+
+	Flower(String name, int numP, float price) {
+		this.name = name;
+		this.numberOfPetals = numP;
+		this.price = price;
+	}
 }
