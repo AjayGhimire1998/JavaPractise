@@ -135,7 +135,8 @@ public class ChapterOneLab {
 			char current = str.charAt(i);
 			if (current == Character.CONNECTOR_PUNCTUATION || current == Character.DASH_PUNCTUATION
 					|| current == Character.END_PUNCTUATION || current == Character.FINAL_QUOTE_PUNCTUATION
-					|| current == Character.INITIAL_QUOTE_PUNCTUATION) {
+					|| current == Character.INITIAL_QUOTE_PUNCTUATION || current == Character.OTHER_PUNCTUATION
+					|| current == Character.START_PUNCTUATION) {
 				result.deleteCharAt(i);
 				i--;
 			}
