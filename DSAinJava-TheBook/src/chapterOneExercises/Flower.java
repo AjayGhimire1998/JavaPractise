@@ -15,12 +15,13 @@ package chapterOneExercises;
 public class Flower {
 
 	public static void main(String[] args) {
-		Flower flower = new Flower();
+		Flower flower = new Flower("Lily", 200, 12.5f);
 		System.out.println(flower.name);
 
 		flower.setName("Lily");
 		System.out.println(flower.name);
 		System.out.println(flower.getName());
+		System.out.println(flower.toString());
 	}
 
 	private String name;
@@ -59,5 +60,9 @@ public class Flower {
 
 	public float getPrice() {
 		return this.price;
+	}
+
+	public String toString() {
+		return String.format("Name: %s\nPetalsCount: %d\nPrice: %f", this.name, this.numberOfPetals, this.price);
 	}
 }
