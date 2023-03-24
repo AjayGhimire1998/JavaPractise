@@ -13,10 +13,7 @@ package chapterOneExercises;
  *
  */
 public class Flower {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+	String name;
+	int numberOfPetals;
+	float price;
 }
