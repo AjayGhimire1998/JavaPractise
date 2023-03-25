@@ -63,4 +63,13 @@ public class CreditCardLab {
 		return this.balance;
 	}
 
+	// update methods
+	public boolean charge(double amount) {
+		if (amount + this.balance > this.limit) {
+			return false;
+		}
+		this.balance += amount;
+		return true;
+	}
+
 }
