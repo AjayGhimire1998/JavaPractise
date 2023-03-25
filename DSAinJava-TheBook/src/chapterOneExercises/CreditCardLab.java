@@ -42,12 +42,17 @@ public class CreditCardLab {
 		this.balance = bal;
 	}
 
+	// Accessor methods
 	public String getCustomer() {
 		return this.customer;
 	}
 
 	public String getBank() {
 		return this.customer;
+	}
+
+	public String getAccount() {
+		return this.account;
 	}
 
 }
