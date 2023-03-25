@@ -25,6 +25,15 @@ public class CreditCardLab {
 		this(cust, bk, acc, lim, 0.0);
 	}
 
+	/**
+	 * Constructs credit card instance by providing all params
+	 * 
+	 * @param cust
+	 * @param bk
+	 * @param acnt
+	 * @param limit
+	 * @param bal
+	 */
 	CreditCardLab(String cust, String bk, String acnt, int limit, double bal) {
 		this.customer = cust;
 		this.bank = bk;
