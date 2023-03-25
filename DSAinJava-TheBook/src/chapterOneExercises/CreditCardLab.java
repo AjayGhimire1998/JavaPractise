@@ -55,4 +55,12 @@ public class CreditCardLab {
 		return this.account;
 	}
 
+	public int getLimit() {
+		return this.limit;
+	}
+
+	public double getBalance() {
+		return this.balance;
+	}
+
 }
