@@ -13,6 +13,12 @@ public class CreditCardLab {
 	private int limit;
 	protected double balance;
 
-//	CreditCard(String cust, String bk, String acnt, )
+	CreditCardLab(String cust, String bk, String acnt, int limit, double bal) {
+		this.customer = cust;
+		this.bank = bk;
+		this.account = acnt;
+		this.limit = limit;
+		this.balance = bal;
+	}
 
 }
