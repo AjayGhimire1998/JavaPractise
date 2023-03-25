@@ -72,4 +72,8 @@ public class CreditCardLab {
 		return true;
 	}
 
+	public void makePayment(double amount) {
+		this.balance -= amount;
+	}
+
 }
