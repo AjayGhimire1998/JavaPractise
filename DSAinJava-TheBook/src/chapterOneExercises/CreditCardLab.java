@@ -4,7 +4,8 @@ public class CreditCardLab {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		CreditCardLab creditCardLab = new CreditCardLab("Ajay", "CommBank", "Ae10u", 200);
+		System.out.println(creditCardLab.toString());
 	}
 
 	private String customer;
@@ -74,6 +75,12 @@ public class CreditCardLab {
 
 	public void makePayment(double amount) {
 		this.balance -= amount;
+	}
+
+	// toString
+	public String toString() {
+		return String.format("Customer: %s\nBank: %s\nAccount: %s\nBalance: %.2f\nLimit: %d", customer, bank, account,
+				balance, limit);
 	}
 
 }
