@@ -25,4 +25,12 @@ public class CreditCardLab {
 		this.balance = bal;
 	}
 
+	public String getCustomer() {
+		return this.customer;
+	}
+
+	public String getBank() {
+		return this.customer;
+	}
+
 }
