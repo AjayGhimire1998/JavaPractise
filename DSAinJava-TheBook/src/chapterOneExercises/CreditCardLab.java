@@ -13,6 +13,14 @@ public class CreditCardLab {
 	private int limit;
 	protected double balance;
 
+	/**
+	 * Constructs credit card instance with initial balance of zero
+	 * 
+	 * @param cust customer name
+	 * @param bk   bank name
+	 * @param acc  account id
+	 * @param lim  limit
+	 */
 	CreditCardLab(String cust, String bk, String acc, int lim) {
 		this(cust, bk, acc, lim, 0.0);
 	}
