@@ -2,7 +2,7 @@ package chapterOneExercises;
 
 import java.util.Scanner;
 
-public class ChapterOneLab {
+public class ChapterOneLabReinforcement {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
