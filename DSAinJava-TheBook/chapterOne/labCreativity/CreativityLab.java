@@ -5,8 +5,11 @@ import java.util.Arrays;
 public class CreativityLab {
 
 	public static void main(String[] args) {
-		int[] nums = { 2, 4, 5, 9, 1, 2 };
+		int[] nums = { 1, 2, 1, 0, 1, 2, 98, 96 };
+		System.out.println(smallestValue(nums));
+		System.out.println(largestValue(nums));
 		System.out.println(Arrays.toString(reverseArray(nums)));
+
 	}
 
 	/*
@@ -23,6 +26,28 @@ public class CreativityLab {
 
 		}
 		return nums;
+	}
+
+	public static int smallestValue(int[] nums) {
+		int index = 0;
+		for (int i = 1; i < nums.length; i++) {
+			if (nums[index] > nums[i]) {
+				index = i;
+			}
+		}
+		return nums[index];
+	}
+
+	public static int largestValue(int[] nums) {
+		int index = 0;
+
+		for (int i = 1; i < nums.length; i++) {
+			if (nums[index] < nums[i]) {
+
+				index = i;
+			}
+		}
+		return nums[index];
 	}
 
 }
