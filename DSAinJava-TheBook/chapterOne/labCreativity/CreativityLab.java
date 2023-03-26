@@ -1,6 +1,7 @@
 package labCreativity;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class CreativityLab {
 
@@ -14,6 +15,14 @@ public class CreativityLab {
 
 		float[] floats = { 1.0f, 2.0f, 4.5f, 2.2f };
 		System.out.println(hasDistinctFloats(floats));
+		int[] cards = new int[52];
+		for (int i = 0; i < cards.length; i++) {
+			cards[i] = i + 1;
+		}
+		System.out.println(Arrays.toString(cards));
+		shuffleNumbers(cards);
+		Random random = new Random();
+		System.out.println(random.nextInt(2));
 
 	}
 
@@ -116,6 +125,18 @@ public class CreativityLab {
 			}
 		}
 		return true;
+	}
+
+	public static void shuffleNumbers(int[] nums) {
+		for (int i = nums.length - 1; i >= 0; i--) {
+			Random random = new Random();
+			int rand = random.nextInt(i + 1);
+
+//			int temp = nums[i];
+			nums[i] = nums[rand];
+		}
+
+		System.out.println(Arrays.toString(nums));
 	}
 
 }
