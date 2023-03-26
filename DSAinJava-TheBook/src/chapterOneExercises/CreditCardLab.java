@@ -6,6 +6,9 @@ public class CreditCardLab {
 		// TODO Auto-generated method stub
 		CreditCardLab creditCardLab = new CreditCardLab("Ajay", "CommBank", "Ae10u", 200);
 		System.out.println(creditCardLab.toString());
+
+		creditCardLab.makePayment(-1);
+		System.out.println(creditCardLab.toString());
 	}
 
 	private String customer;
@@ -73,14 +76,31 @@ public class CreditCardLab {
 		return true;
 	}
 
+	/*
+	 * Modify the CreditCard class from Code Fragment 1.5 so that it ignores any
+	 * request to process a negative payment amount.
+	 */
 	public void makePayment(double amount) {
-		this.balance -= amount;
+		if (amount < 0) {
+			System.err.println("You cannot make negative payments");
+
+		} else {
+			this.balance -= amount;
+		}
 	}
 
 	// toString
 	public String toString() {
 		return String.format("Customer: %s\nBank: %s\nAccount: %s\nBalance: %.2f\nLimit: %d", customer, bank, account,
 				balance, limit);
+	}
+
+	/*
+	 * Modify the CreditCard class from Code Fragment 1.5 to include a method that
+	 * updates the credit limit.
+	 */
+	public void updateLimit(int limit) {
+		this.limit = limit;
 	}
 
 }
