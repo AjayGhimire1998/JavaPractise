@@ -28,6 +28,11 @@ public class CreativityLab {
 		return nums;
 	}
 
+	/*
+	 * Write a pseudocode description of a method for finding the smallest and
+	 * largest numbers in an array of integers and compare that to a Java method
+	 * that would do the same thing.
+	 */
 	public static int smallestValue(int[] nums) {
 		int index = 0;
 		for (int i = 1; i < nums.length; i++) {
@@ -38,6 +43,11 @@ public class CreativityLab {
 		return nums[index];
 	}
 
+	/*
+	 * Write a pseudocode description of a method for finding the smallest and
+	 * largest numbers in an array of integers and compare that to a Java method
+	 * that would do the same thing.
+	 */
 	public static int largestValue(int[] nums) {
 		int index = 0;
 
