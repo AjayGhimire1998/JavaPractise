@@ -10,6 +10,7 @@ public class CreativityLab {
 		System.out.println(smallestValue(nums));
 		System.out.println(largestValue(nums));
 		System.out.println(Arrays.toString(reverseArray(nums)));
+		System.out.println(countOdDivisible(10));
 
 	}
 
@@ -76,9 +77,27 @@ public class CreativityLab {
 					return true;
 				}
 			}
-
 		}
 		return false;
+	}
+
+	/*
+	 * C-1.19 Write a Java program that can take a positive integer greater than 2
+	 * as input and write out the number of times one must repeatedly divide this
+	 * number by 2 before getting a value less than 2.
+	 */
+	public static int countOdDivisible(int n) {
+		if (n <= 2) {
+			System.err.println("only number greater than 2 is valid");
+			return 0;
+		}
+		int count = 0;
+		while (n >= 2) {
+			n = n / 2;
+			count++;
+		}
+		return count;
+
 	}
 
 }
