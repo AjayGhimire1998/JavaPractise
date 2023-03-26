@@ -12,6 +12,9 @@ public class CreativityLab {
 		System.out.println(Arrays.toString(reverseArray(nums)));
 		System.out.println(countOdDivisible(10));
 
+		float[] floats = { 1.0f, 2.0f, 4.5f, 2.2f };
+		System.out.println(hasDistinctFloats(floats));
+
 	}
 
 	/*
@@ -97,7 +100,22 @@ public class CreativityLab {
 			count++;
 		}
 		return count;
+	}
 
+	/*
+	 * Write a Java method that takes an array of float values and determines if all
+	 * the numbers are different from each other (that is, they are distinct).
+	 *
+	 */
+	public static boolean hasDistinctFloats(float[] floats) {
+		for (int i = 0; i < floats.length - 1; i++) {
+			for (int j = i + 1; j < floats.length; j++) {
+				if (floats[i] == floats[j]) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 }
