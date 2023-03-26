@@ -6,6 +6,7 @@ public class CreativityLab {
 
 	public static void main(String[] args) {
 		int[] nums = { 1, 2, 1, 0, 1, 2, 98, 96 };
+		System.out.println(hasProductEven(nums));
 		System.out.println(smallestValue(nums));
 		System.out.println(largestValue(nums));
 		System.out.println(Arrays.toString(reverseArray(nums)));
@@ -58,6 +59,26 @@ public class CreativityLab {
 			}
 		}
 		return nums[index];
+	}
+
+	/*
+	 * C-1.17 Write a short Java method that takes an array of int values and
+	 * determines if there is a pair of distinct elements of the array whose product
+	 * is even.
+	 */
+
+	public static boolean hasProductEven(int[] nums) {
+		for (int i = 0; i < nums.length - 1; i++) {
+			for (int j = i + 1; j < nums.length; j++) {
+				int evenproduct = nums[i] * nums[j];
+				System.out.println(evenproduct);
+				if (evenproduct % 2 == 0) {
+					return true;
+				}
+			}
+
+		}
+		return false;
 	}
 
 }
