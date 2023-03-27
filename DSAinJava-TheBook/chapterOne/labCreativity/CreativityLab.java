@@ -311,4 +311,8 @@ public class CreativityLab {
 		return randomChar;
 	}
 
+	public void hasSameBirthday() {
+
+	}
+
 }
