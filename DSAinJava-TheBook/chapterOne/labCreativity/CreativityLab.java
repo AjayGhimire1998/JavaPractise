@@ -21,8 +21,9 @@ public class CreativityLab {
 		}
 		System.out.println(Arrays.toString(cards));
 		shuffleNumbers(cards);
+		System.out.println(Arrays.toString(cards));
 		Random random = new Random();
-		System.out.println(random.nextInt(2));
+//		System.out.println(random.nextInt(2));
 
 	}
 
@@ -128,15 +129,19 @@ public class CreativityLab {
 	}
 
 	public static void shuffleNumbers(int[] nums) {
-		for (int i = nums.length - 1; i >= 0; i--) {
-			Random random = new Random();
-			int rand = random.nextInt(i + 1);
+		Random random = new Random();
+		for (int i = nums.length - 1; i > 0; i--) {
 
-//			int temp = nums[i];
-			nums[i] = nums[rand];
+			int rand = random.nextInt(i + 1);
+			swap(nums, i, rand);
 		}
 
-		System.out.println(Arrays.toString(nums));
+	}
+
+	private static void swap(int[] nums, int i, int j) {
+		int temp = nums[i];
+		nums[i] = nums[j];
+		nums[j] = temp;
 	}
 
 }
