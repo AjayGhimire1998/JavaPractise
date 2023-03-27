@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class CreativityLab {
 
 	public static void main(String[] args) {
-		calculator();
+//		calculator();
+		printHundredTimesWithTypos("I will never spam my friends again.");
 //		printInputInReverse();
 //		int[] nums = { 1, 2, 1, 0, 1, 2, 98, 96 };
 //		int[] numsTwo = { 2, 4, 2, 0, 100, 1, 2, 100 };
@@ -273,6 +274,12 @@ public class CreativityLab {
 			System.err.println("Wrong operator");
 		}
 
+	}
+
+	public static void printHundredTimesWithTypos(String str) {
+		for (int i = 1; i <= 100; i++) {
+			System.out.println(i + ". " + str);
+		}
 	}
 
 }
