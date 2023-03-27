@@ -7,6 +7,8 @@ public class CreativityLab {
 
 	public static void main(String[] args) {
 		int[] nums = { 1, 2, 1, 0, 1, 2, 98, 96 };
+		int[] numsTwo = { 2, 4, 2, 0, 100, 1, 2, 100 };
+		System.out.println(Arrays.toString(productsOfTwoArr(nums, numsTwo)));
 		System.out.println(hasProductEven(nums));
 		System.out.println(smallestValue(nums));
 		System.out.println(largestValue(nums));
@@ -168,6 +170,21 @@ public class CreativityLab {
 			}
 
 		}
+	}
+
+	/*
+	 * Write a short Java program that takes two arrays a and b of length n storing
+	 * int values, and returns the dot product of a and b. That is, it returns an
+	 * array c of length n such that c[i] = a[i] · b[i], for i = 0,...,n−1.
+	 */
+
+	public static int[] productsOfTwoArr(int[] a, int[] b) {
+		int[] result = new int[a.length];
+
+		for (int i = 0; i < result.length; i++) {
+			result[i] = a[i] * b[i];
+		}
+		return result;
 	}
 
 }
