@@ -1,35 +1,35 @@
 package labCreativity;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class CreativityLab {
 
 	public static void main(String[] args) {
-		printInputInReverse();
-		int[] nums = { 1, 2, 1, 0, 1, 2, 98, 96 };
-		int[] numsTwo = { 2, 4, 2, 0, 100, 1, 2, 100 };
-		System.out.println(Arrays.toString(productsOfTwoArr(nums, numsTwo)));
-		System.out.println(hasProductEven(nums));
-		System.out.println(smallestValue(nums));
-		System.out.println(largestValue(nums));
-		System.out.println(Arrays.toString(reverseArray(nums)));
-		System.out.println(countOdDivisible(10));
-
-		float[] floats = { 1.0f, 2.0f, 4.5f, 2.2f };
-		System.out.println(hasDistinctFloats(floats));
-		int[] cards = new int[52];
-		for (int i = 0; i < cards.length; i++) {
-			cards[i] = i + 1;
-		}
-		System.out.println(Arrays.toString(cards));
-		shuffleNumbers(cards);
-		System.out.println(Arrays.toString(cards));
-		Random random = new Random();
-//		System.out.println(random.nextInt(2));
-		char[] catDog = { 'c', 'a', 't', 'd', 'o', 'g' };
-		printALlPossibleStrings(catDog, 0, catDog.length);
+		calculator();
+//		printInputInReverse();
+//		int[] nums = { 1, 2, 1, 0, 1, 2, 98, 96 };
+//		int[] numsTwo = { 2, 4, 2, 0, 100, 1, 2, 100 };
+//		System.out.println(Arrays.toString(productsOfTwoArr(nums, numsTwo)));
+//		System.out.println(hasProductEven(nums));
+//		System.out.println(smallestValue(nums));
+//		System.out.println(largestValue(nums));
+//		System.out.println(Arrays.toString(reverseArray(nums)));
+//		System.out.println(countOdDivisible(10));
+//
+//		float[] floats = { 1.0f, 2.0f, 4.5f, 2.2f };
+//		System.out.println(hasDistinctFloats(floats));
+//		int[] cards = new int[52];
+//		for (int i = 0; i < cards.length; i++) {
+//			cards[i] = i + 1;
+//		}
+//		System.out.println(Arrays.toString(cards));
+//		shuffleNumbers(cards);
+//		System.out.println(Arrays.toString(cards));
+//		Random random = new Random();
+////		System.out.println(random.nextInt(2));
+//		char[] catDog = { 'c', 'a', 't', 'd', 'o', 'g' };
+//		printALlPossibleStrings(catDog, 0, catDog.length);
 
 	}
 
@@ -215,6 +215,62 @@ public class CreativityLab {
 			}
 
 			System.out.println("The revered version of input number" + (i + 1) + " says: " + result);
+		}
+
+	}
+
+	/*
+	 * Write a Java program that can simulate a simple calculator, using the Java
+	 * console as the exclusive input and output device. That is, each input to the
+	 * calculator, be it a number, like 12.34 or 1034, or an operator, like + or =,
+	 * can be done on a separate line. After each such input, you should output to
+	 * the Java console what would be displayed on your calculator
+	 */
+
+	public static void calculator() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter a number: ");
+//		int firstInt = 0;
+		double firstDoub = 0;
+
+		if (in.hasNextInt()) {
+			firstDoub = in.nextInt();
+		} else if (in.hasNextDouble()) {
+			firstDoub = in.nextDouble();
+		} else {
+			System.err.println(in.next() + "is not a number");
+		}
+
+		System.out.println();
+		Scanner inTwo = new Scanner(System.in);
+		System.out.println("Enter the operator");
+		String operator = inTwo.next();
+		System.out.println();
+
+		Scanner inThree = new Scanner(System.in);
+		System.out.println("Enter another number: ");
+//		int secondInt = 0;
+		double secondDoub = 0;
+		if (inThree.hasNextInt()) {
+			secondDoub = inThree.nextInt();
+		} else if (inThree.hasNextDouble()) {
+			secondDoub = inThree.nextDouble();
+		} else {
+			System.err.println(inThree.next() + "is not a number");
+		}
+
+//		System.out.println(operator.equals("+"));
+		if (operator.equals("+")) {
+			System.out.println(firstDoub + secondDoub);
+		} else if (operator.equals("-")) {
+			System.out.println(firstDoub - secondDoub);
+		} else if (operator.equals("*")) {
+			System.out.println(firstDoub * secondDoub);
+		} else if (operator.equals("/")) {
+
+			System.out.println(firstDoub / secondDoub);
+		} else {
+			System.err.println("Wrong operator");
 		}
 
 	}
