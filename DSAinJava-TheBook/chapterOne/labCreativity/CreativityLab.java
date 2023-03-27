@@ -24,6 +24,8 @@ public class CreativityLab {
 		System.out.println(Arrays.toString(cards));
 		Random random = new Random();
 //		System.out.println(random.nextInt(2));
+		char[] catDog = { 'c', 'a', 't', 'd', 'o', 'g' };
+		printALlPossibleStrings(catDog, 0, catDog.length);
 
 	}
 
@@ -142,6 +144,30 @@ public class CreativityLab {
 		int temp = nums[i];
 		nums[i] = nums[j];
 		nums[j] = temp;
+	}
+
+	private static void swap(char[] nums, int i, int j) {
+		char temp = nums[i];
+		nums[i] = nums[j];
+		nums[j] = temp;
+	}
+
+	/*
+	 * Write a short Java program that outputs all possible strings formed by using
+	 * the characters 'c', 'a', 't', 'd', 'o', and 'g' exactly once.
+	 * 
+	 */
+	public static void printALlPossibleStrings(char[] chars, int start, int end) {
+		if (start == end) {
+			System.out.println(new String(chars));
+		} else {
+			for (int i = start; i < end; i++) {
+				swap(chars, start, i);
+				printALlPossibleStrings(chars, start + 1, end);
+				swap(chars, start, i);
+			}
+
+		}
 	}
 
 }
