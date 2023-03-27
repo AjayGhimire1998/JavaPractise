@@ -2,10 +2,12 @@ package labCreativity;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class CreativityLab {
 
 	public static void main(String[] args) {
+		printInputInReverse();
 		int[] nums = { 1, 2, 1, 0, 1, 2, 98, 96 };
 		int[] numsTwo = { 2, 4, 2, 0, 100, 1, 2, 100 };
 		System.out.println(Arrays.toString(productsOfTwoArr(nums, numsTwo)));
@@ -185,6 +187,36 @@ public class CreativityLab {
 			result[i] = a[i] * b[i];
 		}
 		return result;
+	}
+
+	/*
+	 * Write a short Java program that takes all the lines input to standard input
+	 * and writes them to standard output in reverse order. That is, each line is
+	 * output in the correct order, but the ordering of the lines is reversed.
+	 */
+
+	public static void printInputInReverse() {
+		String[] inputs = new String[3];
+		int inputCount = 0;
+		while (inputCount < 3) {
+			System.out.println("Input line number " + (inputCount + 1) + ":");
+			Scanner in = new Scanner(System.in);
+			String input = in.nextLine();
+			inputs[inputCount] = input;
+			inputCount++;
+		}
+		for (int i = 0; i < inputs.length; i++) {
+			System.out.println("Input number " + (i + 1) + " says: " + inputs[i]);
+			String result = "";
+			for (int j = inputs[i].length() - 1; j >= 0; j--) {
+//				char temp = inputs[i].charAt(j);
+				result += inputs[i].charAt(j);
+
+			}
+
+			System.out.println("The revered version of input number" + (i + 1) + " says: " + result);
+		}
+
 	}
 
 }
