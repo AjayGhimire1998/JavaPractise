@@ -7,7 +7,9 @@ public class CreativityLab {
 
 	public static void main(String[] args) {
 //		calculator();
-		printHundredTimesWithTypos("I will never spam my friends again.");
+		String sent = "I will never spam my friends again.";
+
+		printHundredTimesWithTypos(sent);
 //		printInputInReverse();
 //		int[] nums = { 1, 2, 1, 0, 1, 2, 98, 96 };
 //		int[] numsTwo = { 2, 4, 2, 0, 100, 1, 2, 100 };
@@ -276,10 +278,37 @@ public class CreativityLab {
 
 	}
 
+	/*
+	 * A common punishment for school children is to write out a sentence multiple
+	 * times. Write a Java stand-alone program that will write out the following
+	 * sentence one hundred times: “I will never spam my friends again.” Your
+	 * program should number each of the sentences and it should make eight
+	 * different randomlooking typos.
+	 */
 	public static void printHundredTimesWithTypos(String str) {
+		Random rand = new Random();
 		for (int i = 1; i <= 100; i++) {
-			System.out.println(i + ". " + str);
+			StringBuilder sb = new StringBuilder();
+			sb.append(i).append(". ");
+			for (char c : str.toCharArray()) {
+				if (rand.nextInt(80) == 0) {
+					sb.append(getRandomChar(c));
+				} else {
+					sb.append(c);
+				}
+			}
+			System.out.println(sb.toString());
 		}
+
+	}
+
+	public static char getRandomChar(char c) {
+		Random rand = new Random();
+		char randomChar;
+		do {
+			randomChar = (char) (rand.nextInt(26) + 'a');
+		} while (randomChar == c);
+		return randomChar;
 	}
 
 }
