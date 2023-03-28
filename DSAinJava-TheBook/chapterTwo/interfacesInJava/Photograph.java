@@ -20,19 +20,24 @@ public class Photograph implements Sellable {
 	@Override
 	public String decription() {
 		// TODO Auto-generated method stub
-		return null;
+		return descript;
 	}
 
 	@Override
 	public int listPrice() {
 		// TODO Auto-generated method stub
-		return 0;
+		return price;
 	}
 
 	@Override
 	public int lowestPrice() {
 		// TODO Auto-generated method stub
-		return 0;
+		return price / 2;
+	}
+
+	public boolean isColor() {
+
+		return color;
 	}
 
 }
