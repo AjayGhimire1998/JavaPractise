@@ -27,10 +27,14 @@ public class PredetoryCreditCardTwo extends CreditCardTwo {
 	}
 
 	public static void main(String[] args) {
-		CreditCardTwo card = new PredetoryCreditCardTwo("Ajay", "anz", "aei0u", 100, 0, 12);
-		card.makePayment(12);
+		CreditCardTwo card = new PredetoryCreditCardTwo("Ajay", "anz", "aei0u", 100, 100, 12);
+//		card.makePayment(12);
+
+		System.out.println(card instanceof PredetoryCreditCardTwo);
 		System.out.println(card.intialBalance);
 		card.charge(18);
+
+		System.out.println(card instanceof CreditCardTwo);
 		System.out.println(card.intialBalance);
 	}
 

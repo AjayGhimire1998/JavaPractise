@@ -8,11 +8,11 @@ public class CreditCardTwo {
 
 	}
 
-	String customer;
-	String bank;
-	String account;
-	int limit;
-	double intialBalance;
+	private String customer;
+	private String bank;
+	private String account;
+	private int limit;
+	protected double intialBalance;
 
 	public enum CardName {
 		VISA, MASTERCARD, AMEX
