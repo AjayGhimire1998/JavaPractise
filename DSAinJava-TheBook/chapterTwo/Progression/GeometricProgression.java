@@ -25,5 +25,6 @@ public class GeometricProgression extends Progression {
 		GeometricProgression geo = new GeometricProgression(3, 2);
 		geo.nextValue();
 		System.out.println(geo.current);
+		geo.printProgression(20);
 	}
 }

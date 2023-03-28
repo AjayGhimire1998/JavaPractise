@@ -22,9 +22,9 @@ public class Progression {
 	}
 
 	public void printProgression(int n) {
-		System.out.println(nextValue());
+		System.out.print(nextValue());
 		for (int i = 1; i < n; i++) {
-			System.out.println(" " + nextValue());
+			System.out.print(" " + nextValue());
 		}
 		System.out.println();
 	}

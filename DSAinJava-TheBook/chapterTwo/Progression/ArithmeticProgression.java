@@ -25,5 +25,6 @@ public class ArithmeticProgression extends Progression {
 		ArithmeticProgression arth = new ArithmeticProgression(3, 1);
 		arth.nextValue();
 		System.out.println(arth.current);
+		arth.printProgression(20);
 	}
 }
