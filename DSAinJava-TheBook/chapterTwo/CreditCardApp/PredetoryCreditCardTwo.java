@@ -26,4 +26,12 @@ public class PredetoryCreditCardTwo extends CreditCardTwo {
 		return isSuccess;
 	}
 
+	public static void main(String[] args) {
+		CreditCardTwo card = new PredetoryCreditCardTwo("Ajay", "anz", "aei0u", 100, 0, 12);
+		card.makePayment(12);
+		System.out.println(card.intialBalance);
+		card.charge(18);
+		System.out.println(card.intialBalance);
+	}
+
 }
