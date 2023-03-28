@@ -1,6 +1,19 @@
 package interfacesInJava;
 
+/**
+ * Class for photographs that can be sold
+ * 
+ * @author ajayghimire
+ *
+ */
 public class Photograph implements Sellable {
+	private String descript;
+	private int price;
+	private boolean color;
+
+	Photograph() {
+
+	}
 
 	@Override
 	public String decription() {
