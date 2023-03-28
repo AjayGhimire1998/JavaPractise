@@ -7,12 +7,14 @@ package interfacesInJava;
  *
  */
 public class Photograph implements Sellable {
-	private String descript;
-	private int price;
-	private boolean color;
+	private String descript; // decription of this photo
+	private int price; // the price we are setting
+	private boolean color; // true if the photo is in color
 
-	Photograph() {
-
+	Photograph(String desc, int p, boolean c) {
+		descript = desc;
+		price = p;
+		color = c;
 	}
 
 	@Override
