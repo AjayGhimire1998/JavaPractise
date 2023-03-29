@@ -1,12 +1,6 @@
 package interfacesInJava;
 
-/**
- * Class for objects that can be sold, packed and shipped
- * 
- * @author ajayghimire
- *
- */
-public class BoxedItem implements Sellable, Transportable {
+public class BoxedItem2 implements Insurable {
 	private String descript; // description of this item
 	private int price;// list price in cents
 	private int weight;// weight in grams
@@ -15,23 +9,11 @@ public class BoxedItem implements Sellable, Transportable {
 	private int width = 0;// box width in centimeters
 	private int depth = 0;// box depth in centimeters
 
-	BoxedItem(String desc, int p, int w, boolean h) {
+	BoxedItem2(String desc, int p, int w, boolean h) {
 		descript = desc;
 		price = p;
 		weight = w;
 		haz = h;
-	}
-
-	@Override
-	public int weight() {
-		// TODO Auto-generated method stub
-		return weight;
-	}
-
-	@Override
-	public boolean isHazardous() {
-		// TODO Auto-generated method stub
-		return haz;
 	}
 
 	@Override
@@ -52,14 +34,22 @@ public class BoxedItem implements Sellable, Transportable {
 		return price / 2;
 	}
 
-	public int insuredValue() {
-		return price * 2;
+	@Override
+	public int weight() {
+		// TODO Auto-generated method stub
+		return weight;
 	}
 
-	public void setBox(int h, int w, int d) {
-		height = h;
-		width = w;
-		depth = d;
+	@Override
+	public boolean isHazardous() {
+		// TODO Auto-generated method stub
+		return haz;
+	}
+
+	@Override
+	public int insuredValue() {
+		// TODO Auto-generated method stub
+		return price * 2;
 	}
 
 }
