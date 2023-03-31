@@ -13,7 +13,11 @@ public class Student implements Person {
 
 	@Override
 	public boolean equals(Person other) {
-		return false;
+		if (!(other instanceof Student)) {
+			return false;
+		}
+		Student s = (Student) other;
+		return id.equals(s.id);
 	}
 
 	@Override
@@ -29,6 +33,14 @@ public class Student implements Person {
 
 	public String getId() {
 		return id;
+	}
+
+	protected int studyHours() {
+		return age / 2;
+	}
+
+	public String toString() {
+		return "Student(ID: " + id + ", Name: " + name + ", Age: " + age + ")";
 	}
 
 }
