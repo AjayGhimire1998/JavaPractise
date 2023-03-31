@@ -16,6 +16,12 @@ public class TryException {
 		} catch (NumberFormatException e) {
 			System.out.println("Invalid integer argument. Usinf default");
 		}
+//		ensurePositive(2);
 	}
 
+	public static void ensurePositive(int n) {
+		if (n < 0) {
+			throw new IllegalArgumentException("Thats not positive");
+		}
+	}
 }
