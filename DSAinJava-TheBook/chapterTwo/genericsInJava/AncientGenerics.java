@@ -16,4 +16,9 @@ public class AncientGenerics {
 	public Object getSecond() {
 		return second;
 	}
+
+	public static void main(String[] args) {
+		AncientGenerics gens = new AncientGenerics("ORCL", 32.9);
+		System.out.println(gens.first);
+	}
 }
