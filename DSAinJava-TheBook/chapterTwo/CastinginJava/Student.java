@@ -43,4 +43,14 @@ public class Student implements Person {
 		return "Student(ID: " + id + ", Name: " + name + ", Age: " + age + ")";
 	}
 
+	public static void main(String[] args) {
+		Student s = new Student("42003s", "Ajay", 24);
+		System.out.println(s.toString());
+
+		Person p = new Student("42003s", "ajayay", 21);
+		System.out.println(p.toString());
+
+		System.out.println(s.equals(p));
+	}
+
 }
