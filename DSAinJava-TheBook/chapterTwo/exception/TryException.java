@@ -17,11 +17,23 @@ public class TryException {
 			System.out.println("Invalid integer argument. Usinf default");
 		}
 //		ensurePositive(2);
+		System.out.println(parseInt("12ab"));
 	}
 
+	// throw clause
 	public static void ensurePositive(int n) {
 		if (n < 0) {
 			throw new IllegalArgumentException("Thats not positive");
 		}
+	}
+
+	// throws clause
+	/**
+	 * @param s
+	 * @return
+	 * @throws NumberFormatException
+	 */
+	public static int parseInt(String s) throws NumberFormatException {
+		return Integer.parseInt(s);
 	}
 }
