@@ -1,10 +1,19 @@
 package genericsInJava;
 
 public class AncientGenerics {
+	Object first;
+	Object second;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	AncientGenerics(Object a, Object b) {
+		first = a;
+		second = b;
 	}
 
+	public Object getFirst() {
+		return first;
+	}
+
+	public Object getSecond() {
+		return second;
+	}
 }
