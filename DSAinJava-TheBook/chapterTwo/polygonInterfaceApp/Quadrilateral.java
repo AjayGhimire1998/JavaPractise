@@ -20,5 +20,4 @@ public class Quadrilateral implements Polygon {
 	public double perimeter() {
 		return a + b + c + d;
 	}
-
 }
