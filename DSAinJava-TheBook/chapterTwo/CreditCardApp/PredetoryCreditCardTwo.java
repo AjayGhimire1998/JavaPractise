@@ -2,7 +2,7 @@ package CreditCardApp;
 
 public class PredetoryCreditCardTwo extends CreditCardTwo {
 	private double apr; // annual percentage rate
-	private int chargesCount;
+	private static int chargesCount;
 
 	PredetoryCreditCardTwo(String customer, String bank, String account, int limit, int balance, double rate) {
 		super(customer, bank, account, limit, balance); // initialize superclass attributes
@@ -43,7 +43,7 @@ public class PredetoryCreditCardTwo extends CreditCardTwo {
 	}
 
 	public static void main(String[] args) {
-		CreditCardTwo card = new PredetoryCreditCardTwo("Ajay", "anz", "aei0u", 90, 100, 12);
+		CreditCardTwo card = new PredetoryCreditCardTwo("Ajay", "anz", "aei0u", 200, 100, 12);
 //		card.makePayment(12);
 
 		System.out.println(card instanceof PredetoryCreditCardTwo);
@@ -60,6 +60,7 @@ public class PredetoryCreditCardTwo extends CreditCardTwo {
 		card.charge(18);
 		card.charge(18);
 		card.charge(18);
+		System.out.println(chargesCount);
 
 		System.out.println(card instanceof CreditCardTwo);
 		System.out.println(card.intialBalance);
