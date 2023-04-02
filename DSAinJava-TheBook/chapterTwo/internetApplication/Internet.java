@@ -2,6 +2,17 @@ package internetApplication;
 
 import java.util.ArrayList;
 
+/**
+ * C-2.28 Write a set of Java classes that can simulate an Internet application
+ * in which one party, Alice, is periodically creating a set of packets that she
+ * wants to send to Bob. An Internet process is continually checking if Alice
+ * has any packets to send, and if so, it delivers them to Bob’s computer; Bob
+ * is periodically checking if his computer has a packet from Alice, and if so,
+ * he reads and deletes it.
+ * 
+ * @author ajayghimire
+ *
+ */
 public class Internet {
 	private Sender sender;
 	private Receiver receiver;
