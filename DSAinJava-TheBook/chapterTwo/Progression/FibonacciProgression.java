@@ -12,11 +12,15 @@ public class FibonacciProgression extends Progression {
 		prev = second - first;
 	}
 
+	/**
+	 * C-2.23 Modify the advance method of the FibonacciProgression class so as to
+	 * avoid use of any temporary variable.
+	 *
+	 */
 	@Override
 	protected void advance() {
-		long temp = prev;
-		prev = current;
-		current += temp;
+		current += prev;
+		prev = current - prev;
 	}
 
 	public static void main(String[] args) {
