@@ -1,5 +1,13 @@
 package GameEntries;
 
+/**
+ * Java code for a simple GameEntry class. Note that we include methods for
+ * returning the name and score for a game entry object, as well as a method for
+ * returning a string representation of this entry
+ * 
+ * @author ajayghimire
+ *
+ */
 public class GameEntry {
 	private String name; // name of the player with the score
 	private int score; // the score value
