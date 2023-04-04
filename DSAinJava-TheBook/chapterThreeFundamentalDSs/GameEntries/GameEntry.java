@@ -9,11 +9,15 @@ public class GameEntry {
 		score = i;
 	}
 
-	String getName() {
+	public String getName() {
 		return name;
 	}
 
-	int getScore() {
+	public int getScore() {
 		return score;
+	}
+
+	public String toString() {
+		return "(" + name + ", " + score + ")";
 	}
 }
