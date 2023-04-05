@@ -61,21 +61,36 @@ public class ScoreBoard {
 
 	}
 
-	GameEntry remove(int i) {
-		try {
-			GameEntry temp = board[i];
-			for (int j = i; j < numOfEntries - 1; j++) {
-				board[j] = board[j + 1];
-			}
-			board[numOfEntries - 1] = null;
-			numOfEntries--;
-			return temp;
-		} catch (Exception e) {
-			if (i < 0 || i >= numOfEntries) {
-				throw new IndexOutOfBoundsException("Invalid index: " + i);
-			}
+//	GameEntry remove(int i) {
+//		try {
+//			GameEntry temp = board[i];
+//			for (int j = i; j < numOfEntries - 1; j++) {
+//				board[j] = board[j + 1];
+//			}
+//			board[numOfEntries - 1] = null;
+//			numOfEntries--;
+//			return temp;
+//		} catch (Exception e) {
+//			if (i < 0 || i >= numOfEntries) {
+//				throw new IndexOutOfBoundsException("Invalid index: " + i);
+//			}
+//		}
+//		return new GameEntry(null, i);
+//	}
+
+	public GameEntry removePractise(int i) throws IndexOutOfBoundsException {
+		if (i < 0 || i >= numOfEntries) {
+			throw new IndexOutOfBoundsException("Index invalid at " + i);
 		}
-		return new GameEntry(null, i);
+
+		GameEntry temp = board[i];
+
+		for (int j = i; j < numOfEntries - 1; j++) {
+			board[j] = board[j + 1];
+		}
+		board[numOfEntries - 1] = null;
+		numOfEntries--;
+		return temp;
 	}
 
 	public static void main(String[] args) {
