@@ -24,25 +24,25 @@ public class ScoreBoard {
 	 * 
 	 * @param e
 	 */
-//	void add(GameEntry e) {
-//		int newScore = e.getScore();
-//		// is the new entry e really a high score?
-//		if (numOfEntries < board.length || newScore > board[numOfEntries - 1].getScore()) {
-//			if (numOfEntries < board.length) { // no score drops from the board
-//				numOfEntries++; // so overall number increases
-//			}
-//			// shift any lower scores rightward to make room for the new entry
-//			int j = numOfEntries - 1;
-//			while (j > 0 && board[j - 1].getScore() < newScore) {
-//				board[j] = board[j - 1]; // shift entry from j-1 to j
-//				j--; // and decrement j
-//			}
-//
-//			board[j] = e; // when done, add new entry
-//		}
-//	}
-
 	void add(GameEntry e) {
+		int newScore = e.getScore();
+		// is the new entry e really a high score?
+		if (numOfEntries < board.length || newScore > board[numOfEntries - 1].getScore()) {
+			if (numOfEntries < board.length) { // no score drops from the board
+				numOfEntries++; // so overall number increases
+			}
+			// shift any lower scores rightward to make room for the new entry
+			int j = numOfEntries - 1;
+			while (j > 0 && board[j - 1].getScore() < newScore) {
+				board[j] = board[j - 1]; // shift entry from j-1 to j
+				j--; // and decrement j
+			}
+
+			board[j] = e; // when done, add new entry
+		}
+	}
+
+	void addPractise(GameEntry e) {
 		int newScore = e.getScore();
 		if (numOfEntries < board.length || board[numOfEntries - 1].getScore() < newScore) {
 			if (numOfEntries < board.length) {
@@ -67,6 +67,7 @@ public class ScoreBoard {
 		GameEntry gameEntry3 = new GameEntry("Shiya", 10);
 		GameEntry gameEntry4 = new GameEntry("Shiyaaa", 15);
 		GameEntry gameEntry5 = new GameEntry("Ajayyyyyyyyy", 2);
+		GameEntry gameEntry6 = new GameEntry("JIll the legend", 20);
 
 		ScoreBoard scoreBoard = new ScoreBoard(5);
 		scoreBoard.add(gameEntry);
@@ -77,10 +78,11 @@ public class ScoreBoard {
 		scoreBoard.add(gameEntry2);
 		System.out.println(Arrays.toString(scoreBoard.board));
 		System.out.println(scoreBoard.numOfEntries);
-		scoreBoard.add(gameEntry2);
+//		scoreBoard.add(gameEntry2);
 		scoreBoard.add(gameEntry2);
 		scoreBoard.add(gameEntry4);
 		scoreBoard.add(gameEntry5);
+		scoreBoard.add(gameEntry6);
 		System.out.println(scoreBoard.numOfEntries);
 		System.out.println(Arrays.toString(scoreBoard.board));
 
