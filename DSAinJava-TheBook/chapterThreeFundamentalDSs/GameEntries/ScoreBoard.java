@@ -61,6 +61,23 @@ public class ScoreBoard {
 
 	}
 
+	GameEntry remove(int i) {
+		try {
+			GameEntry temp = board[i];
+			for (int j = i; j < numOfEntries - 1; j++) {
+				board[j] = board[j + 1];
+			}
+			board[numOfEntries - 1] = null;
+			numOfEntries--;
+			return temp;
+		} catch (Exception e) {
+			if (i < 0 || i >= numOfEntries) {
+				throw new IndexOutOfBoundsException("Invalid index: " + i);
+			}
+		}
+		return new GameEntry(null, i);
+	}
+
 	public static void main(String[] args) {
 		GameEntry gameEntry = new GameEntry("Ajay", 9);
 		GameEntry gameEntry2 = new GameEntry("Arjun", 6);
@@ -84,6 +101,9 @@ public class ScoreBoard {
 		scoreBoard.add(gameEntry5);
 		scoreBoard.add(gameEntry6);
 		System.out.println(scoreBoard.numOfEntries);
+		System.out.println(Arrays.toString(scoreBoard.board));
+
+		System.out.println(scoreBoard.remove(0));
 		System.out.println(Arrays.toString(scoreBoard.board));
 
 	}
