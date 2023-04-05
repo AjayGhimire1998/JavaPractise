@@ -1,5 +1,7 @@
 package GameEntries;
 
+import java.util.Arrays;
+
 /**
  * Class for storing high scores in an array in nondecreasing order.
  * 
@@ -26,18 +28,40 @@ public class ScoreBoard {
 		int newScore = e.getScore();
 		// is the new entry e really a high score?
 		if (numOfEntries < board.length || newScore > board[numOfEntries - 1].getScore()) {
-			if (numOfEntries < board.length) {
-				numOfEntries++;
+			if (numOfEntries < board.length) { // no score drops from the board
+				numOfEntries++; // so overall number increases
 			}
-
+			// shift any lower scores rightward to make room for the new entry
 			int j = numOfEntries - 1;
-
 			while (j > 0 && board[j - 1].getScore() < newScore) {
-				board[j] = board[j - 1];
-				j--;
+				board[j] = board[j - 1]; // shift entry from j-1 to j
+				j--; // and decrement j
 			}
 
-			board[j] = e;
+			board[j] = e; // when done, add new entry
 		}
+	}
+
+	public static void main(String[] args) {
+		GameEntry gameEntry = new GameEntry("Ajay", 9);
+		GameEntry gameEntry2 = new GameEntry("Arjun", 6);
+		GameEntry gameEntry3 = new GameEntry("Shiya", 10);
+		GameEntry gameEntry4 = new GameEntry("Shiyaaa", 15);
+
+		ScoreBoard scoreBoard = new ScoreBoard(5);
+		scoreBoard.add(gameEntry);
+
+		System.out.println(Arrays.toString(scoreBoard.board));
+		scoreBoard.add(gameEntry3);
+		System.out.println(Arrays.toString(scoreBoard.board));
+		scoreBoard.add(gameEntry2);
+		System.out.println(Arrays.toString(scoreBoard.board));
+		System.out.println(scoreBoard.numOfEntries);
+		scoreBoard.add(gameEntry2);
+		scoreBoard.add(gameEntry2);
+		scoreBoard.add(gameEntry4);
+		System.out.println(scoreBoard.numOfEntries);
+		System.out.println(Arrays.toString(scoreBoard.board));
+
 	}
 }
