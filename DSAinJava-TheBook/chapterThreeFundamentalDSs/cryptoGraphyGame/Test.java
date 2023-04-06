@@ -7,5 +7,6 @@ public class Test {
 		System.out.println(j);
 		char y = (char) j;
 		System.out.println(y);
+
 	}
 }
