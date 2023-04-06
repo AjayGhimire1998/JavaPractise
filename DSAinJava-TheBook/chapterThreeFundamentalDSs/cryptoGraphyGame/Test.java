@@ -7,6 +7,8 @@ public class Test {
 		System.out.println(j);
 		char y = (char) j;
 		System.out.println(y);
+		int f = 'M' - 'A';
+		System.out.println(f);
 
 	}
 }

@@ -61,4 +61,20 @@ public class CaesarCipher {
 	public String decrypt(String secret) {
 		return transform(secret, decoder); // use decoder array
 	}
+
+	/**
+	 * testing the class
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		CaesarCipher cipher = new CaesarCipher(5);
+		System.out.println("Encryption code: " + new String(cipher.encoder));
+		System.out.println("Decryption code: " + new String(cipher.decoder));
+		String message = "FIRE IN THE HOLE; EVAC TO HENRY'S; DON'T FORGET ALLAH!";
+		String coded = cipher.encrypt(message);
+		System.out.println("Secret: " + coded);
+		String decoded = cipher.decrypt(coded);
+		System.out.println("Message: " + decoded);
+	}
 }
