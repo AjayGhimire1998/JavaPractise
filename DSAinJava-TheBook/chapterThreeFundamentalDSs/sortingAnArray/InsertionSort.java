@@ -7,11 +7,20 @@ public class InsertionSort {
 	public static void main(String[] args) {
 		int[] nums = { 1, 6, 2, 9, 4, 9, 5, 3 };
 		insertionSort(nums);
+//		Arrays.sort(nums);
 		System.out.println(Arrays.toString(nums));
 
 		char[] chars = { 'z', 't', 'a', 'm', 'w', 'y', 'b' };
 		insertionSortFromBook(chars);
 		System.out.println(Arrays.toString(chars));
+		System.out.println(Arrays.binarySearch(chars, 't'));
+
+		char[] temp = new char[5];
+		Arrays.fill(temp, 'a');
+		System.out.println(Arrays.toString(temp));
+
+		char[] tempCopy = Arrays.copyOf(temp, 7);
+		System.out.println(Arrays.toString(tempCopy));
 
 	}
 
