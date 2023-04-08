@@ -52,4 +52,24 @@ public class GenericSinglyLinkedLists<T> {
 		return tail.getElement();
 	}
 
+	void addFirst(T e) {
+		head = new Node<>(e, head);
+		if (size == 0) {
+			tail = head;
+		}
+		size++;
+	}
+
+	void addLast(T e) {
+		Node<T> newestNode = new Node<>(e, null);
+		if (isEmpty()) {
+			head = newestNode;
+		} else {
+			tail.setNext(newestNode);
+		}
+
+		tail = newestNode;
+		size++;
+	}
+
 }
