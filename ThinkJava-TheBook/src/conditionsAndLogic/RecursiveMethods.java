@@ -5,8 +5,8 @@ public class RecursiveMethods {
 	public static void main(String[] args) {
 //		countdownWithParams(5);
 //		countUp(6);
-//		displayBinary(23);
-		displayHex(20);
+		displayBinary(9);
+//		displayHex(20);
 		System.out.println();
 
 	}
