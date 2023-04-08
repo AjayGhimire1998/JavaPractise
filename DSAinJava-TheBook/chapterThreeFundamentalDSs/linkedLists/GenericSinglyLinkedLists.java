@@ -22,4 +22,13 @@ public class GenericSinglyLinkedLists<T> {
 			next = node;
 		}
 	}
+
+	private Node<T> head = null;
+	private Node<T> tail = null;
+	private int size = 0;
+
+	GenericSinglyLinkedLists() {
+	}
+
+	// access methods
 }
