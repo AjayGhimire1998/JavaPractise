@@ -10,15 +10,15 @@ public class GenericSinglyLinkedLists<T> {
 			next = n;
 		}
 
-		public T getElement() {
+		T getElement() {
 			return element;
 		}
 
-		public Node<T> getNext() {
+		Node<T> getNext() {
 			return next;
 		}
 
-		public void setNext(Node<T> node) {
+		void setNext(Node<T> node) {
 			next = node;
 		}
 	}
@@ -31,4 +31,25 @@ public class GenericSinglyLinkedLists<T> {
 	}
 
 	// access methods
+
+	int size() {
+		return size;
+	}
+
+	boolean isEmpty() {
+		return size == 0;
+	}
+
+	T first() {
+		if (isEmpty())
+			return null;
+		return head.getElement();
+	}
+
+	T last() {
+		if (isEmpty())
+			return null;
+		return tail.getElement();
+	}
+
 }
