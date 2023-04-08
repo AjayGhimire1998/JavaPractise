@@ -72,4 +72,17 @@ public class GenericSinglyLinkedLists<T> {
 		size++;
 	}
 
+	T removeFirst() {
+		if (isEmpty())
+			return null;
+		T answer = head.getElement();
+		head = head.getNext();
+		size--;
+
+		if (size == 0)
+			tail = null;
+
+		return answer;
+	}
+
 }
