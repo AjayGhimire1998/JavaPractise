@@ -223,7 +223,7 @@ public class LinkedListPractise<T> {
 	void removeTail() {
 		if (isEmpty()) {
 			head = null;
-//			tail = null;
+			tail = null;
 		}
 
 		Node<T> current = head;
