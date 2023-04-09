@@ -1,5 +1,7 @@
 package linkedLists;
 
+import java.util.ArrayList;
+
 public class GenericCircularlyLinkedList<T> {
 	private static class Node<T> {
 		private T element;
@@ -100,6 +102,45 @@ public class GenericCircularlyLinkedList<T> {
 		if (isEmpty()) {
 			return null;
 		}
+
+		Node<T> current = tail.getNext();
+		Node<T> prev = tail;
+
+		while (current != tail) {
+
+			prev = current;
+			current = current.getNext();
+		}
+
+		prev.setNext(tail);
+		size--;
+		return prev.getElement();
+
+	}
+
+	ArrayList<T> toArray() {
+		ArrayList<T> arrayList = new ArrayList<>();
+		Node<T> current = tail.getNext();
+		while (current != tail) {
+			arrayList.add(current.getElement());
+			current = current.getNext();
+		}
+		return arrayList;
+	}
+
+	public static void main(String[] args) {
+		GenericCircularlyLinkedList<Integer> list = new GenericCircularlyLinkedList<>();
+		list.addFirst(1);
+		list.addFirst(13);
+		list.addLast(10);
+		System.out.println(list.last());
+		System.out.println(list.toArray());
+		System.out.println(list.first());
+//		list.removeLast();
+		System.out.println(list.last());
+		System.out.println(list.toArray());
+
+//		System.out.println(list.getSize());
 	}
 
 }
