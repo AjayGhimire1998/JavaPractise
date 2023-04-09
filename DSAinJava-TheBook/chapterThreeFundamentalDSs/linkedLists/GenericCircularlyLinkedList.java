@@ -130,17 +130,13 @@ public class GenericCircularlyLinkedList<T> {
 
 	public static void main(String[] args) {
 		GenericCircularlyLinkedList<Integer> list = new GenericCircularlyLinkedList<>();
-		list.addFirst(1);
+
+		list.rotate();
 		list.addFirst(13);
-		list.addLast(10);
-		System.out.println(list.last());
-		System.out.println(list.toArray());
-		System.out.println(list.first());
-//		list.removeLast();
-		System.out.println(list.last());
+		list.addFirst(1);
+
 		System.out.println(list.toArray());
 
-//		System.out.println(list.getSize());
 	}
 
 }
