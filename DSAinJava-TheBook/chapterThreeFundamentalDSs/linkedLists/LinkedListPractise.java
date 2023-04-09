@@ -68,4 +68,34 @@ public class LinkedListPractise<T> {
 		tail = newTail;
 		size++;
 	}
+
+	public T removeHead() {
+		if (isEmpty()) {
+			return null;
+		}
+		T toBeRemovedHead = head.getElement();
+		head = head.getNext();
+		size--;
+		if (isEmpty()) {
+			tail = null;
+		}
+		return toBeRemovedHead;
+	}
+
+	public T removeTail() {
+		if (isEmpty()) {
+			return null;
+		}
+		T toBeRemovedTail = tail.getElement();
+		tail = null;
+
+		if (isEmpty()) {
+			head = null;
+		}
+		return toBeRemovedTail;
+	}
+
+	public static void main(String[] args) {
+
+	}
 }
