@@ -85,4 +85,18 @@ public class GenericSinglyLinkedLists<T> {
 		return answer;
 	}
 
+	void removeLast() {
+		if (isEmpty()) {
+			head = null;
+		}
+		Node<T> current = head;
+		Node<T> prev = null;
+
+		while (current != null) {
+			prev = current;
+			current = current.getNext();
+		}
+		prev.setNext(null);
+	}
+
 }
