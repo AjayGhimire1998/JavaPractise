@@ -34,5 +34,9 @@ public class GenericDoublyLinkedList<T> {
 			next = n;
 		}
 
+		private Node<T> header;
+		private Node<T> trailer;
+		private int size = 0;
+
 	}
 }
