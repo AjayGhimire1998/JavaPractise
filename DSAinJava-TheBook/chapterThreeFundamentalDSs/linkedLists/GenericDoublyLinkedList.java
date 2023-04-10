@@ -12,8 +12,27 @@ public class GenericDoublyLinkedList<T> {
 			prev = p;
 		}
 
+		// getter methods
 		T getElement() {
 			return element;
 		}
+
+		Node<T> getPrev() {
+			return prev;
+		}
+
+		Node<T> getNext() {
+			return next;
+		}
+
+		// setter methods
+		void setPrev(Node<T> p) {
+			prev = p;
+		}
+
+		void setNext(Node<T> n) {
+			next = n;
+		}
+
 	}
 }
