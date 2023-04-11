@@ -120,4 +120,19 @@ public class GenericDoublyLinkedList<T> {
 		size++;
 	}
 
+	/**
+	 * Removes the given node from the list and returns its element
+	 * 
+	 * @param node
+	 * @return
+	 */
+	private T remove(Node<T> node) {
+		Node<T> predecessor = node.getPrev();
+		Node<T> successor = node.getNext();
+		predecessor.setNext(successor);
+		successor.setPrev(predecessor);
+		size--;
+		return node.getElement();
+	}
+
 }
