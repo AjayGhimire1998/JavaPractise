@@ -1,5 +1,7 @@
 package linkedLists;
 
+import java.util.ArrayList;
+
 public class GenericDoublyLinkedList<T> {
 	private static class Node<T> {
 		private T element;
@@ -126,6 +128,16 @@ public class GenericDoublyLinkedList<T> {
 		return remove(trailer.getPrev()); // last elem is before the trailer
 	}
 
+	public ArrayList<T> toArray() {
+		ArrayList<T> result = new ArrayList<>();
+		Node<T> curr = header.getNext();
+		while (curr != trailer) {
+			result.add(curr.getElement());
+			curr = curr.getNext();
+		}
+		return result;
+	}
+
 	// private update methods
 
 	/**
@@ -158,7 +170,12 @@ public class GenericDoublyLinkedList<T> {
 	}
 
 	public static void main(String[] args) {
-
+		GenericDoublyLinkedList<Integer> list = new GenericDoublyLinkedList<>();
+		list.addFirst(1);
+		list.addFirst(2);
+		list.addLast(9);
+		list.addLast(9);
+		System.out.println(list.toArray());
 	}
 
 }
