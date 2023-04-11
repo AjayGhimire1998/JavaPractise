@@ -101,7 +101,7 @@ public class GenericDoublyLinkedList<T> {
 	 * @param e
 	 */
 	public void addLast(T e) {
-
+		addBetween(e, trailer.getPrev(), trailer);
 	}
 
 	// private update methods
@@ -114,7 +114,7 @@ public class GenericDoublyLinkedList<T> {
 	 * @param successor
 	 */
 	private void addBetween(T e, Node<T> predecessor, Node<T> successor) {
-		Node<T> newest = new Node(e, successor, predecessor);
+		Node<T> newest = new Node<>(e, successor, predecessor);
 		predecessor.setNext(newest);
 		successor.setPrev(newest);
 		size++;
