@@ -47,6 +47,8 @@ public class GenericDoublyLinkedList<T> {
 		header.setNext(trailer); // header is followed by trailer
 	}
 
+	// getter methods
+
 	/**
 	 * returns the number of the elements in the linked list
 	 *
@@ -80,6 +82,28 @@ public class GenericDoublyLinkedList<T> {
 		if (isEmpty())
 			return null;
 		return trailer.getPrev().getElement(); // last element is before trailer.
+	}
+
+	// setter or update methods
+
+	public void addFirst(T e) {
+		addBetween(e, header, header.getNext());
+	}
+
+	// private update methods
+
+	/**
+	 * adds element e to the linked list in between given nodes
+	 * 
+	 * @param e
+	 * @param predecessor
+	 * @param successor
+	 */
+	private void addBetween(T e, Node<T> predecessor, Node<T> successor) {
+		Node<T> newest = new Node(e, successor, predecessor);
+		predecessor.setNext(newest);
+		successor.setPrev(newest);
+		size++;
 	}
 
 }
