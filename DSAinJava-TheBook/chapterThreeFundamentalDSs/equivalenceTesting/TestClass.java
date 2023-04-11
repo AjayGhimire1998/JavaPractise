@@ -21,5 +21,13 @@ public class TestClass {
 		System.out.println(nums == nums3);
 		System.out.println(nums3.equals(nums));
 		System.out.println(Arrays.equals(nums, nums3));
+
+		// testing multidimensional array
+
+		String[][] pairs = { { "Ajay", "Ghimire" }, { "Ajay", "Ghimire" } };
+		System.out.println(pairs[0] == pairs[1]);
+		System.out.println(pairs[0].equals(pairs[1]));
+		System.out.println(Arrays.equals(pairs[0], pairs[1]));
+		System.out.println(Arrays.deepEquals(pairs[0], pairs[1]));
 	}
 }
