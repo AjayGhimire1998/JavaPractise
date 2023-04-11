@@ -18,4 +18,24 @@ public class DSClone {
 		System.out.println(Arrays.toString(namesBackup));
 
 	}
+
+	// creating a deep clone of the array that holds object references as the
+	// elements
+
+	// first creating a nested class for testing
+	static class Person {
+
+	}
+
+	static class Contact extends Person {
+
+	}
+
+	public Person[] deepCopyOfReferenceArray(Contact[] contacts) {
+		Person[] guests = new Person[contacts.length];
+		for (int i = 0; i < contacts.length; i++) {
+			guests[i] = (Person) contacts[i];
+		}
+		return guests;
+	}
 }
