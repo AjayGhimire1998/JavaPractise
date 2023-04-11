@@ -136,6 +136,8 @@ public class GenericSinglyLinkedLists<T> {
 		return true;
 	}
 
+	// cloning of single linkedList
+
 	public static void main(String[] args) {
 		GenericSinglyLinkedLists<Integer> list = new GenericSinglyLinkedLists<>();
 		list.addFirst(1);
