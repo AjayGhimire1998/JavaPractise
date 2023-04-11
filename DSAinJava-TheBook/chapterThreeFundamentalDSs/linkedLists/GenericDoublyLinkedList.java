@@ -47,4 +47,21 @@ public class GenericDoublyLinkedList<T> {
 		header.setNext(trailer); // header is followed by trailer
 	}
 
+	/**
+	 * returns the number of the elements in the linked list
+	 *
+	 */
+	public int size() {
+		return size;
+	}
+
+	/**
+	 * tests whether the list is empty
+	 * 
+	 * @return
+	 */
+	public boolean isEmpty() {
+		return size == 0;
+	}
+
 }
