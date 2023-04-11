@@ -111,8 +111,19 @@ public class GenericDoublyLinkedList<T> {
 	 */
 	public T removeFirst() {
 		if (isEmpty())
-			return null;
-		return remove(header.getNext());
+			return null; // nothing to remove
+		return remove(header.getNext()); // first elemenet is beyond the header
+	}
+
+	/**
+	 * removes and returns the last element of the list
+	 * 
+	 * @return
+	 */
+	public T removeLast() {
+		if (isEmpty())
+			return null; // nothing to remove
+		return remove(trailer.getPrev()); // last elem is before the trailer
 	}
 
 	// private update methods
