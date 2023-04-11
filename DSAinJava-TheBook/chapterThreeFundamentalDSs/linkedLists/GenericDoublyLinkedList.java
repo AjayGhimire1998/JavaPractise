@@ -64,4 +64,22 @@ public class GenericDoublyLinkedList<T> {
 		return size == 0;
 	}
 
+	/**
+	 * return the first element in the list
+	 */
+	public T getFirst() {
+		if (isEmpty())
+			return null;
+		return header.getNext().getElement(); // first element is after header
+	}
+
+	/**
+	 * returns the last element of the list
+	 */
+	public T getLast() {
+		if (isEmpty())
+			return null;
+		return trailer.getPrev().getElement(); // last element is before trailer.
+	}
+
 }
