@@ -2,7 +2,7 @@ package linkedLists;
 
 import java.util.ArrayList;
 
-public class GenericSinglyLinkedLists<T> {
+public class GenericSinglyLinkedLists<T> implements Cloneable {
 	private static class Node<T> {
 		private T element;
 		private Node<T> next;
