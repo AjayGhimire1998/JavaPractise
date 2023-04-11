@@ -33,10 +33,18 @@ public class GenericDoublyLinkedList<T> {
 		void setNext(Node<T> n) {
 			next = n;
 		}
-
-		private Node<T> header;
-		private Node<T> trailer;
-		private int size = 0;
-
 	}
+
+	// instance variables of the DoublyLinkedList
+	private Node<T> header; // header sentinel
+	private Node<T> trailer; // trailer sentinel
+	private int size = 0; // number of elements in the list
+
+	// Constructs a new empty list
+	GenericDoublyLinkedList() {
+		header = new Node<>(null, null, null);
+		trailer = new Node<>(null, null, header);
+		header.setNext(trailer);
+	}
+
 }
