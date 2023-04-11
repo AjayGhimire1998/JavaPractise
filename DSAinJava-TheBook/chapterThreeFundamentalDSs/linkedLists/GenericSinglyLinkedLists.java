@@ -111,12 +111,46 @@ public class GenericSinglyLinkedLists<T> {
 		return arrayList;
 	}
 
+	// equivalence testing the linked list
+	public boolean equals(Object o) {
+		if (o == null)
+			return false;
+		if (getClass() != o.getClass())
+			return false;
+
+		GenericSinglyLinkedLists other = (GenericSinglyLinkedLists) o; // use nonparamaterised type
+		if (size() != other.size())
+			return false;
+
+		Node walkA = head; // traverse the primary list
+		Node walkB = other.head; // traverse the secondary list
+
+		while (walkA != null) {
+			if (!walkA.getElement().equals(walkB.getElement())) {
+				return false;
+			}
+			walkA = walkA.getNext();
+			walkB = walkB.getNext();
+
+		}
+		return true;
+	}
+
 	public static void main(String[] args) {
 		GenericSinglyLinkedLists<Integer> list = new GenericSinglyLinkedLists<>();
 		list.addFirst(1);
 		list.addLast(10);
-		list.removeLast();
+//		list.removeLast();
 		System.out.println(list.toArray());
+
+		GenericSinglyLinkedLists<Integer> list2 = new GenericSinglyLinkedLists<>();
+		list2.addFirst(1);
+		list2.addLast(10);
+//		list2.addLast(11);
+		System.out.println(list2.toArray());
+
+		System.out.println(list.equals(list2));
+
 	}
 
 }
