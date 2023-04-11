@@ -118,7 +118,7 @@ public class GenericSinglyLinkedLists<T> {
 		if (getClass() != o.getClass())
 			return false;
 
-		GenericSinglyLinkedLists other = (GenericSinglyLinkedLists) o; // use nonparamaterised type
+		GenericSinglyLinkedLists<T> other = (GenericSinglyLinkedLists) o; // use nonparamaterised type
 		if (size() != other.size())
 			return false;
 
