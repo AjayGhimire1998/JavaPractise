@@ -1,5 +1,7 @@
 package linkedLists;
 
+import java.util.ArrayList;
+
 public class GenericSinglyLinkedLists<T> {
 	private static class Node<T> {
 		private T element;
@@ -92,11 +94,29 @@ public class GenericSinglyLinkedLists<T> {
 		Node<T> current = head;
 		Node<T> prev = null;
 
-		while (current != null) {
+		while (current.getNext() != null) {
 			prev = current;
 			current = current.getNext();
 		}
 		prev.setNext(null);
+	}
+
+	ArrayList<T> toArray() {
+		ArrayList<T> arrayList = new ArrayList<>();
+		Node<T> current = head;
+		while (current != null) {
+			arrayList.add(current.getElement());
+			current = current.getNext();
+		}
+		return arrayList;
+	}
+
+	public static void main(String[] args) {
+		GenericSinglyLinkedLists<Integer> list = new GenericSinglyLinkedLists<>();
+		list.addFirst(1);
+		list.addLast(10);
+		list.removeLast();
+		System.out.println(list.toArray());
 	}
 
 }
