@@ -86,8 +86,22 @@ public class GenericDoublyLinkedList<T> {
 
 	// setter or update methods
 
+	/**
+	 * adds elem e to the front of the list
+	 * 
+	 * @param e
+	 */
 	public void addFirst(T e) {
 		addBetween(e, header, header.getNext());
+	}
+
+	/**
+	 * adds elem e to the back of the list
+	 * 
+	 * @param e
+	 */
+	public void addLast(T e) {
+
 	}
 
 	// private update methods
