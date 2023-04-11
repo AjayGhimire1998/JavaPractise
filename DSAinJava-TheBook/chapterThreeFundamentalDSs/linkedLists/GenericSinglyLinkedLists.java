@@ -137,6 +137,22 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 	}
 
 	// cloning of single linkedList
+	public GenericSinglyLinkedLists<T> clone() throws CloneNotSupportedException {
+		// always use inherited Object.clone() to create the initial copy
+		GenericSinglyLinkedLists<T> other = (GenericSinglyLinkedLists<T>) super.clone(); // safe cast
+		if (size() > 0) { // we need independent chain of nodes
+			other.head = new Node<>(head.getElement(), null);
+			Node<T> walk = head.getNext(); // walk through remainder of the original list
+			Node<T> otherTail = other.head; // remember most recently created node
+			while (walk != null) { // make a new node storing same element
+				Node<T> newest = new Node<>(walk.getElement(), null);
+				otherTail.setNext(newest); // link previous node to this one
+				otherTail = newest;
+				walk = walk.getNext();
+			}
+		}
+		return other;
+	}
 
 	public static void main(String[] args) {
 		GenericSinglyLinkedLists<Integer> list = new GenericSinglyLinkedLists<>();
