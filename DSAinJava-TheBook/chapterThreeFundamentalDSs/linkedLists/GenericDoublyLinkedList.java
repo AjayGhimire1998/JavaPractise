@@ -42,9 +42,9 @@ public class GenericDoublyLinkedList<T> {
 
 	// Constructs a new empty list
 	GenericDoublyLinkedList() {
-		header = new Node<>(null, null, null);
-		trailer = new Node<>(null, null, header);
-		header.setNext(trailer);
+		header = new Node<>(null, null, null); // create header
+		trailer = new Node<>(null, null, header); // trailer is preceded by header
+		header.setNext(trailer); // header is followed by trailer
 	}
 
 }
