@@ -11,5 +11,11 @@ public class DSClone {
 		System.out.println(Arrays.toString(data));
 		System.out.println(Arrays.toString(backup));
 
+		String[] names = { "Ajay", "Ghimire" };
+		String[] namesBackup = names.clone();
+		namesBackup[0] = "jay";
+		System.out.println(Arrays.toString(names));
+		System.out.println(Arrays.toString(namesBackup));
+
 	}
 }
