@@ -174,8 +174,15 @@ public class GenericDoublyLinkedList<T> {
 		list.addFirst(1);
 		list.addFirst(2);
 		list.addLast(9);
-		list.addLast(9);
+		list.addLast(10);
 		System.out.println(list.toArray());
+
+		list.removeFirst();
+		System.out.println(list.toArray());
+
+		System.out.println(list.removeLast());
+		System.out.println(list.toArray());
+		System.out.println(list.size());
 	}
 
 }
