@@ -157,4 +157,8 @@ public class GenericDoublyLinkedList<T> {
 		return node.getElement();
 	}
 
+	public static void main(String[] args) {
+
+	}
+
 }
