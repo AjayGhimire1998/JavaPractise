@@ -92,7 +92,7 @@ public class GenericDoublyLinkedList<T> {
 	 * @param e
 	 */
 	public void addFirst(T e) {
-		addBetween(e, header, header.getNext());
+		addBetween(e, header, header.getNext()); // place after the header
 	}
 
 	/**
@@ -101,7 +101,18 @@ public class GenericDoublyLinkedList<T> {
 	 * @param e
 	 */
 	public void addLast(T e) {
-		addBetween(e, trailer.getPrev(), trailer);
+		addBetween(e, trailer.getPrev(), trailer); // place before the trailer
+	}
+
+	/**
+	 * removes and returns the first element of the list
+	 * 
+	 * @return
+	 */
+	public T removeFirst() {
+		if (isEmpty())
+			return null;
+		return remove(header.getNext());
 	}
 
 	// private update methods
