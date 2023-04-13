@@ -2,7 +2,7 @@ package reinforcementLabs;
 
 public class Reinforcement {
 	public static void main(String[] args) {
-
+		System.out.println(giveSeed(12, 5, 100, 92));
 	}
 
 	/**
@@ -12,6 +12,5 @@ public class Reinforcement {
 	 */
 	public static int giveSeed(int a, int b, int n, int seed) {
 		return (a * seed + b) % n;
-
 	}
 }
