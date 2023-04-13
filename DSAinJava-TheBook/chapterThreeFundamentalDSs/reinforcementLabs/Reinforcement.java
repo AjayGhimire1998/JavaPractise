@@ -1,6 +1,7 @@
 package reinforcementLabs;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Reinforcement {
@@ -17,6 +18,11 @@ public class Reinforcement {
 		System.out.println(list);
 		randomlyEmpty(list);
 		System.out.println(list);
+
+		int[] nums = { 1, 2, 3, 4, 5 };
+		System.out.println(Arrays.toString(nums));
+		randomlyEmptyArray(nums);
+		System.out.println(Arrays.toString(nums));
 
 	}
 
@@ -41,6 +47,22 @@ public class Reinforcement {
 		while (nums.size() > 0) {
 			indexToRemove = random.nextInt(nums.size());
 			nums.remove(indexToRemove);
+		}
+	}
+
+	public static void randomlyEmptyArray(int[] nums) {
+		Random random = new Random();
+		int indexToRemove = 0;
+		while (nums.length > 0) {
+			indexToRemove = random.nextInt(nums.length);
+			int[] temp = new int[nums.length - 1];
+			for (int i = 0, k = 0; i < nums.length; i++) {
+				if (i == indexToRemove) {
+					continue;
+				}
+				temp[k++] = nums[i];
+			}
+			nums = temp;
 		}
 	}
 }
