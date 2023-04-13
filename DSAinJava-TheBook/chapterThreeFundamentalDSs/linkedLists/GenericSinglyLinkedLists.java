@@ -101,6 +101,22 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		prev.setNext(null);
 	}
 
+	Node<T> find(T e) {
+		if (isEmpty()) {
+			return null;
+		}
+
+		Node<T> current = head;
+		while (current != null) {
+			if (current.getElement() == e) {
+				return current;
+
+			}
+			current = current.getNext();
+		}
+		return null;
+	}
+
 	Node<T> findSecondLast() {
 		if (isEmpty()) {
 			return null;
@@ -186,6 +202,7 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		list2.addLast(11);
 		list2.addLast(12);
 		list2.addLast(13);
+		System.out.println(list2.find(12));
 		System.out.println(list2.toArray());
 
 		Node<Integer> secondLast = list2.findSecondLast();
