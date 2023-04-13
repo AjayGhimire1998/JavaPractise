@@ -53,10 +53,20 @@ public class GenericDoublyLinkedList<T> {
 
 	/**
 	 * returns the number of the elements in the linked list
+	 * 
+	 * Give an implementation of the size( ) method for the DoublyLinkedList class,
+	 * assuming that we did not maintain size as an instance variable
 	 *
 	 */
 	public int size() {
-		return size;
+//		return size;
+		int count = 0;
+		Node<T> current = header;
+		while (current != trailer) {
+			count++;
+			current = current.getNext();
+		}
+		return count;
 	}
 
 	/**
