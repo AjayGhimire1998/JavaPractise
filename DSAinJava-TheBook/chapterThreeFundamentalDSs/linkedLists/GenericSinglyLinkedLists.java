@@ -34,8 +34,21 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 
 	// access methods
 
+	/**
+	 * Give an implementation of the size( ) method for the SingularlyLinkedList
+	 * class, assuming that we did not maintain size as an instance variable.
+	 * 
+	 * @return
+	 */
 	int size() {
-		return size;
+//		return size;
+		int count = 0;
+		Node<T> curr = head;
+		while (curr != null) {
+			count++;
+			curr = curr.getNext();
+		}
+		return count;
 	}
 
 	boolean isEmpty() {
