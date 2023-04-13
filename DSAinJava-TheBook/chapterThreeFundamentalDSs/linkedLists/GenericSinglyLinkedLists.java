@@ -81,8 +81,8 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		head = head.getNext();
 		size--;
 
-		if (size == 0)
-			tail = null;
+//		if (isEmpty())
+//			tail = null;
 
 		return answer;
 	}
@@ -99,6 +99,23 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 			current = current.getNext();
 		}
 		prev.setNext(null);
+	}
+
+	Node<T> findSecondLast() {
+		if (isEmpty()) {
+			return null;
+		}
+
+		Node<T> current = head;
+		Node<T> result = head.getNext();
+		while (current != null) {
+			if (current.getNext() == tail) {
+				result = current;
+
+			}
+			current = current.getNext();
+		}
+		return result;
 	}
 
 	ArrayList<T> toArray() {
@@ -164,8 +181,15 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		GenericSinglyLinkedLists<Integer> list2 = new GenericSinglyLinkedLists<>();
 		list2.addFirst(1);
 		list2.addLast(10);
-//		list2.addLast(11);
+		list2.removeFirst();
+
+		list2.addLast(11);
+		list2.addLast(12);
+		list2.addLast(13);
 		System.out.println(list2.toArray());
+
+		Node<Integer> secondLast = list2.findSecondLast();
+		System.out.println(secondLast.getElement());
 
 		System.out.println(list.equals(list2));
 
