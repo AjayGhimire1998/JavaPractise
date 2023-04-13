@@ -8,6 +8,16 @@ public class Reinforcement {
 		System.out.println(giveSeed(12, 5, 100, 92));
 
 		ArrayList<Integer> list = new ArrayList<>();
+		list.add(1);
+		list.add(2);
+		System.out.println(list);
+		randomlyEmpty(list);
+		System.out.println(list);
+		list.add(100);
+		System.out.println(list);
+		randomlyEmpty(list);
+		System.out.println(list);
+
 	}
 
 	/**
@@ -27,11 +37,10 @@ public class Reinforcement {
 	 */
 	public static void randomlyEmpty(ArrayList<Integer> nums) {
 		Random random = new Random();
-		int indexToRemove;
-		while (nums.size() == 0) {
+		int indexToRemove = 0;
+		while (nums.size() > 0) {
 			indexToRemove = random.nextInt(nums.size());
 			nums.remove(indexToRemove);
 		}
-
 	}
 }
