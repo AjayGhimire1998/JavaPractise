@@ -33,8 +33,21 @@ public class GenericCircularlyLinkedList<T> {
 
 	}
 
+	/**
+	 * Give an implementation of the size( ) method for the CircularlyLinkedList
+	 * class, assuming that we did not maintain size as an instance variable.
+	 * 
+	 * @return
+	 */
 	int getSize() { // returns the number of nodes in the list
-		return size;
+//		return size;
+		int count = 0;
+		Node<T> curr = tail.getNext();
+		while (curr != tail) {
+			count++;
+			curr = curr.getNext();
+		}
+		return count;
 	}
 
 	Node<T> getTail() { // returns the tail reference of the list
