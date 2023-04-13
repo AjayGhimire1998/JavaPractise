@@ -1,8 +1,13 @@
 package reinforcementLabs;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Reinforcement {
 	public static void main(String[] args) {
 		System.out.println(giveSeed(12, 5, 100, 92));
+
+		ArrayList<Integer> list = new ArrayList<>();
 	}
 
 	/**
@@ -12,5 +17,21 @@ public class Reinforcement {
 	 */
 	public static int giveSeed(int a, int b, int n, int seed) {
 		return (a * seed + b) % n;
+	}
+
+	/**
+	 * Write a Java method that repeatedly selects and removes a random entry from
+	 * an array until the array holds no more entries.
+	 * 
+	 * @param nums
+	 */
+	public static void randomlyEmpty(ArrayList<Integer> nums) {
+		Random random = new Random();
+		int indexToRemove;
+		while (nums.size() == 0) {
+			indexToRemove = random.nextInt(nums.size());
+			nums.remove(indexToRemove);
+		}
+
 	}
 }
