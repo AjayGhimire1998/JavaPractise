@@ -65,14 +65,24 @@ public class GenericCircularlyLinkedList<T> {
 		}
 	}
 
+	/**
+	 * Consider the implementation of CircularlyLinkedList.addFirst, in Code
+	 * Fragment 3.16. The else body at lines 39 and 40 of that method relies on a
+	 * locally declared variable, newest. Redesign that clause to avoid use of any
+	 * local variable.
+	 * 
+	 * @param t
+	 */
 	void addFirst(T t) { // adds element t to the front of the list
 		if (isEmpty()) {
 			tail = new Node<>(t, null);
 			tail.setNext(tail); // link to itself circularly
 		} else {
-			Node<T> newNode = new Node<>(t, tail.getNext());
-			tail.setNext(newNode); // add the new node with next to be the next of tail and set the next of tail to
-									// be the new node
+
+			tail.setNext(new Node<>(t, tail.getNext())); // add the new node with next to be the next of tail and set
+															// the next of tail to
+			// be the new node
+			tail = tail.getNext();
 		}
 		size++;
 	}
@@ -121,20 +131,23 @@ public class GenericCircularlyLinkedList<T> {
 	ArrayList<T> toArray() {
 		ArrayList<T> arrayList = new ArrayList<>();
 		Node<T> current = tail.getNext();
-		while (current != tail) {
+		do {
 			arrayList.add(current.getElement());
 			current = current.getNext();
-		}
+		} while (current != tail);
+		arrayList.add(tail.getElement());
 		return arrayList;
 	}
 
 	public static void main(String[] args) {
 		GenericCircularlyLinkedList<Integer> list = new GenericCircularlyLinkedList<>();
 
-		list.rotate();
 		list.addFirst(13);
 		list.addFirst(1);
+		list.addLast(12);
 
+		System.out.println(list.toArray());
+		list.rotate();
 		System.out.println(list.toArray());
 
 	}

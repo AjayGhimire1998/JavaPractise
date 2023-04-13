@@ -117,6 +117,12 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		return null;
 	}
 
+	/**
+	 * Give an algorithm for finding the second-to-last node in a singly linked list
+	 * in which the last node is indicated by a null next reference.
+	 * 
+	 * @return
+	 */
 	Node<T> findSecondLast() {
 		if (isEmpty()) {
 			return null;
