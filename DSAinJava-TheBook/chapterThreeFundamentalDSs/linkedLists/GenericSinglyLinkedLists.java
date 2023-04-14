@@ -157,7 +157,6 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		if (isEmpty() || head.getNext() == null) {
 			return;
 		}
-
 		Node<T> oldHead = head;
 		head = oldHead.getNext();
 		tail.setNext(oldHead);
@@ -242,6 +241,10 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		System.out.println(secondLast.getElement());
 
 		System.out.println(list.equals(list2));
+
+		int[] arr = { 1, 2, 3, 4, 5 };
+		int[] copy = arr.clone();
+//		int[] arrCopy = System.arraycopy(arr, 0, copy, 0, arr.length);
 
 	}
 
