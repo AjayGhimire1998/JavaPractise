@@ -153,6 +153,12 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		return result;
 	}
 
+	void rotate() {
+		if (isEmpty() || head.getNext() == null) {
+			return;
+		}
+	}
+
 	ArrayList<T> toArray() {
 		ArrayList<T> arrayList = new ArrayList<>();
 		Node<T> current = head;
