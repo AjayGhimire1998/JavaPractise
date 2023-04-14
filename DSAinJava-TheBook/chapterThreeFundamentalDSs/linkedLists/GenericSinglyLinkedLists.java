@@ -235,6 +235,8 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		list2.addLast(13);
 		System.out.println(list2.find(12));
 		System.out.println(list2.toArray());
+		list2.rotate();
+		System.out.println(list2.toArray());
 
 		Node<Integer> secondLast = list2.findSecondLast();
 		System.out.println(secondLast.getElement());
