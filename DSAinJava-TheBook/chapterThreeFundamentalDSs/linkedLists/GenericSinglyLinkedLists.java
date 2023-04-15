@@ -248,6 +248,7 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		System.out.println("This");
 		System.out.println("is");
 		System.out.println("the");
+		System.out.println("streak");
 
 	}
 
