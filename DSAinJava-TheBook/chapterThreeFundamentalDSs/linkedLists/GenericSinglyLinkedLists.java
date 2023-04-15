@@ -245,6 +245,7 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		int[] arr = { 1, 2, 3, 4, 5 };
 		int[] copy = arr.clone();
 //		int[] arrCopy = System.arraycopy(arr, 0, copy, 0, arr.length);
+		System.out.println("This");
 
 	}
 
