@@ -179,6 +179,34 @@ public class GenericDoublyLinkedList<T> {
 		return node.getElement();
 	}
 
+	public boolean equals(Object o) {
+		if (o == null) {
+			return false;
+		}
+		if (o == this) {
+			return true;
+		}
+
+		if (getClass() != o.getClass()) {
+			return false;
+		}
+
+		GenericDoublyLinkedList other = (GenericDoublyLinkedList) o;
+		if (size() != other.size()) {
+			return false;
+		}
+		Node thisCurrent = header.getNext();
+		Node otherCurrent = other.header.getNext();
+		while (thisCurrent != trailer) {
+			if (!thisCurrent.getElement().equals(otherCurrent.getElement())) {
+				return false;
+			}
+
+			thisCurrent = thisCurrent.getNext();
+			otherCurrent = otherCurrent.getNext();
+		}
+	}
+
 	public static void main(String[] args) {
 		GenericDoublyLinkedList<Integer> list = new GenericDoublyLinkedList<>();
 		list.addFirst(1);
