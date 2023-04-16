@@ -205,6 +205,7 @@ public class GenericDoublyLinkedList<T> {
 			thisCurrent = thisCurrent.getNext();
 			otherCurrent = otherCurrent.getNext();
 		}
+		return true;
 	}
 
 	public static void main(String[] args) {
