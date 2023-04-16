@@ -152,6 +152,16 @@ public class GenericCircularlyLinkedList<T> {
 		return arrayList;
 	}
 
+	boolean equals(Object o) {
+		if (o == this) {
+			return true;
+		}
+
+		if (getClass() != o.getClass()) {
+			return false;
+		}
+	}
+
 	public static void main(String[] args) {
 		GenericCircularlyLinkedList<Integer> list = new GenericCircularlyLinkedList<>();
 
