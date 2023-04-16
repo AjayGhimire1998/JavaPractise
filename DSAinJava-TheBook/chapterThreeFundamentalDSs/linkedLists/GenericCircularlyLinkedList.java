@@ -169,6 +169,17 @@ public class GenericCircularlyLinkedList<T> {
 		Node thisCurrent = tail.getNext();
 		Node otherCurrent = other.getTail().getNext();
 
+		while (thisCurrent != getTail()) {
+			if (!thisCurrent.getElement().equals(otherCurrent.getElement())) {
+				return false;
+			}
+
+			thisCurrent = thisCurrent.getNext();
+			otherCurrent = otherCurrent.getNext();
+		}
+		// check last element of both lists
+		return thisCurrent.getElement().equals(otherCurrent.getElement());
+
 	}
 
 	public static void main(String[] args) {
