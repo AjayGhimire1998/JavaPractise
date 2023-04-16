@@ -10,9 +10,9 @@ public class CreativityLabs {
 	 * @param nums
 	 * @return
 	 */
-	public int findRepeated(int[] nums) {
+	public static int findRepeated(int[] nums) {
 		if (nums.length < 2) {
-			return 0;
+			return -1;
 		}
 		int result = 0;
 		for (int i = 0; i < nums.length - 1; i++) {
@@ -24,5 +24,24 @@ public class CreativityLabs {
 		}
 		return result;
 
+	}
+
+	public static int findRepeatedQuick(int[] nums) {
+		boolean[] visited = new boolean[nums.length];
+		for (int x : nums) {
+			if (visited[x]) {
+				return x;
+			}
+			visited[x] = true;
+
+		}
+		return -1;
+
+	}
+
+	public static void main(String[] args) {
+		int[] nums = { 1, 2, 3, 4, 3, 5 };
+		System.out.println(findRepeated(nums));
+		System.out.println(findRepeatedQuick(nums));
 	}
 }
