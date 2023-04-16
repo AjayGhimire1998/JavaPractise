@@ -160,6 +160,15 @@ public class GenericCircularlyLinkedList<T> {
 		if (getClass() != o.getClass()) {
 			return false;
 		}
+		GenericCircularlyLinkedList other = (GenericCircularlyLinkedList) o;
+
+		if (getSize() != other.getSize()) {
+			return false;
+		}
+
+		Node thisCurrent = tail.getNext();
+		Node otherCurrent = other.getTail().getNext();
+
 	}
 
 	public static void main(String[] args) {
