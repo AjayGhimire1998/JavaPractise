@@ -1,5 +1,7 @@
 package creativityLabs;
 
+import java.util.ArrayList;
+
 public class CreativityLabs {
 
 	/**
@@ -39,9 +41,27 @@ public class CreativityLabs {
 
 	}
 
+	public static ArrayList<Integer> findAllRepeated(int[] nums) {
+		ArrayList<Integer> result = new ArrayList<>();
+
+		for (int i = 0; i < nums.length - 1; i++) {
+			for (int j = 1; j < nums.length; j++) {
+				if (nums[i] == nums[j]) {
+
+				}
+			}
+		}
+
+		return result;
+	}
+
 	public static void main(String[] args) {
 		int[] nums = { 1, 2, 3, 4, 3, 5 };
 		System.out.println(findRepeated(nums));
 		System.out.println(findRepeatedQuick(nums));
+
+		int[] nums2 = { 1, 2, 2, 1, 3, 3, 4, 5, 6, 6 };
+		System.out.println(findAllRepeated(nums2));
 	}
+
 }
