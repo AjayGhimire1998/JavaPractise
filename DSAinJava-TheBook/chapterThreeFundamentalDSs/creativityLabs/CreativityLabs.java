@@ -41,15 +41,19 @@ public class CreativityLabs {
 
 	}
 
+	/**
+	 * Let B be an array of size n ≥ 6 containing integers from 1 to n−5 inclusive,
+	 * five of which are repeated. Describe an algorithm for finding the five
+	 * integers in B that are repeated.
+	 * 
+	 * @param nums
+	 * @return
+	 */
 	public static ArrayList<Integer> findAllRepeated(int[] nums) {
 		ArrayList<Integer> result = new ArrayList<>();
 
-		for (int i = 0; i < nums.length - 1; i++) {
-			for (int j = 1; j < nums.length; j++) {
-				if (nums[i] == nums[j]) {
+		for (int i = 0; i < nums.length; i++) {
 
-				}
-			}
 		}
 
 		return result;
