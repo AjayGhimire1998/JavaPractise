@@ -53,10 +53,19 @@ public class CreativityLabs {
 		ArrayList<Integer> result = new ArrayList<>();
 
 		for (int i = 0; i < nums.length; i++) {
+			int absVal = Math.abs(nums[i]);
+			if (result.contains(absVal)) {
+				result.add(nums[i]);
+			} else {
+				result.add(absVal);
+			}
 
+			if (result.size() == 5) {
+				return result;
+			}
 		}
 
-		return result;
+		return new ArrayList<>();
 	}
 
 	public static void main(String[] args) {
@@ -65,6 +74,7 @@ public class CreativityLabs {
 		System.out.println(findRepeatedQuick(nums));
 
 		int[] nums2 = { 1, 2, 2, 1, 3, 3, 4, 5, 6, 6 };
+//		System.out.println(findAllRepeated(nums2));
 		System.out.println(findAllRepeated(nums2));
 	}
 
