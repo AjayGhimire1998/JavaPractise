@@ -73,9 +73,42 @@ public class CreativityLabs {
 		System.out.println(findRepeated(nums));
 		System.out.println(findRepeatedQuick(nums));
 
-		int[] nums2 = { 1, 2, 2, 1, 3, 3, 4, 5, 6, 6 };
+		int[] nums2 = { 1, 2, 3, 4, 4, 5, 2, 3, 4, 5 };
 //		System.out.println(findAllRepeated(nums2));
 		System.out.println(findAllRepeated(nums2));
 	}
+
+	/*
+	 * Give examples of values for a and b in the pseudorandom generator given on
+	 * page 113 of this chapter such that the result is not very random looking, for
+	 * n = 1000.
+	 */
+	/*
+	 * The pseudorandom generator given on page 113 of the chapter is:
+	 * 
+	 * x[0] = seed x[i] = (a*x[i-1] + b) % n
+	 * 
+	 * For n = 1000, some examples of values for a and b that can produce a
+	 * non-random-looking result are:
+	 * 
+	 * a = 0, b = 0: This will always produce the same number and is therefore not
+	 * random at all. All x[i] will be 0 after the first iteration.
+	 * 
+	 * a = 1, b = 0: This will produce a sequence of numbers that are just the
+	 * consecutive integers starting from the seed value. While it is deterministic,
+	 * it is not very random-looking since the sequence is very regular.
+	 * 
+	 * a = 2, b = 0: This will produce a sequence of numbers that alternate between
+	 * even and odd numbers. Again, while it is deterministic, it is not very
+	 * random-looking since the sequence is very regular.
+	 * 
+	 * a = 1, b = 1: This will produce a sequence of numbers that are just the
+	 * consecutive integers starting from the seed value, but shifted by 1. While it
+	 * is deterministic, it is not very random-looking since the sequence is very
+	 * regular and shifted by a fixed amount.
+	 * 
+	 * These are just a few examples, but there are many other combinations of a and
+	 * b that can produce non-random-looking results for n = 1000.
+	 */
 
 }
