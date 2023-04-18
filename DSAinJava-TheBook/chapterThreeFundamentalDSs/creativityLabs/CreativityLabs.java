@@ -111,4 +111,48 @@ public class CreativityLabs {
 	 * b that can produce non-random-looking results for n = 1000.
 	 */
 
+	/*
+	 * Suppose you are given an array, A, containing 100 integers that were
+	 * generated using the method r.nextInt(10), where r is an object of type
+	 * java.util.Random. Let x denote the product of the integers in A. There is a
+	 * single number that x will equal with probability at least 0.99. What is that
+	 * number and what is a formula describing the probability that x is equal to
+	 * that number?
+	 * 
+	 * The possible values of each integer in array A are between 0 and 9 inclusive,
+	 * which means that the product of all the integers in A can be any non-negative
+	 * integer less than or equal to 9^100, which is approximately equal to 1.03 ×
+	 * 10^95.
+	 * 
+	 * To find the number that x will equal with probability at least 0.99, we can
+	 * use the Pigeonhole Principle, which states that if n items are put into m
+	 * containers, with n > m, then at least one container must contain more than
+	 * one item.
+	 * 
+	 * In this case, we can consider the set of all possible products of 100
+	 * integers between 0 and 9 inclusive. There are a total of (10^100) possible
+	 * products, but only (9^100 + 8^100 + ... + 1) of them are less than or equal
+	 * to 9^100. Therefore, if we generate 10^100 random products using the given
+	 * method, at least one of them must occur at least twice.
+	 * 
+	 * This means that there is a single number that x will equal with probability
+	 * at least 0.99. To find that number, we can generate a large number of
+	 * products and keep track of the frequency of each product. The product that
+	 * occurs with the highest frequency is the number that x will equal with
+	 * probability at least 0.99.
+	 * 
+	 * As for the formula describing the probability that x is equal to that number,
+	 * it depends on the specific value of the number. Let k be the value of the
+	 * number. The probability that x is equal to k can be calculated as follows:
+	 * 
+	 * P(x = k) = C(100, n1) * C(100 - n1, n2) * ... * C(100 - n1 - n2 - ... - nk-1,
+	 * nk)
+	 * 
+	 * where C(n, k) is the number of ways to choose k items from a set of n items,
+	 * and ni is the number of occurrences of the ith prime factor in k. This
+	 * formula takes into account the fact that k can be factorized into prime
+	 * factors, and each prime factor can be distributed among the 100 integers in A
+	 * in a certain number of ways. However, calculating this formula exactly for
+	 * large values of k can be computationally intensive.
+	 */
 }
