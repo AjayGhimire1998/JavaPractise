@@ -1,6 +1,7 @@
 package creativityLabs;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class CreativityLabs {
 
@@ -155,4 +156,23 @@ public class CreativityLabs {
 	 * in a certain number of ways. However, calculating this formula exactly for
 	 * large values of k can be computationally intensive.
 	 */
+
+	/*
+	 * Write a method, shuffle(A), that rearranges the elements of array A so that
+	 * every possible ordering is equally likely. You may rely on the nextInt(n)
+	 * method of the java.util.Random class, which returns a random number between 0
+	 * and n−1 inclusive.
+	 */
+
+	public static void shuffle(int[] nums) {
+		Random random = new Random();
+		for (int i = nums.length - 1; i > 0; i--) {
+			int j = random.nextInt(i + 1);
+			int temp = nums[i];
+			nums[i] = nums[j];
+			nums[j] = temp;
+
+		}
+	}
+
 }
