@@ -1,6 +1,7 @@
 package creativityLabs;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class CreativityLabs {
@@ -67,16 +68,6 @@ public class CreativityLabs {
 		}
 
 		return new ArrayList<>();
-	}
-
-	public static void main(String[] args) {
-		int[] nums = { 1, 2, 3, 4, 3, 5 };
-		System.out.println(findRepeated(nums));
-		System.out.println(findRepeatedQuick(nums));
-
-		int[] nums2 = { 1, 2, 3, 4, 4, 5, 2, 3, 4, 5 };
-//		System.out.println(findAllRepeated(nums2));
-		System.out.println(findAllRepeated(nums2));
 	}
 
 	/*
@@ -162,6 +153,18 @@ public class CreativityLabs {
 	 * every possible ordering is equally likely. You may rely on the nextInt(n)
 	 * method of the java.util.Random class, which returns a random number between 0
 	 * and n−1 inclusive.
+	 * 
+	 * 
+	 * To shuffle array A so that every possible ordering is equally likely, we can
+	 * use the Fisher-Yates shuffle algorithm, also known as the Knuth shuffle
+	 * algorithm. Here's the method shuffle(A) in Java:
+	 * 
+	 * The Fisher-Yates shuffle algorithm works by iterating over the array in
+	 * reverse order, and for each index i, choosing a random index j between 0 and
+	 * i (inclusive), and swapping the elements at indices i and j. This algorithm
+	 * guarantees that every possible ordering of the elements is equally likely,
+	 * because at each step, we are choosing from the remaining unshuffled elements
+	 * at random.
 	 */
 
 	public static void shuffle(int[] nums) {
@@ -173,6 +176,19 @@ public class CreativityLabs {
 			nums[j] = temp;
 
 		}
+	}
+
+	public static void main(String[] args) {
+		int[] nums = { 1, 2, 3, 4, 3, 5 };
+		System.out.println(findRepeated(nums));
+		System.out.println(findRepeatedQuick(nums));
+
+		int[] nums2 = { 1, 2, 3, 4, 4, 5, 2, 3, 4, 5 };
+//		System.out.println(findAllRepeated(nums2));
+		System.out.println(findAllRepeated(nums2));
+
+		shuffle(nums2);
+		System.out.println(Arrays.toString(nums2));
 	}
 
 }
