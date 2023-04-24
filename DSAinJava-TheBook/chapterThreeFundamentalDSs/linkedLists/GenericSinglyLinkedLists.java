@@ -217,6 +217,18 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		return other;
 	}
 
+	/**
+	 * Describe an algorithm for concatenating two singly linked lists L and M, into
+	 * a single list L′ that contains all the nodes of L followed by all the nodes
+	 * of M.
+	 * 
+	 * @param list
+	 * @return
+	 */
+	public GenericSinglyLinkedLists<T> concatWith(GenericSinglyLinkedLists<T> list) {
+
+	}
+
 	public static void main(String[] args) {
 		GenericSinglyLinkedLists<Integer> list = new GenericSinglyLinkedLists<>();
 		list.addFirst(1);
