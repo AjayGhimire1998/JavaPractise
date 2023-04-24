@@ -225,14 +225,28 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 	 * @param list
 	 * @return
 	 */
-	public GenericSinglyLinkedLists<T> concatWith(GenericSinglyLinkedLists<T> list) {
+	public GenericSinglyLinkedLists<T> concat(GenericSinglyLinkedLists<T> other) {
+		GenericSinglyLinkedLists<T> result = new GenericSinglyLinkedLists<T>();
+
+		Node<T> thisCurr = head;
+		while (thisCurr != null) {
+			result.addLast(thisCurr.element);
+			thisCurr = thisCurr.getNext();
+		}
+
+		Node<T> otherCurr = other.head;
+		while (otherCurr != null) {
+			result.addLast(otherCurr.element);
+			otherCurr = otherCurr.getNext();
+		}
+		return result;
 
 	}
 
 	public static void main(String[] args) {
 		GenericSinglyLinkedLists<Integer> list = new GenericSinglyLinkedLists<>();
-		list.addFirst(1);
-		list.addLast(10);
+//		list.addFirst(1);
+//		list.addLast(10);
 //		list.removeLast();
 		System.out.println(list.toArray());
 
@@ -244,24 +258,22 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		list2.addLast(11);
 		list2.addLast(12);
 		list2.addLast(13);
-		System.out.println(list2.find(12));
+//		System.out.println(list2.find(12));
 		System.out.println(list2.toArray());
-		list2.rotate();
-		System.out.println(list2.toArray());
+//		list2.rotate();
+//		System.out.println(list2.toArray());
 
-		Node<Integer> secondLast = list2.findSecondLast();
-		System.out.println(secondLast.getElement());
+//		Node<Integer> secondLast = list2.findSecondLast();
+//		System.out.println(secondLast.getElement());
+//
+//		System.out.println(list.equals(list2));
 
-		System.out.println(list.equals(list2));
-
-		int[] arr = { 1, 2, 3, 4, 5 };
-		int[] copy = arr.clone();
+//		int[] arr = { 1, 2, 3, 4, 5 };
+//		int[] copy = arr.clone();
 //		int[] arrCopy = System.arraycopy(arr, 0, copy, 0, arr.length);
-		System.out.println("This");
-		System.out.println("is");
-		System.out.println("the");
-		System.out.println("streak");
-		System.out.println("commit");
+
+		GenericSinglyLinkedLists<Integer> concated = list.concat(list2);
+		System.out.println(concated.toArray());
 
 	}
 
