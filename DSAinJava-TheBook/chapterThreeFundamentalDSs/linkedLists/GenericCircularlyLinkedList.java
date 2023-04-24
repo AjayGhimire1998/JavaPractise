@@ -92,7 +92,6 @@ public class GenericCircularlyLinkedList<T> {
 			tail.setNext(tail); // link to itself circularly
 		} else {
 			Node<T> newNode = new Node<T>(t, tail.getNext());
-			Node<T> temp = tail.getNext();
 			tail.setNext(newNode); // add the new node with next to be the next of tail and set
 									// the next of tail to be the new node
 
@@ -213,6 +212,8 @@ public class GenericCircularlyLinkedList<T> {
 
 		list.addFirst(2);
 		list.addFirst(1);
+		list.addLast(0);
+		list.addFirst(100);
 //		list.addLast(3);
 		System.out.println(list.toArray());
 		System.out.println(list.getTail().getElement());
