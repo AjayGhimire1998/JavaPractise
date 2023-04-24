@@ -243,6 +243,19 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 
 	}
 
+	/**
+	 * Describe in detail how to swap two nodes x and y (and not just their
+	 * contents) in a singly linked list L given references only to x and y. Repeat
+	 * this exercise for the case when L is a doubly linked list. Which algorithm
+	 * takes more time?
+	 * 
+	 * @param x
+	 * @param y
+	 */
+	public void swapNodes(Node<T> x, Node<T> y) {
+
+	}
+
 	public static void main(String[] args) {
 		GenericSinglyLinkedLists<Integer> list = new GenericSinglyLinkedLists<>();
 		list.addFirst(1);
