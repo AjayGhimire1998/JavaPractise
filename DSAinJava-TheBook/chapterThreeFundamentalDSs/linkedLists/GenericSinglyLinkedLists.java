@@ -245,8 +245,8 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 
 	public static void main(String[] args) {
 		GenericSinglyLinkedLists<Integer> list = new GenericSinglyLinkedLists<>();
-//		list.addFirst(1);
-//		list.addLast(10);
+		list.addFirst(1);
+		list.addLast(10);
 //		list.removeLast();
 		System.out.println(list.toArray());
 

@@ -208,6 +208,17 @@ public class GenericDoublyLinkedList<T> {
 		return true;
 	}
 
+	/**
+	 * Give an algorithm for concatenating two doubly linked lists L and M, with
+	 * header and trailer sentinel nodes, into a single list L′
+	 * 
+	 * @param other
+	 * @return
+	 */
+	public GenericDoublyLinkedList<T> concat(GenericDoublyLinkedList<T> other) {
+
+	}
+
 	public static void main(String[] args) {
 		GenericDoublyLinkedList<Integer> list = new GenericDoublyLinkedList<>();
 		list.addFirst(1);
