@@ -248,10 +248,10 @@ public class GenericDoublyLinkedList<T> {
 //		System.out.println(list.toArray());
 //		System.out.println(list.size());
 
-		GenericDoublyLinkedList<Integer> list = new GenericDoublyLinkedList<>();
-		list.addFirst(11);
-		list.addFirst(12);
-		list.addLast(13);
+		GenericDoublyLinkedList<Integer> list2 = new GenericDoublyLinkedList<>();
+		list2.addFirst(11);
+		list2.addFirst(12);
+		list2.addLast(13);
 		System.out.println(list.toArray());
 
 	}
