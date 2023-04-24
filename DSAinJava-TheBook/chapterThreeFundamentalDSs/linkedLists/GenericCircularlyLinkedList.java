@@ -182,6 +182,17 @@ public class GenericCircularlyLinkedList<T> {
 
 	}
 
+	/**
+	 * Give an algorithm for concatenating two doubly linked lists L and M, with
+	 * header and trailer sentinel nodes, into a single list L′ .
+	 * 
+	 * @param other
+	 * @return
+	 */
+	public GenericCircularlyLinkedList<T> concat(GenericCircularlyLinkedList<T> other) {
+
+	}
+
 	public static void main(String[] args) {
 		GenericCircularlyLinkedList<Integer> list = new GenericCircularlyLinkedList<>();
 
