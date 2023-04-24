@@ -91,11 +91,11 @@ public class GenericCircularlyLinkedList<T> {
 			tail = new Node<>(t, null);
 			tail.setNext(tail); // link to itself circularly
 		} else {
+			Node<T> newNode = new Node<T>(t, tail.getNext());
+			Node<T> temp = tail.getNext();
+			tail.setNext(newNode); // add the new node with next to be the next of tail and set
+									// the next of tail to be the new node
 
-			tail.setNext(new Node<>(t, tail.getNext())); // add the new node with next to be the next of tail and set
-															// the next of tail to
-			// be the new node
-			tail = tail.getNext();
 		}
 		size++;
 	}
@@ -147,8 +147,8 @@ public class GenericCircularlyLinkedList<T> {
 		do {
 			arrayList.add(current.getElement());
 			current = current.getNext();
-		} while (current != tail);
-		arrayList.add(tail.getElement());
+		} while (current != tail.getNext());
+//		arrayList.add(tail.getElement());
 		return arrayList;
 	}
 
@@ -190,19 +190,44 @@ public class GenericCircularlyLinkedList<T> {
 	 * @return
 	 */
 	public GenericCircularlyLinkedList<T> concat(GenericCircularlyLinkedList<T> other) {
+		GenericCircularlyLinkedList<T> result = new GenericCircularlyLinkedList<>();
 
+		Node<T> thisCurr = tail.getNext();
+		do {
+			result.addLast(thisCurr.getElement());
+			thisCurr = thisCurr.getNext();
+		} while (thisCurr != tail.getNext());
+
+		Node<T> otherCurr = other.tail.getNext();
+
+		do {
+			result.addLast(otherCurr.getElement());
+			otherCurr = otherCurr.getNext();
+		} while (otherCurr != other.tail.getNext());
+
+		return result;
 	}
 
 	public static void main(String[] args) {
 		GenericCircularlyLinkedList<Integer> list = new GenericCircularlyLinkedList<>();
 
-		list.addFirst(13);
+		list.addFirst(2);
 		list.addFirst(1);
-		list.addLast(12);
+//		list.addLast(3);
+		System.out.println(list.toArray());
+		System.out.println(list.getTail().getElement());
+//		list.rotate();
+//		System.out.println(list.toArray());
 
-		System.out.println(list.toArray());
-		list.rotate();
-		System.out.println(list.toArray());
+		GenericCircularlyLinkedList<Integer> list2 = new GenericCircularlyLinkedList<>();
+		list2.addFirst(10);
+		list2.addLast(11);
+		list2.addLast(12);
+		list2.addFirst(13);
+		System.out.println(list2.toArray());
+
+		GenericCircularlyLinkedList<Integer> concatenated = list.concat(list2);
+		System.out.println(concatenated.toArray());
 
 	}
 
