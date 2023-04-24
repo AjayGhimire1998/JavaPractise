@@ -178,6 +178,23 @@ public class CreativityLabs {
 		}
 	}
 
+	/**
+	 * Write a Java method that takes two three-dimensional integer arrays and adds
+	 * them componentwise.
+	 * 
+	 * @param nums
+	 * @return an array of sums
+	 */
+	public static int[] sumOfThreeDArrays(int[][][] nums) {
+		int[] result = new int[nums[0].length];
+
+		for (int i = 0; i < nums.length; i++) {
+			System.out.println(i);
+		}
+		return result;
+
+	}
+
 	public static void main(String[] args) {
 		int[] nums = { 1, 2, 3, 4, 3, 5 };
 		System.out.println(findRepeated(nums));
@@ -189,6 +206,10 @@ public class CreativityLabs {
 
 		shuffle(nums2);
 		System.out.println(Arrays.toString(nums2));
+
+		int[][][] threeDArray = { { { 1, 2, 3 } }, { { 4, 5, 6 } }, { { 7, 8, 9 } } };
+		sumOfThreeDArrays(threeDArray);
+		System.out.println(Arrays.toString(threeDArray[0][0]));
 	}
 
 }
