@@ -216,7 +216,21 @@ public class GenericDoublyLinkedList<T> {
 	 * @return
 	 */
 	public GenericDoublyLinkedList<T> concat(GenericDoublyLinkedList<T> other) {
+		GenericDoublyLinkedList<T> result = new GenericDoublyLinkedList<T>();
 
+		Node<T> thisCurr = header.getNext();
+		while (thisCurr != trailer) {
+			result.addLast(thisCurr.getElement());
+			thisCurr = thisCurr.getNext();
+		}
+
+		Node<T> otherCurr = other.header.getNext();
+		while (thisCurr != other.trailer) {
+			result.addLast(otherCurr.getElement());
+			otherCurr = otherCurr.getNext();
+		}
+
+		return result;
 	}
 
 	public static void main(String[] args) {
@@ -226,13 +240,20 @@ public class GenericDoublyLinkedList<T> {
 		list.addLast(9);
 		list.addLast(10);
 		System.out.println(list.toArray());
+//
+//		list.removeFirst();
+//		System.out.println(list.toArray());
+//
+//		System.out.println(list.removeLast());
+//		System.out.println(list.toArray());
+//		System.out.println(list.size());
 
-		list.removeFirst();
+		GenericDoublyLinkedList<Integer> list = new GenericDoublyLinkedList<>();
+		list.addFirst(11);
+		list.addFirst(12);
+		list.addLast(13);
 		System.out.println(list.toArray());
 
-		System.out.println(list.removeLast());
-		System.out.println(list.toArray());
-		System.out.println(list.size());
 	}
 
 }
