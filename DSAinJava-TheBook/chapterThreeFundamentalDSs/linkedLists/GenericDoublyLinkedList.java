@@ -225,7 +225,7 @@ public class GenericDoublyLinkedList<T> {
 		}
 
 		Node<T> otherCurr = other.header.getNext();
-		while (thisCurr != other.trailer) {
+		while (otherCurr != other.trailer) {
 			result.addLast(otherCurr.getElement());
 			otherCurr = otherCurr.getNext();
 		}
@@ -252,7 +252,12 @@ public class GenericDoublyLinkedList<T> {
 		list2.addFirst(11);
 		list2.addFirst(12);
 		list2.addLast(13);
-		System.out.println(list.toArray());
+		System.out.println(list2.toArray());
+
+		GenericDoublyLinkedList<Integer> concatenated = list.concat(list2);
+		System.out.println(concatenated.toArray());
+		System.out.println(concatenated.getFirst());
+		System.out.println(concatenated.getLast());
 
 	}
 
