@@ -253,24 +253,44 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 	 * @param y
 	 */
 	public void swapNodes(Node<T> x, Node<T> y) {
+		Node<T> prev_x = null;
+		Node<T> prev_y = null;
+
+		Node<T> curr = head;
+		while (curr != null) {
+			if (curr.getNext() == x) {
+				prev_x = curr;
+			}
+
+			if (curr.getNext() == y) {
+				prev_y = curr;
+			}
+			curr = curr.getNext();
+		}
+
+		if (x.getNext() == y) {
+			prev_x.setNext(y);
+			prev_y.setNext(y.getNext());
+			y.setNext(prev_y);
+		}
 
 	}
 
 	public static void main(String[] args) {
 		GenericSinglyLinkedLists<Integer> list = new GenericSinglyLinkedLists<>();
 		list.addFirst(1);
-		list.addLast(10);
+		list.addLast(2);
 //		list.removeLast();
 		System.out.println(list.toArray());
 
 		GenericSinglyLinkedLists<Integer> list2 = new GenericSinglyLinkedLists<>();
-		list2.addFirst(1);
-		list2.addLast(10);
+		list2.addFirst(3);
+		list2.addLast(4);
 		list2.removeFirst();
 
-		list2.addLast(11);
-		list2.addLast(12);
-		list2.addLast(13);
+		list2.addLast(3);
+		list2.addLast(4);
+		list2.addLast(5);
 //		System.out.println(list2.find(12));
 		System.out.println(list2.toArray());
 //		list2.rotate();
@@ -286,6 +306,9 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 //		int[] arrCopy = System.arraycopy(arr, 0, copy, 0, arr.length);
 
 		GenericSinglyLinkedLists<Integer> concated = list.concat(list2);
+		System.out.println(concated.toArray());
+
+		concated.swapNodes(concated.head.getNext(), concated.head.getNext().getNext());
 		System.out.println(concated.toArray());
 
 	}
