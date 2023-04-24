@@ -267,11 +267,16 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 			}
 			curr = curr.getNext();
 		}
+		System.out.println(prev_x.getElement());
+		System.out.println(prev_y.getElement());
 
 		if (x.getNext() == y) {
 			prev_x.setNext(y);
 			prev_y.setNext(y.getNext());
 			y.setNext(prev_y);
+		} else {
+			prev_x.setNext(y);
+
 		}
 
 	}
@@ -286,11 +291,10 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		GenericSinglyLinkedLists<Integer> list2 = new GenericSinglyLinkedLists<>();
 		list2.addFirst(3);
 		list2.addLast(4);
-		list2.removeFirst();
 
-		list2.addLast(3);
-		list2.addLast(4);
 		list2.addLast(5);
+		list2.addLast(6);
+		list2.addLast(7);
 //		System.out.println(list2.find(12));
 		System.out.println(list2.toArray());
 //		list2.rotate();
@@ -308,7 +312,7 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		GenericSinglyLinkedLists<Integer> concated = list.concat(list2);
 		System.out.println(concated.toArray());
 
-		concated.swapNodes(concated.head.getNext(), concated.head.getNext().getNext());
+		concated.swapNodes(concated.head.getNext().getNext(), concated.head.getNext().getNext().getNext().getNext());
 		System.out.println(concated.toArray());
 
 	}
