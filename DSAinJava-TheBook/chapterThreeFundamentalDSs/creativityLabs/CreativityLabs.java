@@ -185,11 +185,15 @@ public class CreativityLabs {
 	 * @param nums
 	 * @return an array of sums
 	 */
-	public static int[] sumOfThreeDArrays(int[][][] nums) {
-		int[] result = new int[nums[0].length];
+	public static int[][][] sumOfThreeDArrays(int[][][] nums, int[][][] nums2) {
+		int[][][] result = new int[nums.length][nums[0].length][nums[0][0].length];
 
 		for (int i = 0; i < nums.length; i++) {
-			System.out.println(i);
+			for (int j = 0; j < nums[0].length; j++) {
+				for (int k = 0; k < nums[0][0].length; k++) {
+					result[i][j][k] = nums[i][j][k] + nums2[i][j][k];
+				}
+			}
 		}
 		return result;
 
@@ -208,8 +212,10 @@ public class CreativityLabs {
 		System.out.println(Arrays.toString(nums2));
 
 		int[][][] threeDArray = { { { 1, 2, 3 } }, { { 4, 5, 6 } }, { { 7, 8, 9 } } };
-		sumOfThreeDArrays(threeDArray);
-		System.out.println(Arrays.toString(threeDArray[0][0]));
+		int[][][] threeDArray2 = { { { 1, 2, 3 } }, { { 4, 5, 6 } }, { { 7, 8, 9 } } };
+		int[][][] result = sumOfThreeDArrays(threeDArray, threeDArray2);
+
+		System.out.println(result[0][0]);
 	}
 
 }
