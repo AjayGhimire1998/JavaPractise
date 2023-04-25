@@ -225,6 +225,7 @@ public class GenericCircularlyLinkedList<T> {
 		list2.addFirst(1);
 		list2.addLast(0);
 		list2.addFirst(100);
+		list2.rotate();
 		System.out.println(list2.toArray());
 		System.out.println(list2.getTail().getElement());
 
