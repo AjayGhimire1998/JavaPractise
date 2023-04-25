@@ -248,7 +248,7 @@ public class GenericDoublyLinkedList<T> {
 	}
 
 	public void swapNodes(Node<T> x, Node<T> y) {
-		if (x == getHeadNode() && y == getTailNode()) {
+		if (x == getHeadNode() && y == getTailNode()) { // swapping head and tail
 			Node<T> tempHead = getHeadNode();
 
 			Node<T> afterHead = header.getNext().getNext();
@@ -266,7 +266,7 @@ public class GenericDoublyLinkedList<T> {
 			return;
 		}
 
-		if (x == getHeadNode() && y == getHeadNode().getNext()) {
+		if (x == getHeadNode() && y == getHeadNode().getNext()) { // swapping head and next of head
 			Node<T> afterY = y.getNext();
 			header.setNext(y);
 			y.setPrev(header);
@@ -276,7 +276,7 @@ public class GenericDoublyLinkedList<T> {
 			return;
 		}
 
-		if (x == getTailNode().getPrev() && y == getTailNode()) {
+		if (x == getTailNode().getPrev() && y == getTailNode()) { // swapping before of tail and tail
 			Node<T> beforeX = x.getPrev();
 			System.out.println(beforeX.getElement());
 			beforeX.setNext(y);
@@ -290,7 +290,16 @@ public class GenericDoublyLinkedList<T> {
 		}
 
 		if (x != getHeadNode() && y != getTailNode() && x.getNext() == y) {
+			Node<T> beforeX = x.getPrev();
+			Node<T> afterY = y.getNext();
 
+			beforeX.setNext(y);
+			y.setPrev(beforeX);
+
+			y.setNext(x);
+			x.setPrev(y);
+			x.setNext(afterY);
+			return;
 		}
 
 	}
@@ -318,7 +327,8 @@ public class GenericDoublyLinkedList<T> {
 
 		GenericDoublyLinkedList<Integer> concatenated = list.concat(list2);
 		System.out.println(concatenated.toArray());
-		concatenated.swapNodes(concatenated.getHeadNode(), concatenated.getHeadNode().getNext());
+		concatenated.swapNodes(concatenated.getHeadNode().getNext().getNext(),
+				concatenated.getHeadNode().getNext().getNext().getNext());
 		System.out.println(concatenated.toArray());
 
 	}
