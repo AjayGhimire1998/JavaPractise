@@ -254,68 +254,105 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 	 */
 	public void swapNodes(Node<T> x, Node<T> y) {
 
-		Node<T> prev_x = null;
-		Node<T> prev_y = null;
-
-		Node<T> curr = head;
-		while (curr != null) {
-			if (curr.getNext() == x) {
-				prev_x = curr;
-			}
-
-			if (curr.getNext() == y) {
-				prev_y = curr;
-			}
-			curr = curr.getNext();
-		}
-		System.out.println(prev_x.getElement());
-		System.out.println(prev_y.getElement());
-
-		if (x.getNext() == y) {
-			prev_x.setNext(y);
-			prev_y.setNext(y.getNext());
-			y.setNext(prev_y);
-
-		} else {
-			Node<T> tempAfterX = x.getNext();
-			Node<T> tempAfterY = y.getNext();
-			prev_x.setNext(y);
-			y.setNext(tempAfterX);
-			prev_y.setNext(x);
-			x.setNext(tempAfterY);
-
-		}
-
 		if (x == head) {
-			prev_x = null;
-			Node<T> tempAfterX = x.getNext();
-			Node<T> tempAfterY = y.getNext();
-			head = y;
-			head.setNext(tempAfterX);
+			swapHeadWithOtherNode(y);
 			return;
 		}
+
+		if (y == head) {
+			swapHeadWithOtherNode(x);
+			return;
+		}
+
+		Node<T> prev_x = getPrev(x);
+		Node<T> prev_y = getPrev(y);
+
+		if (x.getNext() == y) {
+			swapAdjacents(x, y);
+			return;
+
+		}
+		Node<T> tempAfterX = x.getNext();
+		Node<T> tempAfterY = y.getNext();
+		prev_x.setNext(y);
+		y.setNext(tempAfterX);
+		prev_y.setNext(x);
+		x.setNext(tempAfterY);
+
 	}
 
 	public void swapHeadAndTail() {
-		Node<T> curr = head;
-		Node<T> prevTail = null;
+		Node<T> prevTail = getPrev(tail);
 
-		while (curr != tail) {
-			prevTail = curr;
-			curr = curr.getNext();
-		}
 		Node<T> tempHead = head;
 		Node<T> tempAfterHead = head.getNext();
-		System.out.println("tempHead: " + tempHead.getElement());
 		head = tail;
 		head.setNext(tempAfterHead);
-		System.out.println("after the head: " + tempAfterHead.getElement());
+
 		prevTail.setNext(tempHead);
 		tail = tempHead;
 		tail.setNext(null);
-		System.out.println("Tail after swapping: " + tail.getElement());
-		System.out.println("tempHead after head is tail: " + tempHead.getElement());
+	}
 
+	public void swapHeadWithOtherNode(Node<T> other) {
+		if (other == tail) {
+			swapHeadAndTail();
+			return;
+		}
+
+		if (other == null) {
+			System.err.println("It is null");
+			return;
+		}
+
+		Node<T> tempHead = head;
+		Node<T> tempAfterHead = head.getNext();
+		Node<T> tempAfterOther = other.getNext();
+		Node<T> prevOther = getPrev(other);
+
+		head = other;
+		head.setNext(tempAfterHead);
+
+		prevOther.setNext(tempHead);
+		tempHead.setNext(tempAfterOther);
+	}
+
+	public void swapAdjacents(Node<T> x, Node<T> y) {
+		if (x == head && y == head.getNext()) {
+			x.setNext(y.getNext());
+			y.setNext(x);
+			head = y;
+			return;
+		}
+
+		if (x == getPrev(y) && y == tail) {
+			Node<T> prevX = getPrev(x);
+			prevX.setNext(y);
+			y.setNext(x);
+			x.setNext(null);
+			return;
+		}
+
+		Node<T> prevX = getPrev(x);
+		Node<T> prevY = getPrev(y);
+
+		prevX.setNext(y);
+		prevY.setNext(y.getNext());
+		y.setNext(prevY);
+	}
+
+	public Node<T> getPrev(Node<T> node) {
+		if (head == null) {
+			return null;
+		}
+		Node<T> curr = head;
+		while (curr != null) {
+			if (curr.getNext() == node) {
+				return curr;
+			}
+			curr = curr.getNext();
+		}
+		return null;
 	}
 
 //	public void reverseList() {
@@ -327,6 +364,8 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		list.addFirst(1);
 		list.addLast(2);
 		System.out.println(list.toArray());
+//		list.swapHeadAndTail();
+		System.out.println(list.toArray());
 
 		GenericSinglyLinkedLists<Integer> list2 = new GenericSinglyLinkedLists<>();
 		list2.addFirst(3);
@@ -337,6 +376,10 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		list2.addLast(7);
 //		System.out.println(list2.find(12));
 		System.out.println(list2.toArray());
+		list2.swapHeadAndTail();
+		System.out.println(list2.toArray());
+		Node<Integer> prevOfList2Tail = list2.getPrev(list2.tail);
+		System.out.println(prevOfList2Tail.getElement());
 //		list2.rotate();
 //		System.out.println(list2.toArray());
 
@@ -351,15 +394,21 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 
 		GenericSinglyLinkedLists<Integer> concated = list.concat(list2);
 		System.out.println(concated.toArray());
-		concated.swapHeadAndTail();
-		System.out.println(concated.toArray());
+
+//		concated.swapAdjacents(concated.head.getNext().getNext().getNext().getNext().getNext(), concated.tail);
+//		System.out.println("swapping with adjacaent method: " + concated.toArray());
+
+//		concated.swapHeadWithOtherNode(
+//				concated.head.getNext().getNext().getNext().getNext().getNext().getNext().getNext());
+//		System.out.println("after wswapping head with other:" + concated.toArray());
+//		concated.swapHeadAndTail();
+//		System.out.println(concated.toArray());
 
 //		concated.reverseList();
 //		System.out.println(concated.toArray());
 
-//		concated.swapNodes(concated.head, concated.head.getNext().getNext().getNext().getNext().getNext());
-//		System.out.println(concated.toArray());
-//		
+		concated.swapNodes(concated.head.getNext(), concated.head.getNext().getNext().getNext());
+		System.out.println("swapping  anything: " + concated.toArray());
 
 	}
 
