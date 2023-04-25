@@ -181,6 +181,27 @@ public class GenericCircularlyLinkedList<T> {
 
 	}
 
+	public boolean equalsWithSequence(GenericCircularlyLinkedList<T> other) {
+		if (other == this) {
+			return true;
+		}
+
+		if (getSize() != other.getSize()) {
+			return false;
+		}
+
+		Node<T> thisCurrent = tail.getNext();
+		Node<T> otherCurrent = other.tail.getNext();
+		while (!otherCurrent.getElement().equals(thisCurrent.getElement())) {
+			if (thisCurrent.getElement().equals(otherCurrent.getElement())) {
+				otherCurrent = thisCurrent;
+			}
+			thisCurrent = thisCurrent.getNext();
+			otherCurrent = otherCurrent.getNext();
+		}
+
+	}
+
 	/**
 	 * Give an algorithm for concatenating two doubly linked lists L and M, with
 	 * header and trailer sentinel nodes, into a single list L′ .
@@ -231,7 +252,7 @@ public class GenericCircularlyLinkedList<T> {
 
 		GenericCircularlyLinkedList<Integer> concatenated = list.concat(list2);
 		System.out.println(concatenated.toArray());
-		System.out.println(concatenated.getTail().getElement());
+//		System.out.println(concatenated.getTail().getElement());
 
 		System.out.println(list.equals(list2));
 
