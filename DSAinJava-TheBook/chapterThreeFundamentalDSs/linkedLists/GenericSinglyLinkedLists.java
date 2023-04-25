@@ -358,14 +358,20 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 	public void reverseList() {
 		Node<T> prev = null;
 		Node<T> curr = head;
-		Node<T> next = head.getNext();
+		Node<T> next = null;
+		;
 
 		while (curr != null) {
 			prev = curr;
+			System.out.println(prev.getElement());
 			curr = curr.getNext();
-			next.setNext(prev);
+
 		}
-//		head = curr;
+		System.out.println(prev.getElement());
+//		System.out.println(next.getElement());
+//		System.out.println(curr.getElement());
+		head = curr;
+
 	}
 
 	public static void main(String[] args) {
@@ -410,14 +416,14 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		concated.swapHeadWithOtherNode(
 				concated.head.getNext().getNext().getNext().getNext().getNext().getNext().getNext());
 		System.out.println("after wswapping head with other:" + concated.toArray());
-		concated.swapHeadAndTail();
-		System.out.println(concated.toArray());
-
-		concated.reverseList();
-		System.out.println("reversed list: " + concated.toArray());
+//		concated.swapHeadAndTail();
+//		System.out.println(concated.toArray());
 
 		concated.swapNodes(concated.head.getNext(), concated.head.getNext().getNext().getNext());
 		System.out.println("swapping  anything: " + concated.toArray());
+
+		concated.reverseList();
+		System.out.println("reversed list: " + concated.toArray());
 
 	}
 
