@@ -276,6 +276,10 @@ public class GenericDoublyLinkedList<T> {
 			return;
 		}
 
+		if (x == getTailNode().getPrev() && y == getTailNode()) {
+			Node<T> beforeX = x.getPrev();
+		}
+
 	}
 
 	public static void main(String[] args) {
