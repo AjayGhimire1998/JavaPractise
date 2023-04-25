@@ -305,7 +305,18 @@ public class GenericDoublyLinkedList<T> {
 		}
 
 		if (x == getHeadNode() && y != getHeadNode().getNext() && y != getTailNode()) {
+			Node<T> afterHead = getHeadNode().getNext();
+			Node<T> afterY = y.getNext();
+			Node<T> beforeY = y.getPrev();
 
+			header.setNext(y);
+			y.setPrev(header);
+			y.setNext(afterHead);
+
+			beforeY.setNext(x);
+			x.setPrev(beforeY);
+			x.setNext(afterY);
+			return;
 		}
 
 	}
