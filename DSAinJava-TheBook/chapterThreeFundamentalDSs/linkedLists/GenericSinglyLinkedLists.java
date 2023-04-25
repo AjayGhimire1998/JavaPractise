@@ -359,18 +359,24 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		Node<T> prev = null;
 		Node<T> curr = head;
 		Node<T> next = null;
+		Node<T> tempHead = head;
 		;
 
-		while (curr != null) {
+		while (curr != tail) {
 			prev = curr;
-			System.out.println(prev.getElement());
-			curr = curr.getNext();
+			System.out.println("prev: " + prev.getElement());
+			next = prev.getNext();
+			System.out.println("next: " + next.getElement());
 
+			curr = curr.getNext();
+			System.out.println("next: " + next.getNext().getElement());
 		}
-		System.out.println(prev.getElement());
+//		System.out.println(prev.getElement());
 //		System.out.println(next.getElement());
 //		System.out.println(curr.getElement());
-		head = curr;
+		head = curr.getNext();
+		tail = tempHead;
+		tail.setNext(null);
 
 	}
 
