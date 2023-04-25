@@ -286,8 +286,11 @@ public class GenericDoublyLinkedList<T> {
 			y.setNext(x);
 			x.setPrev(y);
 			x.setNext(trailer);
-
 			return;
+		}
+
+		if (x != getHeadNode() && y != getTailNode() && x.getNext() == y) {
+
 		}
 
 	}
