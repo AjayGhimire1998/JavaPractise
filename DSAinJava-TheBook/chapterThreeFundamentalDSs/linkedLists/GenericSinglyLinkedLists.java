@@ -330,6 +330,7 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 			prevX.setNext(y);
 			y.setNext(x);
 			x.setNext(null);
+			tail = x;
 			return;
 		}
 
@@ -355,28 +356,27 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		return null;
 	}
 
+	/**
+	 * 8 Describe in detail an algorithm for reversing a singly linked list L using
+	 * only a constant amount of additional space.
+	 * 
+	 */
 	public void reverseList() {
-		Node<T> prev = null;
-		Node<T> curr = head;
-		Node<T> next = null;
+		Node<T> prevNode = null;
+		Node<T> currNode = head;
 		Node<T> tempHead = head;
-		;
 
-		while (curr != tail) {
-			prev = curr;
-			System.out.println("prev: " + prev.getElement());
-			next = prev.getNext();
-			System.out.println("next: " + next.getElement());
-
-			curr = curr.getNext();
-			System.out.println("next: " + next.getNext().getElement());
+		while (currNode != null) {
+			Node<T> nextNode = currNode.getNext();
+			currNode.setNext(prevNode);
+			prevNode = currNode;
+			currNode = nextNode;
 		}
-//		System.out.println(prev.getElement());
-//		System.out.println(next.getElement());
-//		System.out.println(curr.getElement());
-		head = curr.getNext();
+
+		System.out.println(prevNode.getElement());
+		head = prevNode;
+		tempHead.setNext(null);
 		tail = tempHead;
-		tail.setNext(null);
 
 	}
 
@@ -418,15 +418,18 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 
 		concated.swapAdjacents(concated.head.getNext().getNext().getNext().getNext().getNext(), concated.tail);
 		System.out.println("swapping with adjacaent method: " + concated.toArray());
+		System.out.println(concated.tail.getElement());
 
 		concated.swapHeadWithOtherNode(
 				concated.head.getNext().getNext().getNext().getNext().getNext().getNext().getNext());
 		System.out.println("after wswapping head with other:" + concated.toArray());
+		System.out.println(concated.tail.getElement());
 //		concated.swapHeadAndTail();
 //		System.out.println(concated.toArray());
 
 		concated.swapNodes(concated.head.getNext(), concated.head.getNext().getNext().getNext());
 		System.out.println("swapping  anything: " + concated.toArray());
+		System.out.println(concated.tail.getElement());
 
 		concated.reverseList();
 		System.out.println("reversed list: " + concated.toArray());
