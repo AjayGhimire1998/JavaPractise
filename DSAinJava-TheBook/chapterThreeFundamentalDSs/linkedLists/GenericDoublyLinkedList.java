@@ -336,8 +336,13 @@ public class GenericDoublyLinkedList<T> {
 			x.setPrev(beforeTail);
 			x.setNext(trailer);
 			return;
-
 		}
+
+		Node<T> beforeX = x.getPrev();
+		Node<T> afterX = x.getNext();
+
+		Node<T> beforeY = y.getPrev();
+		Node<T> afterY = y.getNext();
 
 	}
 
