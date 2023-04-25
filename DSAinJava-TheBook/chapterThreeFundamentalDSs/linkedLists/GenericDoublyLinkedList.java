@@ -344,6 +344,14 @@ public class GenericDoublyLinkedList<T> {
 		Node<T> beforeY = y.getPrev();
 		Node<T> afterY = y.getNext();
 
+		beforeX.setNext(y);
+		y.setPrev(beforeX);
+		y.setNext(afterX);
+
+		beforeY.setNext(x);
+		x.setPrev(beforeY);
+		x.setNext(afterY);
+
 	}
 
 	public static void main(String[] args) {
@@ -369,7 +377,7 @@ public class GenericDoublyLinkedList<T> {
 
 		GenericDoublyLinkedList<Integer> concatenated = list.concat(list2);
 		System.out.println(concatenated.toArray());
-		concatenated.swapNodes(concatenated.getHeadNode().getNext().getNext(), concatenated.getTailNode());
+		concatenated.swapNodes(concatenated.getHeadNode().getNext().getNext(), concatenated.getTailNode().getPrev());
 		System.out.println(concatenated.toArray());
 
 	}
