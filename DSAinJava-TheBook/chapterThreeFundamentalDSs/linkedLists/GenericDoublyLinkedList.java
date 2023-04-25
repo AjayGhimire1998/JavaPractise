@@ -293,6 +293,7 @@ public class GenericDoublyLinkedList<T> {
 		System.out.println(concatenated.toArray());
 		concatenated.swapNodes(concatenated.getHeadNode(), concatenated.getTailNode());
 		System.out.println(concatenated.toArray());
+
 	}
 
 }
