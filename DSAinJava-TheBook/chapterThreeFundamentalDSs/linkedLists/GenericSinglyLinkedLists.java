@@ -395,17 +395,17 @@ public class GenericSinglyLinkedLists<T> implements Cloneable {
 		GenericSinglyLinkedLists<Integer> concated = list.concat(list2);
 		System.out.println(concated.toArray());
 
-//		concated.swapAdjacents(concated.head.getNext().getNext().getNext().getNext().getNext(), concated.tail);
-//		System.out.println("swapping with adjacaent method: " + concated.toArray());
+		concated.swapAdjacents(concated.head.getNext().getNext().getNext().getNext().getNext(), concated.tail);
+		System.out.println("swapping with adjacaent method: " + concated.toArray());
 
-//		concated.swapHeadWithOtherNode(
-//				concated.head.getNext().getNext().getNext().getNext().getNext().getNext().getNext());
-//		System.out.println("after wswapping head with other:" + concated.toArray());
-//		concated.swapHeadAndTail();
-//		System.out.println(concated.toArray());
+		concated.swapHeadWithOtherNode(
+				concated.head.getNext().getNext().getNext().getNext().getNext().getNext().getNext());
+		System.out.println("after wswapping head with other:" + concated.toArray());
+		concated.swapHeadAndTail();
+		System.out.println(concated.toArray());
 
 //		concated.reverseList();
-//		System.out.println(concated.toArray());
+		System.out.println(concated.toArray());
 
 		concated.swapNodes(concated.head.getNext(), concated.head.getNext().getNext().getNext());
 		System.out.println("swapping  anything: " + concated.toArray());
