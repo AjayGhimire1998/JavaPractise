@@ -221,14 +221,18 @@ public class GenericCircularlyLinkedList<T> {
 //		System.out.println(list.toArray());
 
 		GenericCircularlyLinkedList<Integer> list2 = new GenericCircularlyLinkedList<>();
-		list2.addFirst(10);
-		list2.addLast(11);
-		list2.addLast(12);
-		list2.addFirst(13);
+		list2.addFirst(2);
+		list2.addFirst(1);
+		list2.addLast(0);
+		list2.addFirst(100);
 		System.out.println(list2.toArray());
+		System.out.println(list2.getTail().getElement());
 
 		GenericCircularlyLinkedList<Integer> concatenated = list.concat(list2);
 		System.out.println(concatenated.toArray());
+		System.out.println(concatenated.getTail().getElement());
+
+		System.out.println(list.equals(list2));
 
 	}
 
