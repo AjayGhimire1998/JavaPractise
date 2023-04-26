@@ -190,11 +190,18 @@ public class GenericCircularlyLinkedList<T> {
 			return false;
 		}
 
+		if (isEmpty() && other.isEmpty()) {
+			return true;
+		}
+
 		Node<T> thisCurrent = tail.getNext();
 		Node<T> otherCurrent = other.tail.getNext();
 
 		while (!otherCurrent.getElement().equals(thisCurrent.getElement())) {
-			other.rotate(); // rotating the other list until the head of the list matches the this list
+//			other.rotate(); // rotating the other list until the head of the list matches the this list
+
+			other.tail = other.tail.getNext();
+			System.out.println(other.toArray());
 			otherCurrent = otherCurrent.getNext();
 		}
 		return this.equals(other); // using the equals method above to check
