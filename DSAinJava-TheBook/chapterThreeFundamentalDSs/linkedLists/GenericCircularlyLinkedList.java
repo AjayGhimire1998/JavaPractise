@@ -181,24 +181,22 @@ public class GenericCircularlyLinkedList<T> {
 
 	}
 
-	public boolean equalsWithSequence(GenericCircularlyLinkedList<T> other) {
-		if (other == this) {
-			return true;
-		}
-
-		if (getSize() != other.getSize()) {
-			return false;
-		}
+	public void equalsWithSequence(GenericCircularlyLinkedList<T> other) {
+//		if (other == this) {
+//			return true;
+//		}
+//
+//		if (getSize() != other.getSize()) {
+//			return false;
+//		}
 
 		Node<T> thisCurrent = tail.getNext();
 		Node<T> otherCurrent = other.tail.getNext();
-		while (!otherCurrent.getElement().equals(thisCurrent.getElement())) {
-			if (thisCurrent.getElement().equals(otherCurrent.getElement())) {
-				otherCurrent = thisCurrent;
-			}
-			thisCurrent = thisCurrent.getNext();
-			otherCurrent = otherCurrent.getNext();
+		while (otherCurrent.getElement().equals(thisCurrent.getElement())) {
+			other.rotate();
 		}
+		System.out.println(this.getTail().getNext().getElement());
+		System.out.println(other.getTail().getNext().getElement());
 
 	}
 
@@ -255,6 +253,7 @@ public class GenericCircularlyLinkedList<T> {
 //		System.out.println(concatenated.getTail().getElement());
 
 		System.out.println(list.equals(list2));
+		list.equalsWithSequence(list2);
 
 	}
 
