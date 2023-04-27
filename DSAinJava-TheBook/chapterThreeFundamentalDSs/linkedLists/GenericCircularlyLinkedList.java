@@ -228,7 +228,28 @@ public class GenericCircularlyLinkedList<T> {
 			result.addLast(curr.getElement());
 			curr = curr.getNext();
 		}
+
 		result.addLast(curr.getElement());
+		tail = curr;
+		System.out.println(result.getTail().getElement());
+		return result;
+
+	}
+
+	public GenericCircularlyLinkedList<T> giveSecondHalf() {
+		GenericCircularlyLinkedList<T> result = new GenericCircularlyLinkedList<T>();
+		Node<T> curr = tail.getNext();
+		for (int i = 1; i <= getSize() / 2; i++) {
+			curr = curr.getNext();
+		}
+		curr = curr.getNext();
+		System.out.println(curr.getElement());
+		for (int j = getSize() / 2 + 1; j <= getSize(); j++) {
+			result.addLast(curr.getElement());
+			curr = curr.getNext();
+		}
+		tail = curr;
+		System.out.println(result.getTail().getElement());
 		return result;
 
 	}
@@ -280,12 +301,14 @@ public class GenericCircularlyLinkedList<T> {
 		list2.rotate();
 		System.out.println(list2.toArray());
 		System.out.println(list2.giveFirstHalf().toArray());
+		System.out.println(list2.giveSecondHalf().toArray());
 		System.out.println(list2.getTail().getElement());
 
 		GenericCircularlyLinkedList<Integer> concatenated = list.concat(list2);
 		System.out.println(concatenated.toArray());
 
 		System.out.println(concatenated.giveFirstHalf().toArray());
+		System.out.println(concatenated.giveSecondHalf().toArray());
 //		System.out.println(concatenated.getTail().getElement());
 
 		System.out.println(list.equals(list2));
