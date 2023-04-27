@@ -208,7 +208,7 @@ public class GenericCircularlyLinkedList<T> {
 		while (!otherCurrent.getElement().equals(thisCurrent.getElement())) {
 //			other.rotate(); // rotating the other list until the head of the list matches the this list
 
-			other.tail = other.tail.getNext();
+			other.tail = other.tail.getNext(); // changing tail until the list matches
 			System.out.println(other.toArray());
 			otherCurrent = otherCurrent.getNext();
 		}
