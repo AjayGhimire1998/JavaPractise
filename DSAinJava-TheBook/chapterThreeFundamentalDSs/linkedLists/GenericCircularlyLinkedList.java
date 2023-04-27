@@ -216,6 +216,23 @@ public class GenericCircularlyLinkedList<T> {
 
 	}
 
+	/*
+	 * Given a circularly linked list L containing an even number of nodes, describe
+	 * how to split L into two circularly linked lists of half the size
+	 */
+
+	public GenericCircularlyLinkedList<T> giveFirstHalf() {
+		GenericCircularlyLinkedList<T> result = new GenericCircularlyLinkedList<T>();
+		Node<T> curr = tail.getNext();
+		for (int i = 1; i <= getSize() / 2; i++) {
+			result.addLast(curr.getElement());
+			curr = curr.getNext();
+		}
+		result.addLast(curr.getElement());
+		return result;
+
+	}
+
 	/**
 	 * Give an algorithm for concatenating two doubly linked lists L and M, with
 	 * header and trailer sentinel nodes, into a single list L′ .
@@ -262,10 +279,13 @@ public class GenericCircularlyLinkedList<T> {
 		list2.addFirst(100);
 		list2.rotate();
 		System.out.println(list2.toArray());
+		System.out.println(list2.giveFirstHalf().toArray());
 		System.out.println(list2.getTail().getElement());
 
 		GenericCircularlyLinkedList<Integer> concatenated = list.concat(list2);
 		System.out.println(concatenated.toArray());
+
+		System.out.println(concatenated.giveFirstHalf().toArray());
 //		System.out.println(concatenated.getTail().getElement());
 
 		System.out.println(list.equals(list2));
