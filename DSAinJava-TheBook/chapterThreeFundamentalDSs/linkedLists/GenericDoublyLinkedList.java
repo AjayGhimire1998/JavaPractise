@@ -354,13 +354,23 @@ public class GenericDoublyLinkedList<T> {
 
 	}
 
+	/**
+	 * Implement a circular version of a doubly linked list, without any sentinels,
+	 * that supports all the public behaviors of the original as well as two new
+	 * update methods, rotate( ) and rotateBackward( ).
+	 * 
+	 */
+	void rotate() {
+
+	}
+
 	public static void main(String[] args) {
 		GenericDoublyLinkedList<Integer> list = new GenericDoublyLinkedList<>();
 		list.addFirst(1);
 		list.addFirst(2);
 		list.addLast(9);
 		list.addLast(10);
-		System.out.println(list.toArray());
+//		System.out.println(list.toArray());
 //
 //		list.removeFirst();
 //		System.out.println(list.toArray());
@@ -373,12 +383,14 @@ public class GenericDoublyLinkedList<T> {
 		list2.addFirst(11);
 		list2.addFirst(12);
 		list2.addLast(13);
-		System.out.println(list2.toArray());
+//		System.out.println(list2.toArray());
 
 		GenericDoublyLinkedList<Integer> concatenated = list.concat(list2);
+//		System.out.println(concatenated.toArray());
+//		concatenated.swapNodes(concatenated.getHeadNode().getNext().getNext(), concatenated.getTailNode().getPrev());
 		System.out.println(concatenated.toArray());
-		concatenated.swapNodes(concatenated.getHeadNode().getNext().getNext(), concatenated.getTailNode().getPrev());
-		System.out.println(concatenated.toArray());
+		System.out.println("head: " + concatenated.getHeadNode().getElement());
+		System.out.println("tail: " + concatenated.getTailNode().getElement());
 
 	}
 

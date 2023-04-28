@@ -230,6 +230,8 @@ public class GenericCircularlyLinkedList<T> {
 			curr = curr.getNext();
 			System.out.println(" first size incremation" + result.getSize());
 		}
+		result.addLast(curr.getElement());
+		System.out.println(" last size incremation" + result.getSize());
 
 		return result;
 
