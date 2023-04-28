@@ -102,7 +102,7 @@ public class GenericCircularlyLinkedList<T> {
 	void addLast(T t) { // adds the element t to the end of the list
 		addFirst(t); // insert the new element at the front of the list
 		tail = tail.getNext(); // now new element becomes the tail
-		size++;
+//		size++;
 
 	}
 
@@ -115,8 +115,9 @@ public class GenericCircularlyLinkedList<T> {
 			tail = null;
 		} else {
 			tail.setNext(head.getNext()); // removes "head" fromt the list
-			size--;
+
 		}
+		size--;
 		return head.getElement();
 	}
 
@@ -209,7 +210,7 @@ public class GenericCircularlyLinkedList<T> {
 //			other.rotate(); // rotating the other list until the head of the list matches the this list
 
 			other.tail = other.tail.getNext(); // changing tail until the list matches
-			System.out.println(other.toArray());
+//			System.out.println(other.toArray());
 			otherCurrent = otherCurrent.getNext();
 		}
 		return this.equals(other); // using the equals method above to check
@@ -227,11 +228,9 @@ public class GenericCircularlyLinkedList<T> {
 		for (int i = 1; i <= getSize() / 2; i++) {
 			result.addLast(curr.getElement());
 			curr = curr.getNext();
+			System.out.println(" first size incremation" + result.getSize());
 		}
 
-		result.addLast(curr.getElement());
-//		tail = curr;
-		System.out.println(result.getTail().getElement());
 		return result;
 
 	}
