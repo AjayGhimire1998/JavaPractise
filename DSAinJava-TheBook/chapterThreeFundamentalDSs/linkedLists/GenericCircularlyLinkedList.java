@@ -230,7 +230,7 @@ public class GenericCircularlyLinkedList<T> {
 		}
 
 		result.addLast(curr.getElement());
-		tail = curr;
+//		tail = curr;
 		System.out.println(result.getTail().getElement());
 		return result;
 
@@ -243,12 +243,12 @@ public class GenericCircularlyLinkedList<T> {
 			curr = curr.getNext();
 		}
 		curr = curr.getNext();
-		System.out.println(curr.getElement());
+		System.out.println("current before second half:" + curr.getElement());
 		for (int j = getSize() / 2 + 1; j <= getSize(); j++) {
 			result.addLast(curr.getElement());
 			curr = curr.getNext();
 		}
-		tail = curr;
+		result.tail = curr;
 		System.out.println(result.getTail().getElement());
 		return result;
 
@@ -307,8 +307,8 @@ public class GenericCircularlyLinkedList<T> {
 		GenericCircularlyLinkedList<Integer> concatenated = list.concat(list2);
 		System.out.println(concatenated.toArray());
 
-		System.out.println(concatenated.giveFirstHalf().toArray());
-		System.out.println(concatenated.giveSecondHalf().toArray());
+		System.out.println("first half: " + concatenated.giveFirstHalf().toArray());
+		System.out.println("second half: " + concatenated.giveSecondHalf().toArray());
 //		System.out.println(concatenated.getTail().getElement());
 
 		System.out.println(list.equals(list2));
