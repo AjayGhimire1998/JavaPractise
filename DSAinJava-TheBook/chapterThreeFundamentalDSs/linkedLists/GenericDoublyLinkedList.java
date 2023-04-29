@@ -368,6 +368,7 @@ public class GenericDoublyLinkedList<T> {
 		trailer.setPrev(tempHead);
 		tempHead.setPrev(prevTail);
 		tempHead.setNext(trailer);
+		System.out.println(tempHead.getElement());
 	}
 
 	public static void main(String[] args) {
