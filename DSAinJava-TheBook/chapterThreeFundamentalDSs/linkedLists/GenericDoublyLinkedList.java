@@ -363,6 +363,7 @@ public class GenericDoublyLinkedList<T> {
 	void rotate() {
 		Node<T> tempHead = header.getNext();
 		header.setNext(header.getNext().getNext());
+		System.out.println(header.getNext().getElement());
 		Node<T> prevTail = trailer.getPrev().getPrev();
 		prevTail.setNext(tempHead);
 		trailer.setPrev(tempHead);
