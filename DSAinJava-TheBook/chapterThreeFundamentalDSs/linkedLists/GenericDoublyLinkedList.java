@@ -407,6 +407,8 @@ public class GenericDoublyLinkedList<T> {
 		System.out.println("after roatation: " + concatenated.toArray());
 		System.out.println("head: " + concatenated.getHeadNode().getElement());
 		System.out.println("tail: " + concatenated.getTailNode().getElement());
+		concatenated.rotate();
+		System.out.println("after roatation: " + concatenated.toArray());
 
 	}
 
