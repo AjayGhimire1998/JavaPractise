@@ -361,7 +361,15 @@ public class GenericDoublyLinkedList<T> {
 	 * 
 	 */
 	void rotate() {
-		System.out.println("whatveveer");
+		Node<T> tempHead = header.getNext();
+		Node<T> tempTail = trailer.getPrev();
+		header.setNext(header.getNext().getNext());
+		tempTail.setNext(tempHead);
+		tempHead.setPrev(tempTail);
+		tempHead.setNext(trailer);
+		trailer.setPrev(tempHead);
+		header.getNext().setPrev(header);
+
 	}
 
 	public static void main(String[] args) {
@@ -401,6 +409,8 @@ public class GenericDoublyLinkedList<T> {
 		System.out.println("tail: " + concatenated.getTailNode().getElement());
 		concatenated.rotate();
 		System.out.println("after roatation: " + concatenated.toArray());
+		concatenated.rotate();
+		System.out.println("after roatation2: " + concatenated.toArray());
 
 	}
 
