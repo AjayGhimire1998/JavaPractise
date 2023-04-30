@@ -372,6 +372,18 @@ public class GenericDoublyLinkedList<T> {
 
 	}
 
+	void rotateBackwards() {
+		Node<T> tempHead = header.getNext();
+		Node<T> tempTail = trailer.getPrev();
+		trailer.setPrev(trailer.getPrev().getPrev());
+		tempHead.setPrev(tempTail);
+		tempTail.setNext(tempHead);
+		tempTail.setPrev(header);
+		header.setNext(tempTail);
+		trailer.getPrev().setNext(trailer);
+
+	}
+
 	public static void main(String[] args) {
 		GenericDoublyLinkedList<Integer> list = new GenericDoublyLinkedList<>();
 		list.addFirst(1);
@@ -429,6 +441,14 @@ public class GenericDoublyLinkedList<T> {
 		System.out.println("tail: " + concatenated.getTailNode().getElement());
 		concatenated.rotate();
 		System.out.println("after roatation4: " + concatenated.toArray());
+		System.out.println("head: " + concatenated.getHeadNode().getElement());
+		System.out.println("tail: " + concatenated.getTailNode().getElement());
+		concatenated.rotateBackwards();
+		System.out.println("after backwardroatation1: " + concatenated.toArray());
+		System.out.println("head: " + concatenated.getHeadNode().getElement());
+		System.out.println("tail: " + concatenated.getTailNode().getElement());
+		concatenated.rotateBackwards();
+		System.out.println("after backwardroatation1: " + concatenated.toArray());
 		System.out.println("head: " + concatenated.getHeadNode().getElement());
 		System.out.println("tail: " + concatenated.getTailNode().getElement());
 
