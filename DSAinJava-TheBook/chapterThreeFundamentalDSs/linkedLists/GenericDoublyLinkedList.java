@@ -400,17 +400,37 @@ public class GenericDoublyLinkedList<T> {
 		System.out.println("head: " + concatenated.getHeadNode().getElement());
 		System.out.println("tail: " + concatenated.getTailNode().getElement());
 		concatenated.rotate();
-		System.out.println("after roatation: " + concatenated.toArray());
+		System.out.println("after roatation1: " + concatenated.toArray());
 		System.out.println("head: " + concatenated.getHeadNode().getElement());
 		System.out.println("tail: " + concatenated.getTailNode().getElement());
-		concatenated.rotate();
-		System.out.println("after roatation: " + concatenated.toArray());
-		System.out.println("head: " + concatenated.getHeadNode().getElement());
-		System.out.println("tail: " + concatenated.getTailNode().getElement());
-		concatenated.rotate();
-		System.out.println("after roatation: " + concatenated.toArray());
 		concatenated.rotate();
 		System.out.println("after roatation2: " + concatenated.toArray());
+		System.out.println("head: " + concatenated.getHeadNode().getElement());
+		System.out.println("tail: " + concatenated.getTailNode().getElement());
+		concatenated.rotate();
+		System.out.println("after roatation3: " + concatenated.toArray());
+		System.out.println("head: " + concatenated.getHeadNode().getElement());
+		System.out.println("tail: " + concatenated.getTailNode().getElement());
+		concatenated.rotate();
+		System.out.println("after roatation4: " + concatenated.toArray());
+		System.out.println("head: " + concatenated.getHeadNode().getElement());
+		System.out.println("tail: " + concatenated.getTailNode().getElement());
+		concatenated.rotate();
+		System.out.println("after roatation1: " + concatenated.toArray());
+		System.out.println("head: " + concatenated.getHeadNode().getElement());
+		System.out.println("tail: " + concatenated.getTailNode().getElement());
+		concatenated.rotate();
+		System.out.println("after roatation2: " + concatenated.toArray());
+		System.out.println("head: " + concatenated.getHeadNode().getElement());
+		System.out.println("tail: " + concatenated.getTailNode().getElement());
+		concatenated.rotate();
+		System.out.println("after roatation3: " + concatenated.toArray());
+		System.out.println("head: " + concatenated.getHeadNode().getElement());
+		System.out.println("tail: " + concatenated.getTailNode().getElement());
+		concatenated.rotate();
+		System.out.println("after roatation4: " + concatenated.toArray());
+		System.out.println("head: " + concatenated.getHeadNode().getElement());
+		System.out.println("tail: " + concatenated.getTailNode().getElement());
 
 	}
 
