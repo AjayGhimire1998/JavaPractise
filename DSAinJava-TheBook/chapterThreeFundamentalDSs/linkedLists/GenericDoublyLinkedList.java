@@ -451,6 +451,10 @@ public class GenericDoublyLinkedList<T> {
 		System.out.println("after backwardroatation1: " + concatenated.toArray());
 		System.out.println("head: " + concatenated.getHeadNode().getElement());
 		System.out.println("tail: " + concatenated.getTailNode().getElement());
+		concatenated.rotateBackwards();
+		System.out.println("after backwardroatation1: " + concatenated.toArray());
+		System.out.println("head: " + concatenated.getHeadNode().getElement());
+		System.out.println("tail: " + concatenated.getTailNode().getElement());
 
 	}
 
