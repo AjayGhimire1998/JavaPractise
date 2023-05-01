@@ -406,8 +406,8 @@ public class GenericDoublyLinkedList<T> {
 //		System.out.println(list2.toArray());
 
 		GenericDoublyLinkedList<Integer> concatenated = list.concat(list2);
-//		System.out.println(concatenated.toArray());
-//		concatenated.swapNodes(concatenated.getHeadNode().getNext().getNext(), concatenated.getTailNode().getPrev());
+		System.out.println(concatenated.toArray());
+		concatenated.swapNodes(concatenated.getHeadNode().getNext().getNext(), concatenated.getTailNode().getPrev());
 		System.out.println(concatenated.toArray());
 		System.out.println("head: " + concatenated.getHeadNode().getElement());
 		System.out.println("tail: " + concatenated.getTailNode().getElement());
