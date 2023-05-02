@@ -384,6 +384,10 @@ public class GenericDoublyLinkedList<T> {
 
 	}
 
+	public GenericDoublyLinkedList<T> clone() {
+		GenericDoublyLinkedList<T> clone = new GenericDoublyLinkedList<>();
+	}
+
 	public static void main(String[] args) {
 		GenericDoublyLinkedList<Integer> list = new GenericDoublyLinkedList<>();
 		list.addFirst(1);
