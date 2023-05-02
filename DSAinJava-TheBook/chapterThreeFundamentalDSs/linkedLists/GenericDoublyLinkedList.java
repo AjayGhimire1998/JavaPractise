@@ -394,8 +394,12 @@ public class GenericDoublyLinkedList<T> implements Cloneable {
 			while (walk != null) {
 				Node<T> newest = new Node<T>(walk.getElement(), null, cloneWalk);
 				cloneWalk.setNext(newest);
+				newest.setPrev(cloneWalk);
 				cloneWalk = newest;
 				walk = walk.getNext();
+				if (walk == null) {
+					newest.setNext(trailer);
+				}
 			}
 		}
 		return clone;
