@@ -2,7 +2,7 @@ package linkedLists;
 
 import java.util.ArrayList;
 
-public class GenericDoublyLinkedList<T> {
+public class GenericDoublyLinkedList<T> implements Cloneable {
 	private static class Node<T> {
 		private T element;
 		private Node<T> next;
@@ -384,8 +384,14 @@ public class GenericDoublyLinkedList<T> {
 
 	}
 
-	public GenericDoublyLinkedList<T> clone() {
-		GenericDoublyLinkedList<T> clone = new GenericDoublyLinkedList<>();
+	public GenericDoublyLinkedList<T> clone() throws CloneNotSupportedException {
+		GenericDoublyLinkedList<T> clone = (GenericDoublyLinkedList<T>) super.clone();
+		if (size > 0) {
+			clone.header.setNext(header.getNext());
+			Node<T> walk = header.getNext().getNext();
+		}
+		return clone;
+
 	}
 
 	public static void main(String[] args) {
