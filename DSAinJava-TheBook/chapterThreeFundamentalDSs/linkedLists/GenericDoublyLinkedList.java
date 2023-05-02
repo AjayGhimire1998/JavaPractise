@@ -387,8 +387,16 @@ public class GenericDoublyLinkedList<T> implements Cloneable {
 	public GenericDoublyLinkedList<T> clone() throws CloneNotSupportedException {
 		GenericDoublyLinkedList<T> clone = (GenericDoublyLinkedList<T>) super.clone();
 		if (size > 0) {
-			clone.header.setNext(header.getNext());
+			clone.header.setNext(new Node<T>(getFirst(), clone.trailer, clone.header));
 			Node<T> walk = header.getNext().getNext();
+			Node<T> cloneWalk = clone.header.getNext();
+
+			while (walk != null) {
+				Node<T> newest = new Node<T>(walk.getElement(), null, cloneWalk);
+				cloneWalk.setNext(newest);
+				cloneWalk = newest;
+				walk = walk.getNext();
+			}
 		}
 		return clone;
 
@@ -465,6 +473,13 @@ public class GenericDoublyLinkedList<T> implements Cloneable {
 		System.out.println("after backwardroatation1: " + concatenated.toArray());
 		System.out.println("head: " + concatenated.getHeadNode().getElement());
 		System.out.println("tail: " + concatenated.getTailNode().getElement());
+
+		try {
+			System.out.println("Cloned: " + concatenated.clone().toArray());
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
