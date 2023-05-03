@@ -10,6 +10,7 @@ public class GameScoreBoard {
 	}
 
 	int getSize() {
+
 		return scoreboard.size();
 	}
 
