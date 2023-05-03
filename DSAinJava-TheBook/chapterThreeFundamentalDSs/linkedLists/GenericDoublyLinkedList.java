@@ -477,6 +477,7 @@ public class GenericDoublyLinkedList<T> implements Cloneable {
 		System.out.println("after backwardroatation1: " + concatenated.toArray());
 		System.out.println("head: " + concatenated.getHeadNode().getElement());
 		System.out.println("tail: " + concatenated.getTailNode().getElement());
+		System.out.println("contacenated size: " + concatenated.size());
 
 		try {
 			System.out.println("Cloned: " + concatenated.clone().toArray());
