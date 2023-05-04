@@ -10,12 +10,17 @@ public class GameScoreBoard {
 	}
 
 	int getSize() {
-
 		return scoreboard.size();
+	}
+
+	boolean addFirs(int val) {
+		return scoreboard.add(val);
 	}
 
 	public static void main(String[] args) {
 		GameScoreBoard game = new GameScoreBoard();
 		System.out.println(game.getSize());
+		game.addFirs(0);
+
 	}
 }
