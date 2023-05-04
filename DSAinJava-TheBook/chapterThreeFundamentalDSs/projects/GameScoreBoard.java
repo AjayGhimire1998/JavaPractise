@@ -17,12 +17,20 @@ public class GameScoreBoard {
 		scoreboard.addFirst(val);
 	}
 
+	void addLast(int val) {
+		scoreboard.addLast(val);
+	}
+
 	void display() {
 		System.out.println(scoreboard);
 	}
 
 	Integer getFirst() {
 		return scoreboard.getFirst();
+	}
+
+	Integer getLast() {
+		return scoreboard.getLast();
 	}
 
 	public static void main(String[] args) {
