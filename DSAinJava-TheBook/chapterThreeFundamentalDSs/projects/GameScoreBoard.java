@@ -33,11 +33,16 @@ public class GameScoreBoard {
 		return scoreboard.getLast();
 	}
 
+	void displayInOrder() {
+
+	}
+
 	public static void main(String[] args) {
 		GameScoreBoard game = new GameScoreBoard();
 		System.out.println(game.getSize());
 		game.addFirst(0);
 		game.addFirst(1);
+		game.addLast(9);
 		System.out.println(game.getSize());
 		game.display();
 		System.out.println(game.getFirst());
