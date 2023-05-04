@@ -21,6 +21,10 @@ public class GameScoreBoard {
 		System.out.println(scoreboard);
 	}
 
+	Integer getFirst() {
+		return scoreboard.getFirst();
+	}
+
 	public static void main(String[] args) {
 		GameScoreBoard game = new GameScoreBoard();
 		System.out.println(game.getSize());
@@ -28,6 +32,7 @@ public class GameScoreBoard {
 		game.addFirst(1);
 		System.out.println(game.getSize());
 		game.display();
+		System.out.println(game.getFirst());
 
 	}
 }
