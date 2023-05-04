@@ -13,14 +13,21 @@ public class GameScoreBoard {
 		return scoreboard.size();
 	}
 
-	boolean addFirs(int val) {
-		return scoreboard.add(val);
+	void addFirst(int val) {
+		scoreboard.addFirst(val);
+	}
+
+	void display() {
+		System.out.println(scoreboard);
 	}
 
 	public static void main(String[] args) {
 		GameScoreBoard game = new GameScoreBoard();
 		System.out.println(game.getSize());
-		game.addFirs(0);
+		game.addFirst(0);
+		game.addFirst(1);
+		System.out.println(game.getSize());
+		game.display();
 
 	}
 }
