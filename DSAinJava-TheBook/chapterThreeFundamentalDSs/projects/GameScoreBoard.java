@@ -47,5 +47,15 @@ public class GameScoreBoard {
 		game.display();
 		System.out.println(game.getFirst());
 
+//		GameScoreBoard game = new GameScoreBoard();
+		System.out.println(game.getSize());
+		game.addFirst(0);
+		game.addFirst(1);
+		game.addLast(9);
+		System.out.println(game.getSize());
+		game.display();
+		System.out.println(game.getFirst());
+		System.out.println(game.getSize());
+
 	}
 }
