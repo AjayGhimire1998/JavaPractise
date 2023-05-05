@@ -59,5 +59,7 @@ public class GameScoreBoard {
 		game.addLast(9);
 		System.out.println(game.getSize());
 
+		System.out.println(game.getSize());
+
 	}
 }
