@@ -61,5 +61,7 @@ public class GameScoreBoard {
 
 		System.out.println(game.getSize());
 
+		System.out.println(game.getSize());
+
 	}
 }
