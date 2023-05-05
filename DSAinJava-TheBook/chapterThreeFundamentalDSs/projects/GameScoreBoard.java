@@ -33,9 +33,9 @@ public class GameScoreBoard {
 		return scoreboard.getLast();
 	}
 
-	void displayInOrder() {
-
-	}
+//	void displayInOrder() {
+//		
+//	}
 
 	public static void main(String[] args) {
 		GameScoreBoard game = new GameScoreBoard();
