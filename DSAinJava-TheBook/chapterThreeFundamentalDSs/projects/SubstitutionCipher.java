@@ -38,4 +38,28 @@ public class SubstitutionCipher {
 		}
 		return sb.toString();
 	}
+
+	String decode(String encoded) {
+		StringBuilder sb = new StringBuilder();
+		for (char c : encoded.toCharArray()) {
+			if (Character.isUpperCase(c)) {
+				sb.append(decodingMap[c - 'A']);
+			} else if (Character.isLowerCase(c)) {
+				sb.append(Character.toLowerCase(decodingMap[Character.toUpperCase(c) - 'A']));
+			} else {
+				sb.append(c);
+			}
+		}
+		return sb.toString();
+	}
+
+	public static void main(String[] args) {
+		SubstitutionCipher cipher = new SubstitutionCipher("QWERTYUIOPASDFGHJKLZXCVBNM");
+		String message = "Fire in the Hole, Detach, I repeat DETACH!!";
+		System.out.println("msge: " + message);
+		String encoded = cipher.encode(message);
+		System.out.println("encoded msge: " + encoded);
+		String decoded = cipher.decode(encoded);
+		System.out.println("decoded msge: " + decoded);
+	}
 }
