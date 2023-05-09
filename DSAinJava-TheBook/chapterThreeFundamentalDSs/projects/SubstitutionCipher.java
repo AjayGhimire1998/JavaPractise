@@ -26,6 +26,16 @@ public class SubstitutionCipher {
 	}
 
 	String encode(String message) {
-
+		StringBuilder sb = new StringBuilder();
+		for (char c : message.toCharArray()) {
+			if (Character.isUpperCase(c)) {
+				sb.append(encodingMap[c - 'A']);
+			} else if (Character.isLowerCase(c)) {
+				sb.append(Character.toLowerCase(encodingMap[Character.toUpperCase(c) - 'A']));
+			} else {
+				sb.append(c);
+			}
+		}
+		return sb.toString();
 	}
 }
