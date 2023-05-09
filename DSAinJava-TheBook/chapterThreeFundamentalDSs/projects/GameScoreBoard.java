@@ -9,5 +9,19 @@ package projects;
  *
  */
 public class GameScoreBoard {
+	/**
+	 * private Node class for scoreboard
+	 * 
+	 * @author ajayghimire
+	 *
+	 */
+	private static class Node {
+		int score;
+		Node next;
 
+		Node(int score, Node next) {
+			this.score = score;
+			this.next = next;
+		}
+	}
 }
