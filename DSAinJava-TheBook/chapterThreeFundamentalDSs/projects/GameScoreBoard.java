@@ -61,6 +61,23 @@ public class GameScoreBoard {
 
 	}
 
+	void remove(int index) {
+		if (index < 0 || index >= size) {
+			throw new IndexOutOfBoundsException("Invalid index: " + index);
+		}
+
+		if (index == 0) {
+			head = head.next;
+		} else {
+			Node curr = head;
+			for (int i = 0; i < index - 1; i++) {
+				curr = curr.next;
+			}
+			curr.next = curr.next.next;
+		}
+		size--;
+	}
+
 	public void printTopTen() {
 		Node current = head;
 		for (int i = 1; i <= size; i++) {
