@@ -53,4 +53,25 @@ class Matrix {
 
 		return new Matrix(resultData);
 	}
+
+	Matrix multiply(Matrix other) {
+		if (cols != other.cols) {
+			throw new IllegalArgumentException("number of columns between matrices must match");
+		}
+
+		int[][] resultData = new int[rows][other.cols];
+
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < other.cols; j++) {
+				int sum = 0;
+				for (int k = 0; k < cols; k++) {
+					sum += data[i][k] * other.data[k][j];
+				}
+				resultData[i][j] = sum;
+			}
+
+		}
+		return new Matrix(resultData);
+
+	}
 }
