@@ -1,5 +1,12 @@
 package projects;
 
+/**
+ * Write a program that can perform the Caesar cipher for English messages that
+ * include both upper- and lowercase characters.
+ * 
+ * @author ajayghimire
+ *
+ */
 public class CaesarCipherAgain {
 	private int shift;
 
