@@ -1,10 +1,20 @@
 package projects;
 
+import java.util.Random;
+
+/**
+ * Redesign the CaesarCipher class as a subclass of the SubstitutionCipher from
+ * the previous problem.
+ * 
+ * @author ajayghimire
+ *
+ */
 public class ReDesignedCaesarClass extends SubstitutionCipher {
 	private int shift;
 
 	ReDesignedCaesarClass(int shift) {
-		super(generateEncoding(shift));
+//		super(generateEncoding(shift));
+		super(randomlyGeneratedEncoding());
 		this.shift = shift;
 	}
 
@@ -15,6 +25,30 @@ public class ReDesignedCaesarClass extends SubstitutionCipher {
 			sb.append(ch);
 		}
 		return sb.toString();
+	}
+
+	/**
+	 * Design a RandomCipher class as a subclass of the SubstitutionCipher from
+	 * Exercise P-3.40, so that each instance of the class relies on a random
+	 * permutation of letters for its mapping.
+	 * 
+	 * @return
+	 */
+	private static String randomlyGeneratedEncoding() {
+		Random random = new Random();
+		boolean[] usedChars = new boolean[26];
+		char[] encodingMap = new char[26];
+
+		for (int i = 0; i < 26; i++) {
+			int index;
+			do {
+				index = random.nextInt(26);
+			} while (usedChars[index]);
+
+			usedChars[index] = true;
+			encodingMap[i] = (char) ('A' + index);
+		}
+		return new String(encodingMap);
 	}
 
 	@Override
