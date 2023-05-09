@@ -99,6 +99,8 @@ public class GameScoreBoard {
 		board.add(10);
 		board.add(1);
 		board.add(3);
+		board.remove(0);
+		board.remove(8);
 		board.printTopTen();
 
 	}
