@@ -18,6 +18,21 @@ public class TwoDArrayAddAndMultiply {
 //
 //	}
 
+	public static void main(String[] args) {
+		int[][] data1 = { { 1, 2 }, { 3, 4 } };
+		int[][] data2 = { { 5, 6 }, { 7, 8 } };
+
+		Matrix matrix1 = new Matrix(data1);
+		Matrix matrix2 = new Matrix(data2);
+
+		Matrix sum = matrix1.add(matrix2);
+		sum.print();
+
+		Matrix product = matrix1.multiply(matrix2);
+		product.print();
+
+	}
+
 }
 
 /**
@@ -72,6 +87,15 @@ class Matrix {
 
 		}
 		return new Matrix(resultData);
-
 	}
+
+	void print() {
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				System.out.print(data[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+
 }
