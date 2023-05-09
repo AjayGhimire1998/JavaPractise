@@ -40,6 +40,17 @@ class Matrix {
 	Matrix add(Matrix other) {
 		if (rows != other.rows || cols != other.cols) {
 			throw new IllegalArgumentException("Matrices must have same dimension");
+
 		}
+
+		int[][] resultData = new int[rows][cols];
+
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				resultData[i][j] = data[i][j] + other.data[i][j];
+			}
+		}
+
+		return new Matrix(resultData);
 	}
 }
