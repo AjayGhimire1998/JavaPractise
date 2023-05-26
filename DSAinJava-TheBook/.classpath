@@ -9,5 +9,6 @@
 	<classpathentry kind="src" path="chapterOneJavaPrimer"/>
 	<classpathentry kind="src" path="chapterTwoOOP"/>
 	<classpathentry kind="src" path="chapterThreeFundamentalDSs"/>
+	<classpathentry kind="src" path="chapterFourAlgorthimAnalysis"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
