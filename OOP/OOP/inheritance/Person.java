@@ -9,6 +9,14 @@ public class Person {
 		this.age = age;
 	}
 
+	String getName() {
+		return name;
+	}
+
+	void setName(String name) {
+		this.name = name;
+	}
+
 	void info() {
 		System.out.println("Person is " + name + ", and the age is " + age);
 	}
@@ -17,4 +25,5 @@ public class Person {
 		Person person = new Person("Ajay", 23);
 //		person.info();
 	}
+
 }
