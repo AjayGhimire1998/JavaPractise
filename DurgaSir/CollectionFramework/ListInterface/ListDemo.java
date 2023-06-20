@@ -19,8 +19,8 @@ public class ListDemo<T> implements List<T> {
 		return index + 1;
 	}
 
-	@Override 
-	public boolean isEmpty() {Å
+	@Override
+	public boolean isEmpty() {
 		// TODO Auto-generated method stub
 		return false;
 	}
