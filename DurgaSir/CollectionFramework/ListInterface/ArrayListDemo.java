@@ -2,7 +2,9 @@ package ListInterface;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.RandomAccess;
 
 public class ArrayListDemo {
@@ -33,5 +35,10 @@ public class ArrayListDemo {
 		System.out.println(list2 instanceof Serializable);
 		System.out.println(list2 instanceof Cloneable);
 		System.out.println(list2 instanceof RandomAccess);
+
+		List list3 = Collections.synchronizedList(list);
+
+		System.out.println(list3);
+//		list3.iterator();
 	}
 }
