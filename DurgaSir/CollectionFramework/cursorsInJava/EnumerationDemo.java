@@ -14,7 +14,10 @@ public class EnumerationDemo {
 
 		Enumeration<Integer> e = vector.elements();
 		while (e.hasMoreElements()) {
-			System.out.println(e.nextElement());
+			int i = e.nextElement();
+			if (i % 2 == 0) {
+				System.out.println(i);
+			}
 		}
 	}
 }
